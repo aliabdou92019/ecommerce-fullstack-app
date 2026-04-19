@@ -27,6 +27,9 @@ def create_product(db: Session, product_data: ProductCreate):
 def get_all_products(db: Session):
     return db.query(Product).all()
 
+def search_products_by_name(db: Session, name: str):
+    return db.query(Product).filter(Product.name.contains(name)).all()
+
 def get_product_by_id(db: Session, product_id: int):
     return db.query(Product).filter(Product.id == product_id).first()
 

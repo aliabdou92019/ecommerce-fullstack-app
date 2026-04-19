@@ -1,5 +1,5 @@
-from fastapi import APIRouter, Depends, HTTPException, status
-from sqlalchemy.orm import Session
+from fastapi import APIRouter, Depends, HTTPException, status, Query
+from sqlalchemy.orm import Session 
 
 from database import get_db
 # from schemas.products import ProductCreate, ProductResponse , ProductDeleteResponse , ProductUpdate
@@ -25,6 +25,13 @@ def add_product(product: ProductCreate, db: Session = Depends(get_db)):
 @router.get("/", response_model=list[ProductResponse])
 def read_products(db: Session = Depends(get_db)):
     return get_all_products(db)
+
+@router.get("/search", response_model=list[ProductResponse])
+def search_products(
+    name: str = Query(..., min_length=1, description="Search by product name"),
+    db: Session = Depends(get_db)
+):
+    return search_products_by_name(db, name)
 
 @router.get("/{product_id}", response_model=ProductResponse)
 def read_product(product_id: int, db: Session = Depends(get_db)):
