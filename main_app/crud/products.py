@@ -36,6 +36,9 @@ def get_in_stock_products(db: Session):
 def get_product_by_id(db: Session, product_id: int):
     return db.query(Product).filter(Product.id == product_id).first()
 
+def get_products_by_category(db: Session, category_id: int):
+    return db.query(Product).filter(Product.category_id == category_id).all()
+
 def update_product(db: Session, product_id: int, product_data: ProductUpdate):
     product = db.query(Product).filter(Product.id == product_id).first()
 

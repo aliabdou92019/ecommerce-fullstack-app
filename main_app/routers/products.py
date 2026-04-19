@@ -49,6 +49,10 @@ def read_product(product_id: int, db: Session = Depends(get_db)):
 
     return product
 
+@router.get("/category/{category_id}", response_model=list[ProductResponse])
+def read_products_by_category(category_id: int, db: Session = Depends(get_db)):
+    return get_products_by_category(db, category_id)
+
 @router.put("/{product_id}", response_model=ProductResponse, status_code=status.HTTP_200_OK)
 def edit_product(
     product_id: int,
