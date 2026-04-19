@@ -22,6 +22,10 @@ def add_product(product: ProductCreate, db: Session = Depends(get_db)):
 
     return new_product
 
+@router.get("/in-stock", response_model=list[ProductResponse])
+def read_in_stock_products(db: Session = Depends(get_db)):
+    return get_in_stock_products(db)
+
 @router.get("/", response_model=list[ProductResponse])
 def read_products(db: Session = Depends(get_db)):
     return get_all_products(db)

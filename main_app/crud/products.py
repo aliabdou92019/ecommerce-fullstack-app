@@ -30,6 +30,9 @@ def get_all_products(db: Session):
 def search_products_by_name(db: Session, name: str):
     return db.query(Product).filter(Product.name.contains(name)).all()
 
+def get_in_stock_products(db: Session):
+    return db.query(Product).filter(Product.stock > 0).all()
+
 def get_product_by_id(db: Session, product_id: int):
     return db.query(Product).filter(Product.id == product_id).first()
 
