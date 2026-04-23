@@ -6,10 +6,10 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
-from ..database import get_db
+from database import get_db
 
-from .. import models
-from ..schemas.users import UserCreate, UserUpdate
+import models 
+from schemas.users import UserCreate, UserUpdate
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 SECRET_KEY = os.getenv("SECRET_KEY", "change_this_secret_in_env")
@@ -148,20 +148,3 @@ def delete_user(db: Session, user_id: int):
         raise DatabaseException("Failed to delete user") from exc
 
 
-def get_current_user(
-    authorization: str | None = Header(default=None),
-    db: Session = Depends(get_db),
-):
-    if not authorization:
-        raise AppException(status.HTTP_401_UNAUTHORIZED, "Authorization header is required")
-
-    scheme, _, token = authorization.partition(" ")
-    if scheme.lower() != "bearer" or not token:
-        raise AppException(status.HTTP_401_UNAUTHORIZED, "Invalid authorization format")
-
-    payload = decode_access_token(token)
-    user_id = payload.get("sub")
-    if not user_id:
-        raise AppException(status.HTTP_401_UNAUTHORIZED, "Invalid token payload")
-
-    return get_user_by_id(db, int(user_id))

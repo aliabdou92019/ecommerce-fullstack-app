@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, Header, status
 from sqlalchemy.orm import Session
 
-from ..crud.users import (
+from crud.users import (
     AppException,
     authenticate_user,
     create_access_token,
@@ -12,12 +12,28 @@ from ..crud.users import (
     get_users,
     update_user,
 )
-from ..database import get_db
-from ..schemas.users import Message, Token, UserCreate, UserLogin, UserOut, UserUpdate
+from database import get_db
+from schemas.users import Message, Token, UserCreate, UserLogin, UserOut, UserUpdate
 
 router = APIRouter(prefix="/api/v1/users", tags=["Authentication & Users"])
 
+def get_current_user(
+    authorization: str | None = Header(default=None),
+    db: Session = Depends(get_db),
+):
+    if not authorization:
+        raise AppException(status.HTTP_401_UNAUTHORIZED, "Authorization header is required")
 
+    scheme, _, token = authorization.partition(" ")
+    if scheme.lower() != "bearer" or not token:
+        raise AppException(status.HTTP_401_UNAUTHORIZED, "Invalid authorization format")
+
+    payload = decode_access_token(token)
+    user_id = payload.get("sub")
+    if not user_id:
+        raise AppException(status.HTTP_401_UNAUTHORIZED, "Invalid token payload")
+
+    return get_user_by_id(db, int(user_id))
 @router.post("/register", response_model=UserOut, status_code=status.HTTP_201_CREATED)
 def register(user_in: UserCreate, db: Session = Depends(get_db)):
     return create_user(db, user_in)
