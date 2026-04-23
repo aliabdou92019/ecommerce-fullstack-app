@@ -1,18 +1,20 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import os
-
 from fastapi import HTTPException, status, Depends, Header
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
-from database import get_db
+from database import load_dotenv
 
 import models 
 from schemas.users import UserCreate, UserUpdate
 
+
+
+load_dotenv()
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-SECRET_KEY = os.getenv("SECRET_KEY", "change_this_secret_in_env")
+SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "60"))
 
@@ -42,8 +44,10 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None) -> s
     to_encode = data.copy()
     expire = datetime.utcnow() + (expires_delta or timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))
     to_encode.update({"exp": expire})
-    return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+    token = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
+    print(decode_access_token(token))
+    return token
 
 
 def decode_access_token(token: str) -> dict:
@@ -83,11 +87,13 @@ def create_user(db: Session, user_in: UserCreate):
 
     if get_user_by_username(db, user_in.username):
         raise AppException(status.HTTP_409_CONFLICT, "Username already exists")
-
     new_user = models.User(
         username=user_in.username,
         email=user_in.email,
-        password=hash_password(user_in.password),
+        password=hash_password(user_in.password[:72]),
+        created_at=datetime.now(timezone.utc),
+        role="user"
+
     )
 
     try:
