@@ -5,7 +5,6 @@ from routers.users import router as users_router
 app = FastAPI(title="E-Commerce app")
 Base.metadata.create_all(bind=engine)
 app.include_router(users_router)
-app = FastAPI()
 
 @app.get("/")
 def root():
