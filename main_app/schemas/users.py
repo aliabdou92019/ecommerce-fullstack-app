@@ -1,5 +1,6 @@
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, EmailStr, Field
+from typing import Optional
 
 
 class UserBase(BaseModel):
@@ -7,9 +8,11 @@ class UserBase(BaseModel):
     email: EmailStr
 
 
-class UserCreate(UserBase):
-    password: str = Field(..., min_length=8, max_length=72)
-
+class UserCreate(BaseModel):
+    username: str
+    email: EmailStr
+    password: str
+    role: Optional[str] = "customer"
 
 class UserLogin(BaseModel):
     email: EmailStr
@@ -36,3 +39,9 @@ class Token(BaseModel):
 
 class Message(BaseModel):
     detail: str
+
+
+class UserRoleResponse(BaseModel):
+    user_id: int
+    username: str
+    role: str

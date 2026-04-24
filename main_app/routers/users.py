@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, Header, status
 from sqlalchemy.orm import Session
 
+
 from crud.users import (
     AppException,
     authenticate_user,
@@ -11,9 +12,12 @@ from crud.users import (
     get_user_by_id,
     get_users,
     update_user,
+    get_current_user_role_data,
 )
 from database import get_db
-from schemas.users import Message, Token, UserCreate, UserLogin, UserOut, UserUpdate
+from schemas.users import Message, Token, UserCreate, UserLogin, UserOut, UserUpdate ,UserRoleResponse
+from models import User
+
 
 router = APIRouter(prefix="/api/v1/users", tags=["Authentication & Users"])
 
@@ -70,3 +74,8 @@ def edit_user(user_id: int, user_in: UserUpdate, db: Session = Depends(get_db)):
 @router.delete("/{user_id}", response_model=Message)
 def remove_user(user_id: int, db: Session = Depends(get_db)):
     return delete_user(db, user_id)
+
+@router.get("/me/role", response_model=UserRoleResponse)
+def get_my_role(current_user: User = Depends(get_current_user)):
+    return get_current_user_role_data(current_user)
+

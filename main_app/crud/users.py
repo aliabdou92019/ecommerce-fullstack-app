@@ -92,9 +92,9 @@ def create_user(db: Session, user_in: UserCreate):
         email=user_in.email,
         password=hash_password(user_in.password[:72]),
         created_at=datetime.now(timezone.utc),
-        role="user"
-
+        role=user_in.role
     )
+
 
     try:
         db.add(new_user)
@@ -154,3 +154,9 @@ def delete_user(db: Session, user_id: int):
         raise DatabaseException("Failed to delete user") from exc
 
 
+def get_current_user_role_data(current_user: models.User):
+    return {
+        "user_id": current_user.id,
+        "username": current_user.username,
+        "role": current_user.role
+    }
