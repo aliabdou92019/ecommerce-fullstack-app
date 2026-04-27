@@ -4,10 +4,10 @@ import redis.asyncio as redis
 from database import get_db
 from dependencies import get_current_user, get_redis
 from schemas.shopping_cart import CartItem, CartItemAdd, CartItemUpdate, CartResponse
-from crud import cart as cart_service
+from crud import shopping_cart as cart_service
 import models
 
-router = APIRouter(prefix="/cart", tags=["Cart"])
+router = APIRouter(prefix="/api/v1/cart", tags=["Cart"])
 
 
 @router.get("/", response_model=CartResponse)
