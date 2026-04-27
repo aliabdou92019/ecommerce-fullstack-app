@@ -4,6 +4,9 @@ from sqlalchemy.orm import Session
 
 from database import get_db
 from crud.users import AppException, decode_access_token, get_user_by_id
+from fastapi.security import OAuth2PasswordBearer
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/users/login")
 
 async def get_redis():
     client = redis.from_url("redis://localhost:6379")
@@ -13,15 +16,9 @@ async def get_redis():
         await client.close()
 
 def get_current_user(
-    authorization: str | None = Header(default=None),
+    token: str = Depends(oauth2_scheme),
     db: Session = Depends(get_db),
 ):
-    if not authorization:
-        raise AppException(status.HTTP_401_UNAUTHORIZED, "Authorization header is required")
-
-    scheme, _, token = authorization.partition(" ")
-    if scheme.lower() != "bearer" or not token:
-        raise AppException(status.HTTP_401_UNAUTHORIZED, "Invalid authorization format")
 
     payload = decode_access_token(token)
     
@@ -30,3 +27,8 @@ def get_current_user(
         raise AppException(status.HTTP_401_UNAUTHORIZED, "Invalid token payload")
 
     return get_user_by_id(db, int(user_id))
+
+def get_admin_user(current_user = Depends(get_current_user)):
+    if current_user.role != "admin":
+        raise AppException(status.HTTP_403_FORBIDDEN, "Admin privileges required")
+    return current_user

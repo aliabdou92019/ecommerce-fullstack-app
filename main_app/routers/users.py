@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends, Header, status
+from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 
 
@@ -15,37 +16,22 @@ from crud.users import (
     get_current_user_role_data,
 )
 from database import get_db
+from dependencies import get_current_user, get_admin_user
 from schemas.users import Message, Token, UserCreate, UserLogin, UserOut, UserUpdate ,UserRoleResponse
 from models import User
 
 
 router = APIRouter(prefix="/api/v1/users", tags=["Authentication & Users"])
 
-def get_current_user(
-    authorization: str | None = Header(default=None),
-    db: Session = Depends(get_db),
-):
-    if not authorization:
-        raise AppException(status.HTTP_401_UNAUTHORIZED, "Authorization header is required")
-
-    scheme, _, token = authorization.partition(" ")
-    if scheme.lower() != "bearer" or not token:
-        raise AppException(status.HTTP_401_UNAUTHORIZED, "Invalid authorization format")
-
-    payload = decode_access_token(token)
-    user_id = payload.get("sub")
-    if not user_id:
-        raise AppException(status.HTTP_401_UNAUTHORIZED, "Invalid token payload")
-
-    return get_user_by_id(db, int(user_id))
 @router.post("/register", response_model=UserOut, status_code=status.HTTP_201_CREATED)
 def register(user_in: UserCreate, db: Session = Depends(get_db)):
     return create_user(db, user_in)
 
 
 @router.post("/login", response_model=Token)
-def login(user_in: UserLogin, db: Session = Depends(get_db)):
-    user = authenticate_user(db, user_in.email, user_in.password)
+def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
+    # Note: OAuth2PasswordRequestForm uses 'username' field, so we pass it to email
+    user = authenticate_user(db, form_data.username, form_data.password)
     token = create_access_token({"id": user.id, "email": user.email, "role": user.role})
     return {"access_token": token, "token_type": "bearer"}
 
@@ -62,17 +48,17 @@ def read_current_user(current_user=Depends(get_current_user)):
 
 
 @router.get("/{user_id}", response_model=UserOut)
-def read_user(user_id: int, db: Session = Depends(get_db)):
+def read_user(user_id: int, current_user: User = Depends(get_admin_user), db: Session = Depends(get_db)):
     return get_user_by_id(db, user_id)
 
 
 @router.put("/{user_id}", response_model=UserOut)
-def edit_user(user_id: int, user_in: UserUpdate, db: Session = Depends(get_db)):
+def edit_user(user_id: int,user_in: UserUpdate, current_user: User = Depends(get_admin_user),  db: Session = Depends(get_db)):
     return update_user(db, user_id, user_in)
 
 
 @router.delete("/{user_id}", response_model=Message)
-def remove_user(user_id: int, db: Session = Depends(get_db)):
+def remove_user(user_id: int, current_user: User = Depends(get_admin_user), db: Session = Depends(get_db)):
     return delete_user(db, user_id)
 
 @router.get("/me/role", response_model=UserRoleResponse)
