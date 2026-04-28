@@ -1,6 +1,6 @@
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, EmailStr, Field
-from typing import Optional
+from typing import Optional, Literal
 
 
 class UserBase(BaseModel):
@@ -10,7 +10,7 @@ class UserBase(BaseModel):
 
 class UserCreate(UserBase):
     password: str = Field(..., min_length=8, max_length=72)
-    role: Optional[str] = "user"
+    role: Literal["user", "admin"]
 
 class UserLogin(BaseModel):
     email: EmailStr
@@ -20,7 +20,10 @@ class UserLogin(BaseModel):
 class UserUpdate(BaseModel):
     username: str | None = Field(None, min_length=3, max_length=50)
     email: EmailStr | None = None
+    old_password: str | None = Field(None, min_length=8, max_length=72)
     password: str | None = Field(None, min_length=8, max_length=72)
+    confirm_password: str | None = Field(None, min_length=8, max_length=72)
+
 
 
 class UserOut(UserBase):
@@ -42,4 +45,4 @@ class Message(BaseModel):
 class UserRoleResponse(BaseModel):
     user_id: int
     username: str
-    role: str
+    role: Literal["user", "admin"]

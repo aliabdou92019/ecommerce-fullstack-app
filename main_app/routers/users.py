@@ -52,9 +52,9 @@ def read_user(user_id: int, current_user: User = Depends(get_admin_user), db: Se
     return get_user_by_id(db, user_id)
 
 
-@router.put("/{user_id}", response_model=UserOut)
-def edit_user(user_id: int,user_in: UserUpdate, current_user: User = Depends(get_admin_user),  db: Session = Depends(get_db)):
-    return update_user(db, user_id, user_in)
+@router.put("/edit", response_model=UserOut)
+def edit_user(user_in: UserUpdate, current_user: User = Depends(get_current_user) ,  db: Session = Depends(get_db)):
+    return update_user(db, user_in, current_user)
 
 
 @router.delete("/{user_id}", response_model=Message)

@@ -113,8 +113,7 @@ def authenticate_user(db: Session, email: str, password: str):
 
 
 
-def update_user(db: Session, user_id: int, user_in: UserUpdate):
-    user = get_user_by_id(db, user_id)
+def update_user(db: Session, user_in: UserUpdate, user: models.User):
 
     if user_in.email and user_in.email != user.email:
         existing_email = get_user_by_email(db, user_in.email)
@@ -129,6 +128,14 @@ def update_user(db: Session, user_id: int, user_in: UserUpdate):
         user.username = user_in.username
 
     if user_in.password:
+        if not user_in.old_password:
+            raise AppException(status.HTTP_400_BAD_REQUEST, "Old password is required")
+        if not verify_password(user_in.old_password, user.password):
+            raise AppException(status.HTTP_401_UNAUTHORIZED, "Invalid old password")
+        if not user_in.confirm_password:
+            raise AppException(status.HTTP_400_BAD_REQUEST, "Confirm password is required")
+        if user_in.confirm_password != user_in.password:
+            raise AppException(status.HTTP_400_BAD_REQUEST, "Passwords do not match")
         user.password = hash_password(user_in.password)
 
     try:
