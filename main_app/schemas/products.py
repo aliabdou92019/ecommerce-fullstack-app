@@ -9,12 +9,32 @@ class ProductCreate(BaseModel):
     stock: int = Field(default=0, ge=0)
     category_id: int
 
+from pydantic import BaseModel, Field, field_validator, ConfigDict
+from typing import Optional, Literal
+
+
 class ProductResponse(BaseModel):
     id: int
     name: str
     description: Optional[str]
     price: float
-    stock: Optional[int] = None
+    stock: Literal["in-stock", "out-of-stock"]
+    category_id: int
+
+    @field_validator("stock", mode="before")
+    @classmethod
+    def convert_stock_number_to_status(cls, value):
+        if isinstance(value, str):
+            return value
+
+        return "in-stock" if value > 0 else "out-of-stock"
+
+    model_config = ConfigDict(from_attributes=True)
+
+class ProductStockResponse(BaseModel):
+    id: int
+    name: str
+    stock: int
     category_id: int
 
     class Config:
