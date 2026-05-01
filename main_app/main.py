@@ -7,7 +7,7 @@ from routers.categories import router as categories_router
 from routers.products import router as products_router
 from routers.orders import router as orders_router
 from routers.shopping_cart import router as shopping_cart_router
-
+import redis.asyncio as redis
 
 app = FastAPI(title="E-Commerce app")
 #Base.metadata.drop_all(bind=engine)
