@@ -2,29 +2,65 @@ from fastapi import APIRouter, Depends, HTTPException, status, Query
 from sqlalchemy.orm import Session 
 
 from database import get_db
-# from schemas.products import ProductCreate, ProductResponse , ProductDeleteResponse , ProductUpdate
 from schemas.products import *
-# from crud.products import create_product, get_product_by_id , get_all_products , delete_product, update_product 
 from crud.products import * 
+from dependencies import *
+from models import *
 
 router = APIRouter(prefix="/products", tags=["Products"])
 
 
+# Admin only: create product
 @router.post("/", response_model=ProductResponse, status_code=status.HTTP_201_CREATED)
-def add_product(product: ProductCreate, db: Session = Depends(get_db)):
+def add_product(
+    product: ProductCreate,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_admin_user)
+):
     new_product = create_product(db, product)
 
-    if not new_product:
+    if new_product == "invalid_category":
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Category does not exist"
         )
 
+    if new_product == "duplicate_product":
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Product already exists in this category"
+        )
+
     return new_product
 
-@router.get("/in-stock", response_model=list[ProductResponse])
-def read_in_stock_products(db: Session = Depends(get_db)):
-    return get_in_stock_products(db)
+@router.get(
+    "/in-stock",
+    response_model=list[ProductResponse],
+    response_model_exclude_none=True
+)
+def read_in_stock_products(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    products = get_in_stock_products(db)
+
+    result = []
+
+    for product in products:
+        product_data = {
+            "id": product.id,
+            "name": product.name,
+            "description": product.description,
+            "price": product.price,
+            "category_id": product.category_id,
+        }
+
+        if current_user.role == "admin" or product.stock <= 3:
+            product_data["stock"] = product.stock
+
+        result.append(product_data)
+
+    return result
 
 @router.get("/", response_model=list[ProductResponse])
 def read_products(db: Session = Depends(get_db)):
@@ -58,7 +94,7 @@ def edit_product(
     product_id: int,
     product_data: ProductUpdate,
     db: Session = Depends(get_db),
-    # current_user: User = Depends(require_admin)        #if User.role != "admin" raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Not authorized to update products")
+    current_user: User = Depends(get_admin_user)
 ):
     updated_product = update_product(db, product_id, product_data)
 
@@ -80,7 +116,7 @@ def edit_product(
 def remove_product(
     product_id: int,
     db: Session = Depends(get_db),
-    # current_user: User = Depends(require_admin)   #if User.role != "admin" raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Not authorized to delete products")
+    current_user: User = Depends(get_admin_user)
 ):
     product = delete_product(db, product_id)
 
@@ -92,7 +128,6 @@ def remove_product(
 
     return ProductDeleteResponse(
         message="Product deleted successfully",
-        # deleted_by=current_user.username
         deleted_product=product
     )
     

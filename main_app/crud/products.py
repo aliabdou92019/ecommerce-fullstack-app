@@ -1,21 +1,32 @@
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session 
+from sqlalchemy import func
 from models import Product, Category
 from schemas.products import ProductCreate,ProductUpdate
 
-
 def create_product(db: Session, product_data: ProductCreate):
-    category = db.query(Category).filter(Category.id == product_data.category_id).first()
+    category = db.query(Category).filter(
+        Category.id == product_data.category_id
+    ).first()
 
     if not category:
-        return None
+        return "invalid_category"
+
+    product_name = product_data.name.strip()
+
+    existing_product = db.query(Product).filter(
+        func.lower(Product.name) == product_name.lower(),
+        Product.category_id == product_data.category_id
+    ).first()
+
+    if existing_product:
+        return "duplicate_product"
 
     new_product = Product(
-        name=product_data.name,
+        name=product_name,
         description=product_data.description,
         price=product_data.price,
         stock=product_data.stock,
         category_id=product_data.category_id
-        
     )
 
     db.add(new_product)

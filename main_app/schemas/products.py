@@ -9,18 +9,17 @@ class ProductCreate(BaseModel):
     stock: int = Field(default=0, ge=0)
     category_id: int
 
-
 class ProductResponse(BaseModel):
     id: int
     name: str
     description: Optional[str]
     price: float
-    stock: int
+    stock: Optional[int] = None
     category_id: int
 
     class Config:
         from_attributes = True
-      
+
 class ProductUpdate(BaseModel):
     name: Optional[str] = Field(None, min_length=2, max_length=100)
     description: Optional[str] = None
