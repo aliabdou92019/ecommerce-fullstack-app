@@ -5,14 +5,14 @@ from dependencies import *
 from models import *
 from schemas.orders import * 
 from crud.orders import * 
-from crud.shopping_cart import get_cart
-from routers.shopping_cart import clear_cart
+from crud.shopping_cart import get_cart,clear_cart
+# from routers.shopping_cart import clear_cart
 router = APIRouter(prefix='/api/v1/orders',tags=['Orders'])
 
 @router.post('/create',response_model=OrderResponse,status_code=status.HTTP_201_CREATED)
 async def create_order(db:Session =Depends(get_db),redis_client: redis.Redis = Depends(get_redis),current_user = Depends(get_current_user)):
   order_data = await get_cart(redis_client,current_user.id)
-  if order_data.items == []:
+  if not order_data['items']:
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Shopping Cart is empty.")
   order_data = CartResponse(
         user_id=order_data["user_id"],
@@ -23,7 +23,7 @@ async def create_order(db:Session =Depends(get_db),redis_client: redis.Redis = D
     new_order = add_order(db,order_data)
   except ValueError as e:
     raise HTTPException(status.HTTP_400_BAD_REQUEST, detail="Could not create order. Please check product stock.")
-  await clear_cart(redis_client, current_user.id)
+  await clear_cart(redis_client,current_user.id)
   return new_order
 
 @router.get('/get/user/{user_id}',response_model=List[OrderResponse])
