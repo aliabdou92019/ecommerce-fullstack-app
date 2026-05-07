@@ -6,7 +6,6 @@ from models import *
 from schemas.orders import * 
 from crud.orders import * 
 from crud.shopping_cart import get_cart,clear_cart
-# from routers.shopping_cart import clear_cart
 router = APIRouter(prefix='/api/v1/orders',tags=['Orders'])
 
 @router.post('/create',response_model=OrderResponse,status_code=status.HTTP_201_CREATED)

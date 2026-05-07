@@ -53,9 +53,11 @@ def cancel_order(db: Session, order_id: int, user_id: int = None):
     
     if not order:
       return False
-    if order.status == 'ordered':
+    if order.status == 'pending':
       order.status = 'canceled'
-    return True
+      db.commit()
+      return True
+    return False
 
 def change_to_shipping(db:Session,order_id:int):
   order = db.query(Order).filter(Order.id == order_id).first()
