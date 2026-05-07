@@ -1,13 +1,39 @@
 from sqlalchemy.orm import Session
+from sqlalchemy import func
+from sqlalchemy.exc import IntegrityError
 from models import Category
 from schemas.categories import CategoryCreate, CategoryUpdate
 
 
+def get_category_by_name(db: Session, name: str, exclude_category_id: int | None = None):
+    normalized_name = name.strip()
+    query = db.query(Category).filter(func.lower(Category.name) == normalized_name.lower())
+
+    if exclude_category_id is not None:
+        query = query.filter(Category.id != exclude_category_id)
+
+    return query.first()
+
+
 def create_category(db: Session, category: CategoryCreate):
-    db_category = Category(**category.dict())
+    category_name = category.name.strip()
+
+    if get_category_by_name(db, category_name):
+        return "duplicate_category"
+
+    db_category = Category(
+        name=category_name,
+        description=category.description
+    )
     db.add(db_category)
-    db.commit()
-    db.refresh(db_category)
+
+    try:
+        db.commit()
+        db.refresh(db_category)
+    except IntegrityError:
+        db.rollback()
+        return "duplicate_category"
+
     return db_category
 
 
@@ -25,11 +51,26 @@ def update_category(db: Session, category_id: int, update_data: CategoryUpdate):
     if not category:
         return None
 
-    for key, value in update_data.dict(exclude_unset=True).items():
+    update_fields = update_data.dict(exclude_unset=True)
+
+    if "name" in update_fields and update_fields["name"] is not None:
+        category_name = update_fields["name"].strip()
+
+        if get_category_by_name(db, category_name, exclude_category_id=category_id):
+            return "duplicate_category"
+
+        update_fields["name"] = category_name
+
+    for key, value in update_fields.items():
         setattr(category, key, value)
 
-    db.commit()
-    db.refresh(category)
+    try:
+        db.commit()
+        db.refresh(category)
+    except IntegrityError:
+        db.rollback()
+        return "duplicate_category"
+
     return category
 
 
