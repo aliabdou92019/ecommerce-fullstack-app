@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, HTTPException, Depends, status
 from sqlalchemy.orm import Session
 from database import get_db
 
@@ -11,25 +11,32 @@ from crud.categories import (
     update_category,
     delete_category,
 )
-# Section 5 - JWT Protection
-from dependencies import get_current_user
+from dependencies import get_admin_user
 
 router = APIRouter(
-    prefix="/categories",
+    prefix="/api/v1/categories",
     tags=["Categories"]
 )
 
 
-@router.post("/", response_model=CategoryResponse)
+@router.post("/add", response_model=CategoryResponse, status_code=status.HTTP_201_CREATED)
 def add_category(
     category: CategoryCreate,
     db: Session = Depends(get_db),
-    user: str = Depends(get_current_user)
+    current_user = Depends(get_admin_user)
 ):
-    return create_category(db, category)
+    new_category = create_category(db, category)
+
+    if new_category == "duplicate_category":
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Category with this name already exists"
+        )
+
+    return new_category
 
 
-@router.get("/", response_model=list[CategoryResponse])
+@router.get("/getall", response_model=list[CategoryResponse])
 def read_categories(db: Session = Depends(get_db)):
     return get_categories(db)
 
@@ -49,12 +56,18 @@ def edit_category(
     category_id: int,
     update_data: CategoryUpdate,
     db: Session = Depends(get_db),
-    user: str = Depends(get_current_user)
+    current_user = Depends(get_admin_user)
 ):
     category = update_category(db, category_id, update_data)
 
     if not category:
         raise HTTPException(status_code=404, detail="Category not found")
+
+    if category == "duplicate_category":
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Category with this name already exists"
+        )
 
     return category
 
@@ -63,7 +76,7 @@ def edit_category(
 def remove_category(
     category_id: int,
     db: Session = Depends(get_db),
-    user: str = Depends(get_current_user)
+    current_user = Depends(get_admin_user)
 ):
     category = delete_category(db, category_id)
 
