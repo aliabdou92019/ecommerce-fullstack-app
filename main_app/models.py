@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, String, Float, ForeignKey, DateTime, Tex
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from database import Base
+from sqlalchemy.sql import func
 
 class User(Base):
     __tablename__ = "users"
@@ -44,7 +45,7 @@ class Order(Base):
     user_id = Column(Integer, ForeignKey("users.id"))
     total_price = Column(Float)
     status = Column(String(20), default="pending")
-    created_at = Column(DateTime, default=datetime.astimezone)
+    created_at = Column(DateTime, default=func.now())
     owner = relationship("User", back_populates="orders")
     items = relationship("OrderItem", back_populates="order")
 

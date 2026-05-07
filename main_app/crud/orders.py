@@ -1,18 +1,21 @@
 from models import Order, OrderItem,Product
 from schemas.orders import OrderCreate
 from sqlalchemy.orm import Session
+from schemas.shopping_cart import CartResponse
 
-def add_order(db:Session,order_data:OrderCreate):
+def add_order(db:Session,order_data:CartResponse):
   total_price = 0
   order_list = []
 
   ## add order to order list to get the ID for the order items
-  new_order = Order(user_id= order_data.user_id,total_price = total_price)
+  new_order = Order(user_id= order_data.user_id,total_price = total_price,)
   db.add(new_order)
   db.flush()  
 
   for item in order_data.items:
     product = db.query(Product).filter(Product.id == item.product_id).first()
+    if product.stock < item.quantity:
+      raise ValueError
     total_price += product.price*item.quantity
     order_item = OrderItem(
       order_id= new_order.id,
@@ -34,7 +37,8 @@ def get_user_orders(user_id:int,db:Session):
   orders = db.query(Order).filter(Order.user_id == user_id).all()
   return orders
 
-def get_all_orders(user_id: int,db:Session):
+
+def get_all_orders(db:Session):
   all_orders = db.query(Order)
   return all_orders
 
@@ -49,7 +53,14 @@ def cancel_order(db: Session, order_id: int, user_id: int = None):
     
     if not order:
       return False
-        
-    db.delete(order)
+    if order.status == 'ordered':
+      order.status = 'canceled'
+    return True
+
+def change_to_shipping(db:Session,order_id:int):
+  order = db.query(Order).filter(Order.id == order_id).first()
+  if order and order.status == "pending":
+    order.status = "shipped"
     db.commit()
     return True
+  return False
