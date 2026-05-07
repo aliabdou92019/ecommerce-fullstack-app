@@ -14,12 +14,12 @@ from crud.categories import (
 from dependencies import get_admin_user
 
 router = APIRouter(
-    prefix="/categories",
+    prefix="/api/v1/categories",
     tags=["Categories"]
 )
 
 
-@router.post("/", response_model=CategoryResponse, status_code=status.HTTP_201_CREATED)
+@router.post("/add", response_model=CategoryResponse, status_code=status.HTTP_201_CREATED)
 def add_category(
     category: CategoryCreate,
     db: Session = Depends(get_db),
@@ -36,7 +36,7 @@ def add_category(
     return new_category
 
 
-@router.get("/", response_model=list[CategoryResponse])
+@router.get("/getall", response_model=list[CategoryResponse])
 def read_categories(db: Session = Depends(get_db)):
     return get_categories(db)
 
