@@ -19,7 +19,7 @@ class ProductResponse(BaseModel):
     description: Optional[str]
     price: float
     stock: Literal["in-stock", "out-of-stock"]
-    category_id: int
+    category_id: Optional[int]
 
     @field_validator("stock", mode="before")
     @classmethod
@@ -35,7 +35,7 @@ class ProductStockResponse(BaseModel):
     id: int
     name: str
     stock: int
-    category_id: int
+    category_id: Optional[int]
 
     class Config:
         from_attributes = True
