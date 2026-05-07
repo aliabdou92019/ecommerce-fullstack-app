@@ -6,6 +6,7 @@ from passlib.context import CryptContext
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
 from database import load_dotenv
+from core.logging_config import logger
 
 import models 
 from schemas.users import UserCreate, UserUpdate
@@ -103,14 +104,17 @@ def create_user(db: Session, user_in: UserCreate):
         db.rollback()
         raise DatabaseException("Failed to create user") from exc
 
+    logger.info(f"New user registered: {new_user.email}")
 
 
 def authenticate_user(db: Session, email: str, password: str):
     user = get_user_by_email(db, email)
     if not user or not verify_password(password, user.password):
         raise AppException(status.HTTP_401_UNAUTHORIZED, "Invalid email or password")
-    return user
+    logger.warning(f"Failed login attempt: {email}")
+    logger.info(f"User logged in: {email}")
 
+    return user
 
 
 def update_user(db: Session, user_in: UserUpdate, user: models.User):

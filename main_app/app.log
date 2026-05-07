@@ -1,0 +1,6 @@
+2026-05-08 00:08:35,094 - INFO - ecommerce - GET /api/v1/cart Status: 307 Duration: 0.002s
+2026-05-08 00:08:35,105 - INFO - ecommerce - GET /api/v1/cart/ Status: 401 Duration: 0.0046s
+2026-05-08 00:08:35,124 - INFO - ecommerce - GET /api/v1/orders/get_all_orders Status: 401 Duration: 0.0067s
+2026-05-08 00:10:00,736 - INFO - ecommerce - GET /api/v1/cart Status: 307 Duration: 0.0019s
+2026-05-08 00:10:00,750 - INFO - ecommerce - GET /api/v1/cart/ Status: 401 Duration: 0.0026s
+2026-05-08 00:10:00,772 - INFO - ecommerce - GET /api/v1/orders/get_all_orders Status: 401 Duration: 0.0049s

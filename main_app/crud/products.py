@@ -2,6 +2,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import func , or_
 from models import Product, Category
 from schemas.products import ProductCreate,ProductUpdate
+from core.logging_config import logger
 
 def create_product(db: Session, product_data: ProductCreate):
     category = db.query(Category).filter(
@@ -34,6 +35,7 @@ def create_product(db: Session, product_data: ProductCreate):
     db.refresh(new_product)
 
     return new_product
+    logger.info(f"Product created: {new_product.name}")
 
 def get_products_stock_admin(
     db: Session,
@@ -124,6 +126,7 @@ def update_product(db: Session, product_id: int, product_data: ProductUpdate):
     db.refresh(product)
 
     return product
+    logger.info(f"Product updated: {product.id}")
 
 def delete_product(db: Session, product_id: int):
     product = db.query(Product).filter(Product.id == product_id).first()
@@ -134,3 +137,4 @@ def delete_product(db: Session, product_id: int):
     db.delete(product)
     db.commit()
     return product
+    logger.warning(f"Product deleted: {product.id}")

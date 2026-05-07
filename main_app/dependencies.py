@@ -9,12 +9,12 @@ from fastapi.security import OAuth2PasswordBearer
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/users/login")
 
 async def get_redis():
-    client = redis.from_url("redis://localhost:6379")
+    client = redis.from_url("redis://redis:6379")
     try:
         yield client
     finally:
-        await client.close()
-
+        await client.aclose()
+        
 def get_current_user(
     token: str = Depends(oauth2_scheme),
     db: Session = Depends(get_db),

@@ -32,6 +32,7 @@ def add_order(db:Session,order_data:CartResponse):
   db.commit()
   db.refresh(new_order)
   return new_order
+  logger.info(f"Order created: {new_order.id}")
 
 def get_user_orders(user_id:int,db:Session): 
   orders = db.query(Order).filter(Order.user_id == user_id).all()
