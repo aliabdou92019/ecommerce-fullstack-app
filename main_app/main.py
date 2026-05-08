@@ -54,7 +54,7 @@ async def get_redis():
     try:
         yield client
     finally:
-        await client.close()  # in database.py
+        await client.close() 
         
         
 
