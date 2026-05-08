@@ -18,3 +18,1263 @@
 2026-05-08 16:25:09,683 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.067s
 2026-05-08 16:34:58,419 - INFO - ecommerce - GET /docs Status: 200 Duration: 0.0008s
 2026-05-08 16:34:58,537 - INFO - ecommerce - GET /openapi.json Status: 200 Duration: 0.002s
+2026-05-08 23:16:11,296 - INFO - ecommerce - GET / Status: 200 Duration: 0.0035s
+2026-05-09 00:22:54,485 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4853s
+2026-05-09 00:22:54,497 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.0049s
+2026-05-09 00:22:54,502 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.0028s
+2026-05-09 00:22:54,513 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.0052s
+2026-05-09 00:22:54,521 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.0044s
+2026-05-09 00:22:54,532 - INFO - ecommerce - POST /api/v1/users/register Status: 422 Duration: 0.0033s
+2026-05-09 00:22:54,924 - WARNING - ecommerce - Failed login attempt: authuser@test.com
+2026-05-09 00:22:54,924 - INFO - ecommerce - User logged in: authuser@test.com
+2026-05-09 00:22:55,014 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4729s
+2026-05-09 00:22:55,409 - INFO - ecommerce - POST /api/v1/users/login Status: 401 Duration: 0.3901s
+2026-05-09 00:22:55,420 - INFO - ecommerce - POST /api/v1/users/login Status: 401 Duration: 0.0057s
+2026-05-09 00:22:55,761 - WARNING - ecommerce - Failed login attempt: authuser@test.com
+2026-05-09 00:22:55,761 - INFO - ecommerce - User logged in: authuser@test.com
+2026-05-09 00:22:55,762 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3365s
+2026-05-09 00:22:55,769 - INFO - ecommerce - GET /api/v1/users/me Status: 200 Duration: 0.0043s
+2026-05-09 00:22:55,774 - INFO - ecommerce - GET /api/v1/users/me Status: 401 Duration: 0.0006s
+2026-05-09 00:22:55,781 - INFO - ecommerce - GET /api/v1/users/me Status: 401 Duration: 0.0023s
+2026-05-09 00:22:56,163 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3771s
+2026-05-09 00:22:56,503 - WARNING - ecommerce - Failed login attempt: regular1@test.com
+2026-05-09 00:22:56,504 - INFO - ecommerce - User logged in: regular1@test.com
+2026-05-09 00:22:56,505 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3397s
+2026-05-09 00:22:56,513 - INFO - ecommerce - GET /api/v1/users/ Status: 403 Duration: 0.0052s
+2026-05-09 00:22:56,905 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.381s
+2026-05-09 00:22:57,283 - WARNING - ecommerce - Failed login attempt: admin1@test.com
+2026-05-09 00:22:57,283 - INFO - ecommerce - User logged in: admin1@test.com
+2026-05-09 00:22:57,284 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3776s
+2026-05-09 00:22:57,292 - INFO - ecommerce - GET /api/v1/users/ Status: 200 Duration: 0.0057s
+2026-05-09 00:22:57,678 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3805s
+2026-05-09 00:22:58,099 - WARNING - ecommerce - Failed login attempt: editme@test.com
+2026-05-09 00:22:58,099 - INFO - ecommerce - User logged in: editme@test.com
+2026-05-09 00:22:58,101 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4201s
+2026-05-09 00:22:58,127 - INFO - ecommerce - PUT /api/v1/users/edit Status: 200 Duration: 0.0232s
+2026-05-09 00:22:58,139 - INFO - ecommerce - GET /api/v1/cart/ Status: 401 Duration: 0.0019s
+2026-05-09 00:22:58,547 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4021s
+2026-05-09 00:22:58,910 - WARNING - ecommerce - Failed login attempt: cartuser@test.com
+2026-05-09 00:22:58,910 - INFO - ecommerce - User logged in: cartuser@test.com
+2026-05-09 00:22:58,911 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.361s
+2026-05-09 00:22:58,917 - INFO - ecommerce - GET /api/v1/cart/ Status: 200 Duration: 0.0032s
+2026-05-09 00:22:59,290 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3697s
+2026-05-09 00:22:59,673 - WARNING - ecommerce - Failed login attempt: cartadmin@test.com
+2026-05-09 00:22:59,673 - INFO - ecommerce - User logged in: cartadmin@test.com
+2026-05-09 00:22:59,674 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3814s
+2026-05-09 00:23:00,069 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.393s
+2026-05-09 00:23:00,413 - WARNING - ecommerce - Failed login attempt: cartbuyer@test.com
+2026-05-09 00:23:00,413 - INFO - ecommerce - User logged in: cartbuyer@test.com
+2026-05-09 00:23:00,414 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3424s
+2026-05-09 00:23:00,440 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0235s
+2026-05-09 00:23:00,468 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0249s
+2026-05-09 00:23:00,476 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0051s
+2026-05-09 00:23:00,896 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4157s
+2026-05-09 00:23:01,269 - WARNING - ecommerce - Failed login attempt: cartbuyer2@test.com
+2026-05-09 00:23:01,270 - INFO - ecommerce - User logged in: cartbuyer2@test.com
+2026-05-09 00:23:01,271 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3719s
+2026-05-09 00:23:01,278 - INFO - ecommerce - POST /api/v1/cart/ Status: 404 Duration: 0.0051s
+2026-05-09 00:23:01,666 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3836s
+2026-05-09 00:23:02,008 - WARNING - ecommerce - Failed login attempt: stockadmin@test.com
+2026-05-09 00:23:02,009 - INFO - ecommerce - User logged in: stockadmin@test.com
+2026-05-09 00:23:02,010 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3409s
+2026-05-09 00:23:02,376 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3643s
+2026-05-09 00:23:02,706 - WARNING - ecommerce - Failed login attempt: stockbuyer@test.com
+2026-05-09 00:23:02,707 - INFO - ecommerce - User logged in: stockbuyer@test.com
+2026-05-09 00:23:02,708 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3296s
+2026-05-09 00:23:02,727 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.016s
+2026-05-09 00:23:02,746 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0175s
+2026-05-09 00:23:02,754 - INFO - ecommerce - POST /api/v1/cart/ Status: 400 Duration: 0.0048s
+2026-05-09 00:23:03,222 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4621s
+2026-05-09 00:23:03,644 - WARNING - ecommerce - Failed login attempt: upd_admin@test.com
+2026-05-09 00:23:03,645 - INFO - ecommerce - User logged in: upd_admin@test.com
+2026-05-09 00:23:03,646 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4199s
+2026-05-09 00:23:04,007 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3593s
+2026-05-09 00:23:04,373 - WARNING - ecommerce - Failed login attempt: upd_buyer@test.com
+2026-05-09 00:23:04,373 - INFO - ecommerce - User logged in: upd_buyer@test.com
+2026-05-09 00:23:04,374 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3655s
+2026-05-09 00:23:04,400 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0226s
+2026-05-09 00:23:04,428 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0246s
+2026-05-09 00:23:04,438 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0062s
+2026-05-09 00:23:04,449 - INFO - ecommerce - PUT /api/v1/cart/3 Status: 200 Duration: 0.0072s
+2026-05-09 00:23:04,847 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3892s
+2026-05-09 00:23:05,210 - WARNING - ecommerce - Failed login attempt: rem_admin@test.com
+2026-05-09 00:23:05,210 - INFO - ecommerce - User logged in: rem_admin@test.com
+2026-05-09 00:23:05,211 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.362s
+2026-05-09 00:23:05,565 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3524s
+2026-05-09 00:23:06,008 - WARNING - ecommerce - Failed login attempt: rem_buyer@test.com
+2026-05-09 00:23:06,009 - INFO - ecommerce - User logged in: rem_buyer@test.com
+2026-05-09 00:23:06,011 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.443s
+2026-05-09 00:23:06,042 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0274s
+2026-05-09 00:23:06,070 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.024s
+2026-05-09 00:23:06,082 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0076s
+2026-05-09 00:23:06,092 - INFO - ecommerce - DELETE /api/v1/cart/4 Status: 200 Duration: 0.0056s
+2026-05-09 00:23:06,479 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3772s
+2026-05-09 00:23:06,839 - WARNING - ecommerce - Failed login attempt: clr_admin@test.com
+2026-05-09 00:23:06,839 - INFO - ecommerce - User logged in: clr_admin@test.com
+2026-05-09 00:23:06,840 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3586s
+2026-05-09 00:23:07,225 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3819s
+2026-05-09 00:23:07,663 - WARNING - ecommerce - Failed login attempt: clr_buyer@test.com
+2026-05-09 00:23:07,663 - INFO - ecommerce - User logged in: clr_buyer@test.com
+2026-05-09 00:23:07,664 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4361s
+2026-05-09 00:23:07,689 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0215s
+2026-05-09 00:23:07,713 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0213s
+2026-05-09 00:23:07,723 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0065s
+2026-05-09 00:23:07,732 - INFO - ecommerce - DELETE /api/v1/cart/clear Status: 200 Duration: 0.005s
+2026-05-09 00:23:08,298 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5545s
+2026-05-09 00:23:08,818 - WARNING - ecommerce - Failed login attempt: catadmin@test.com
+2026-05-09 00:23:08,819 - INFO - ecommerce - User logged in: catadmin@test.com
+2026-05-09 00:23:08,820 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5144s
+2026-05-09 00:23:08,849 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0232s
+2026-05-09 00:23:08,867 - INFO - ecommerce - GET /api/v1/categories/getall Status: 200 Duration: 0.0063s
+2026-05-09 00:23:08,894 - INFO - ecommerce - GET /api/v1/categories/1 Status: 200 Duration: 0.0106s
+2026-05-09 00:23:08,917 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.009s
+2026-05-09 00:23:09,477 - WARNING - ecommerce - Failed login attempt: catadmin@test.com
+2026-05-09 00:23:09,478 - INFO - ecommerce - User logged in: catadmin@test.com
+2026-05-09 00:23:09,479 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5525s
+2026-05-09 00:23:09,509 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0229s
+2026-05-09 00:23:09,537 - INFO - ecommerce - PUT /api/v1/categories/7 Status: 200 Duration: 0.0217s
+2026-05-09 00:23:09,553 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.0048s
+2026-05-09 00:23:09,959 - WARNING - ecommerce - Failed login attempt: catadmin@test.com
+2026-05-09 00:23:09,960 - INFO - ecommerce - User logged in: catadmin@test.com
+2026-05-09 00:23:09,961 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4019s
+2026-05-09 00:23:09,988 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0226s
+2026-05-09 00:23:10,014 - INFO - ecommerce - DELETE /api/v1/categories/8 Status: 200 Duration: 0.0173s
+2026-05-09 00:23:10,027 - INFO - ecommerce - POST /api/v1/categories/add Status: 401 Duration: 0.0041s
+2026-05-09 00:23:10,437 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4024s
+2026-05-09 00:23:10,785 - WARNING - ecommerce - Failed login attempt: ord_admin@test.com
+2026-05-09 00:23:10,785 - INFO - ecommerce - User logged in: ord_admin@test.com
+2026-05-09 00:23:10,786 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3459s
+2026-05-09 00:23:11,152 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3641s
+2026-05-09 00:23:11,514 - WARNING - ecommerce - Failed login attempt: ord_buyer@test.com
+2026-05-09 00:23:11,515 - INFO - ecommerce - User logged in: ord_buyer@test.com
+2026-05-09 00:23:11,516 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3603s
+2026-05-09 00:23:11,537 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0189s
+2026-05-09 00:23:11,556 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0171s
+2026-05-09 00:23:11,564 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0047s
+2026-05-09 00:23:11,600 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0327s
+2026-05-09 00:23:12,096 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4866s
+2026-05-09 00:23:12,549 - WARNING - ecommerce - Failed login attempt: empty_buyer@test.com
+2026-05-09 00:23:12,549 - INFO - ecommerce - User logged in: empty_buyer@test.com
+2026-05-09 00:23:12,551 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4518s
+2026-05-09 00:23:12,557 - INFO - ecommerce - POST /api/v1/orders/create Status: 404 Duration: 0.0036s
+2026-05-09 00:23:12,565 - INFO - ecommerce - POST /api/v1/orders/create Status: 401 Duration: 0.0022s
+2026-05-09 00:23:12,980 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4087s
+2026-05-09 00:23:13,361 - WARNING - ecommerce - Failed login attempt: my_ord_admin@test.com
+2026-05-09 00:23:13,361 - INFO - ecommerce - User logged in: my_ord_admin@test.com
+2026-05-09 00:23:13,362 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3799s
+2026-05-09 00:23:13,799 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4338s
+2026-05-09 00:23:14,267 - WARNING - ecommerce - Failed login attempt: my_ord_buyer@test.com
+2026-05-09 00:23:14,267 - INFO - ecommerce - User logged in: my_ord_buyer@test.com
+2026-05-09 00:23:14,268 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4657s
+2026-05-09 00:23:14,297 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.027s
+2026-05-09 00:23:14,325 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0243s
+2026-05-09 00:23:14,337 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0075s
+2026-05-09 00:23:14,370 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0284s
+2026-05-09 00:23:14,385 - INFO - ecommerce - GET /api/v1/orders/get/my_orders Status: 200 Duration: 0.0102s
+2026-05-09 00:23:14,806 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4132s
+2026-05-09 00:23:15,145 - WARNING - ecommerce - Failed login attempt: all_ord_admin@test.com
+2026-05-09 00:23:15,145 - INFO - ecommerce - User logged in: all_ord_admin@test.com
+2026-05-09 00:23:15,146 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3374s
+2026-05-09 00:23:15,156 - INFO - ecommerce - GET /api/v1/orders/get_all_orders Status: 200 Duration: 0.0074s
+2026-05-09 00:23:15,578 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.417s
+2026-05-09 00:23:16,024 - WARNING - ecommerce - Failed login attempt: all_ord_user@test.com
+2026-05-09 00:23:16,025 - INFO - ecommerce - User logged in: all_ord_user@test.com
+2026-05-09 00:23:16,028 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4466s
+2026-05-09 00:23:16,037 - INFO - ecommerce - GET /api/v1/orders/get_all_orders Status: 403 Duration: 0.004s
+2026-05-09 00:23:16,046 - INFO - ecommerce - GET /api/v1/orders/get_all_orders Status: 401 Duration: 0.0036s
+2026-05-09 00:23:16,588 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5357s
+2026-05-09 00:23:17,011 - WARNING - ecommerce - Failed login attempt: cancel_admin@test.com
+2026-05-09 00:23:17,012 - INFO - ecommerce - User logged in: cancel_admin@test.com
+2026-05-09 00:23:17,014 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4218s
+2026-05-09 00:23:17,454 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4369s
+2026-05-09 00:23:17,904 - WARNING - ecommerce - Failed login attempt: cancel_buyer@test.com
+2026-05-09 00:23:17,904 - INFO - ecommerce - User logged in: cancel_buyer@test.com
+2026-05-09 00:23:17,906 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4477s
+2026-05-09 00:23:17,938 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0278s
+2026-05-09 00:23:17,968 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0262s
+2026-05-09 00:23:17,981 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0081s
+2026-05-09 00:23:18,006 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0229s
+2026-05-09 00:23:18,036 - INFO - ecommerce - DELETE /api/v1/orders/cancel/3 Status: 200 Duration: 0.025s
+2026-05-09 00:23:18,507 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4618s
+2026-05-09 00:23:18,926 - WARNING - ecommerce - Failed login attempt: cancel_ghost@test.com
+2026-05-09 00:23:18,927 - INFO - ecommerce - User logged in: cancel_ghost@test.com
+2026-05-09 00:23:18,928 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4173s
+2026-05-09 00:23:18,935 - INFO - ecommerce - DELETE /api/v1/orders/cancel/999999 Status: 404 Duration: 0.0045s
+2026-05-09 00:23:19,357 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4166s
+2026-05-09 00:23:19,772 - WARNING - ecommerce - Failed login attempt: ship_admin@test.com
+2026-05-09 00:23:19,772 - INFO - ecommerce - User logged in: ship_admin@test.com
+2026-05-09 00:23:19,774 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4129s
+2026-05-09 00:23:20,135 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3581s
+2026-05-09 00:23:20,509 - WARNING - ecommerce - Failed login attempt: ship_buyer@test.com
+2026-05-09 00:23:20,510 - INFO - ecommerce - User logged in: ship_buyer@test.com
+2026-05-09 00:23:20,511 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3734s
+2026-05-09 00:23:20,539 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0249s
+2026-05-09 00:23:20,569 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0266s
+2026-05-09 00:23:20,580 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0067s
+2026-05-09 00:23:20,608 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0249s
+2026-05-09 00:23:20,634 - INFO - ecommerce - PUT /api/v1/orders/put/ship/4 Status: 200 Duration: 0.0226s
+2026-05-09 00:23:21,046 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.402s
+2026-05-09 00:23:21,454 - WARNING - ecommerce - Failed login attempt: ship_admin2@test.com
+2026-05-09 00:23:21,454 - INFO - ecommerce - User logged in: ship_admin2@test.com
+2026-05-09 00:23:21,456 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4073s
+2026-05-09 00:23:21,850 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3912s
+2026-05-09 00:23:22,212 - WARNING - ecommerce - Failed login attempt: ship_buyer2@test.com
+2026-05-09 00:23:22,212 - INFO - ecommerce - User logged in: ship_buyer2@test.com
+2026-05-09 00:23:22,214 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3617s
+2026-05-09 00:23:22,239 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0213s
+2026-05-09 00:23:22,266 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0249s
+2026-05-09 00:23:22,273 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0047s
+2026-05-09 00:23:22,300 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0232s
+2026-05-09 00:23:22,310 - INFO - ecommerce - PUT /api/v1/orders/put/ship/5 Status: 403 Duration: 0.0072s
+2026-05-09 00:23:22,729 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4096s
+2026-05-09 00:23:23,128 - WARNING - ecommerce - Failed login attempt: state_admin@test.com
+2026-05-09 00:23:23,129 - INFO - ecommerce - User logged in: state_admin@test.com
+2026-05-09 00:23:23,130 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3965s
+2026-05-09 00:23:23,511 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3787s
+2026-05-09 00:23:23,895 - WARNING - ecommerce - Failed login attempt: state_buyer@test.com
+2026-05-09 00:23:23,896 - INFO - ecommerce - User logged in: state_buyer@test.com
+2026-05-09 00:23:23,898 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3832s
+2026-05-09 00:23:23,961 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0605s
+2026-05-09 00:23:23,993 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0285s
+2026-05-09 00:23:24,003 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0064s
+2026-05-09 00:23:24,034 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0272s
+2026-05-09 00:23:24,061 - INFO - ecommerce - PUT /api/v1/orders/put/ship/6 Status: 200 Duration: 0.0218s
+2026-05-09 00:23:24,075 - INFO - ecommerce - DELETE /api/v1/orders/cancel/6 Status: 404 Duration: 0.0096s
+2026-05-09 00:23:24,519 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4349s
+2026-05-09 00:23:24,913 - WARNING - ecommerce - Failed login attempt: prodadmin@test.com
+2026-05-09 00:23:24,914 - INFO - ecommerce - User logged in: prodadmin@test.com
+2026-05-09 00:23:24,915 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3935s
+2026-05-09 00:23:24,938 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0208s
+2026-05-09 00:23:25,346 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3998s
+2026-05-09 00:23:25,696 - WARNING - ecommerce - Failed login attempt: produser@test.com
+2026-05-09 00:23:25,696 - INFO - ecommerce - User logged in: produser@test.com
+2026-05-09 00:23:25,697 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3488s
+2026-05-09 00:23:25,703 - INFO - ecommerce - POST /api/v1/categories/add Status: 403 Duration: 0.0035s
+2026-05-09 00:23:26,138 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.43s
+2026-05-09 00:23:26,676 - WARNING - ecommerce - Failed login attempt: prodadmin2@test.com
+2026-05-09 00:23:26,677 - INFO - ecommerce - User logged in: prodadmin2@test.com
+2026-05-09 00:23:26,679 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5372s
+2026-05-09 00:23:26,715 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0315s
+2026-05-09 00:23:26,728 - INFO - ecommerce - POST /api/v1/categories/add Status: 409 Duration: 0.0085s
+2026-05-09 00:23:26,737 - INFO - ecommerce - GET /api/v1/categories/getall Status: 200 Duration: 0.0032s
+2026-05-09 00:23:27,180 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4348s
+2026-05-09 00:23:27,601 - WARNING - ecommerce - Failed login attempt: prodadmin3@test.com
+2026-05-09 00:23:27,601 - INFO - ecommerce - User logged in: prodadmin3@test.com
+2026-05-09 00:23:27,603 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.42s
+2026-05-09 00:23:27,630 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0244s
+2026-05-09 00:23:27,637 - INFO - ecommerce - GET /api/v1/categories/16 Status: 200 Duration: 0.0037s
+2026-05-09 00:23:27,651 - INFO - ecommerce - GET /api/v1/categories/999999 Status: 404 Duration: 0.0041s
+2026-05-09 00:23:28,061 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4012s
+2026-05-09 00:23:28,574 - WARNING - ecommerce - Failed login attempt: prodadmin4@test.com
+2026-05-09 00:23:28,575 - INFO - ecommerce - User logged in: prodadmin4@test.com
+2026-05-09 00:23:28,578 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5135s
+2026-05-09 00:23:28,608 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0265s
+2026-05-09 00:23:28,638 - INFO - ecommerce - PUT /api/v1/categories/17 Status: 200 Duration: 0.0253s
+2026-05-09 00:23:29,127 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4797s
+2026-05-09 00:23:29,494 - WARNING - ecommerce - Failed login attempt: prodadmin5@test.com
+2026-05-09 00:23:29,495 - INFO - ecommerce - User logged in: prodadmin5@test.com
+2026-05-09 00:23:29,496 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.366s
+2026-05-09 00:23:29,515 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0169s
+2026-05-09 00:23:29,533 - INFO - ecommerce - DELETE /api/v1/categories/18 Status: 200 Duration: 0.0161s
+2026-05-09 00:23:29,942 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4018s
+2026-05-09 00:23:30,322 - WARNING - ecommerce - Failed login attempt: prodc_admin@test.com
+2026-05-09 00:23:30,322 - INFO - ecommerce - User logged in: prodc_admin@test.com
+2026-05-09 00:23:30,324 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3772s
+2026-05-09 00:23:30,434 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.1069s
+2026-05-09 00:23:30,465 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0272s
+2026-05-09 00:23:30,862 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3878s
+2026-05-09 00:23:31,279 - WARNING - ecommerce - Failed login attempt: prodc_user@test.com
+2026-05-09 00:23:31,279 - INFO - ecommerce - User logged in: prodc_user@test.com
+2026-05-09 00:23:31,280 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4143s
+2026-05-09 00:23:31,286 - INFO - ecommerce - POST /api/v1/products Status: 403 Duration: 0.004s
+2026-05-09 00:23:31,689 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3986s
+2026-05-09 00:23:32,039 - WARNING - ecommerce - Failed login attempt: prodc_admin2@test.com
+2026-05-09 00:23:32,039 - INFO - ecommerce - User logged in: prodc_admin2@test.com
+2026-05-09 00:23:32,040 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3468s
+2026-05-09 00:23:32,047 - INFO - ecommerce - POST /api/v1/products Status: 400 Duration: 0.0051s
+2026-05-09 00:23:32,433 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3808s
+2026-05-09 00:23:32,795 - WARNING - ecommerce - Failed login attempt: prodc_admin3@test.com
+2026-05-09 00:23:32,795 - INFO - ecommerce - User logged in: prodc_admin3@test.com
+2026-05-09 00:23:32,797 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3619s
+2026-05-09 00:23:32,820 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0206s
+2026-05-09 00:23:32,850 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0266s
+2026-05-09 00:23:32,864 - INFO - ecommerce - POST /api/v1/products Status: 409 Duration: 0.01s
+2026-05-09 00:23:32,876 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0059s
+2026-05-09 00:23:33,316 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4301s
+2026-05-09 00:23:33,679 - WARNING - ecommerce - Failed login attempt: prodc_admin4@test.com
+2026-05-09 00:23:33,679 - INFO - ecommerce - User logged in: prodc_admin4@test.com
+2026-05-09 00:23:33,680 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3616s
+2026-05-09 00:23:33,703 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0204s
+2026-05-09 00:23:33,727 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0202s
+2026-05-09 00:23:33,731 - INFO - ecommerce - GET /api/v1/products/14 Status: 200 Duration: 0.0026s
+2026-05-09 00:23:33,740 - INFO - ecommerce - GET /api/v1/products/999999 Status: 404 Duration: 0.0031s
+2026-05-09 00:23:34,213 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4658s
+2026-05-09 00:23:34,647 - WARNING - ecommerce - Failed login attempt: prodc_admin5@test.com
+2026-05-09 00:23:34,647 - INFO - ecommerce - User logged in: prodc_admin5@test.com
+2026-05-09 00:23:34,649 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4319s
+2026-05-09 00:23:34,676 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0246s
+2026-05-09 00:23:34,703 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0243s
+2026-05-09 00:23:34,730 - INFO - ecommerce - PUT /api/v1/products/15 Status: 200 Duration: 0.0238s
+2026-05-09 00:23:35,131 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3933s
+2026-05-09 00:23:35,552 - WARNING - ecommerce - Failed login attempt: prodc_admin6@test.com
+2026-05-09 00:23:35,553 - INFO - ecommerce - User logged in: prodc_admin6@test.com
+2026-05-09 00:23:35,554 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4208s
+2026-05-09 00:23:35,583 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0259s
+2026-05-09 00:23:35,608 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0225s
+2026-05-09 00:23:35,642 - INFO - ecommerce - DELETE /api/v1/products/16 Status: 200 Duration: 0.0297s
+2026-05-09 00:23:35,655 - INFO - ecommerce - GET /api/v1/products/search Status: 200 Duration: 0.0052s
+2026-05-09 00:23:36,130 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4625s
+2026-05-09 00:23:36,671 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5262s
+2026-05-09 00:23:37,049 - WARNING - ecommerce - Failed login attempt: login@test.com
+2026-05-09 00:23:37,049 - INFO - ecommerce - User logged in: login@test.com
+2026-05-09 00:23:37,050 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3732s
+2026-05-09 00:23:37,432 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3729s
+2026-05-09 00:23:37,864 - WARNING - ecommerce - Failed login attempt: me@test.com
+2026-05-09 00:23:37,864 - INFO - ecommerce - User logged in: me@test.com
+2026-05-09 00:23:37,865 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4253s
+2026-05-09 00:23:37,877 - INFO - ecommerce - GET /api/v1/users/me Status: 200 Duration: 0.0065s
+2026-05-09 00:23:38,388 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4973s
+2026-05-09 00:23:38,740 - WARNING - ecommerce - Failed login attempt: role@test.com
+2026-05-09 00:23:38,740 - INFO - ecommerce - User logged in: role@test.com
+2026-05-09 00:23:38,741 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3475s
+2026-05-09 00:23:38,753 - INFO - ecommerce - GET /api/v1/users/me/role Status: 200 Duration: 0.0051s
+2026-05-09 00:23:39,191 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4288s
+2026-05-09 00:23:39,570 - WARNING - ecommerce - Failed login attempt: edit@test.com
+2026-05-09 00:23:39,570 - INFO - ecommerce - User logged in: edit@test.com
+2026-05-09 00:23:39,571 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3755s
+2026-05-09 00:23:39,597 - INFO - ecommerce - PUT /api/v1/users/edit Status: 200 Duration: 0.021s
+2026-05-09 00:23:39,608 - INFO - ecommerce - GET /api/v1/users/ Status: 401 Duration: 0.0023s
+2026-05-09 00:24:33,577 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4822s
+2026-05-09 00:24:33,592 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.0066s
+2026-05-09 00:24:33,602 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.0056s
+2026-05-09 00:24:33,620 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.0078s
+2026-05-09 00:24:33,635 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.0083s
+2026-05-09 00:24:33,651 - INFO - ecommerce - POST /api/v1/users/register Status: 422 Duration: 0.0037s
+2026-05-09 00:24:34,027 - WARNING - ecommerce - Failed login attempt: authuser@test.com
+2026-05-09 00:24:34,027 - INFO - ecommerce - User logged in: authuser@test.com
+2026-05-09 00:24:34,035 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3742s
+2026-05-09 00:24:34,423 - INFO - ecommerce - POST /api/v1/users/login Status: 401 Duration: 0.382s
+2026-05-09 00:24:34,434 - INFO - ecommerce - POST /api/v1/users/login Status: 401 Duration: 0.0063s
+2026-05-09 00:24:34,881 - WARNING - ecommerce - Failed login attempt: authuser@test.com
+2026-05-09 00:24:34,881 - INFO - ecommerce - User logged in: authuser@test.com
+2026-05-09 00:24:34,882 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4418s
+2026-05-09 00:24:34,893 - INFO - ecommerce - GET /api/v1/users/me Status: 200 Duration: 0.0068s
+2026-05-09 00:24:34,902 - INFO - ecommerce - GET /api/v1/users/me Status: 401 Duration: 0.001s
+2026-05-09 00:24:34,912 - INFO - ecommerce - GET /api/v1/users/me Status: 401 Duration: 0.0028s
+2026-05-09 00:24:35,337 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4181s
+2026-05-09 00:24:35,755 - WARNING - ecommerce - Failed login attempt: regular1@test.com
+2026-05-09 00:24:35,756 - INFO - ecommerce - User logged in: regular1@test.com
+2026-05-09 00:24:35,758 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4165s
+2026-05-09 00:24:35,769 - INFO - ecommerce - GET /api/v1/users/ Status: 403 Duration: 0.0075s
+2026-05-09 00:24:36,222 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.441s
+2026-05-09 00:24:36,656 - WARNING - ecommerce - Failed login attempt: admin1@test.com
+2026-05-09 00:24:36,656 - INFO - ecommerce - User logged in: admin1@test.com
+2026-05-09 00:24:36,658 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4332s
+2026-05-09 00:24:36,673 - INFO - ecommerce - GET /api/v1/users/ Status: 200 Duration: 0.011s
+2026-05-09 00:24:37,103 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.422s
+2026-05-09 00:24:37,458 - WARNING - ecommerce - Failed login attempt: editme@test.com
+2026-05-09 00:24:37,458 - INFO - ecommerce - User logged in: editme@test.com
+2026-05-09 00:24:37,459 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.351s
+2026-05-09 00:24:37,481 - INFO - ecommerce - PUT /api/v1/users/edit Status: 200 Duration: 0.0203s
+2026-05-09 00:24:37,487 - INFO - ecommerce - GET /api/v1/cart/ Status: 401 Duration: 0.0013s
+2026-05-09 00:24:37,876 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.383s
+2026-05-09 00:24:38,214 - WARNING - ecommerce - Failed login attempt: cartuser@test.com
+2026-05-09 00:24:38,214 - INFO - ecommerce - User logged in: cartuser@test.com
+2026-05-09 00:24:38,215 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3366s
+2026-05-09 00:24:38,220 - INFO - ecommerce - GET /api/v1/cart/ Status: 200 Duration: 0.0031s
+2026-05-09 00:24:38,593 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3673s
+2026-05-09 00:24:38,970 - WARNING - ecommerce - Failed login attempt: cartadmin@test.com
+2026-05-09 00:24:38,970 - INFO - ecommerce - User logged in: cartadmin@test.com
+2026-05-09 00:24:38,971 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3746s
+2026-05-09 00:24:39,328 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3547s
+2026-05-09 00:24:39,714 - WARNING - ecommerce - Failed login attempt: cartbuyer@test.com
+2026-05-09 00:24:39,715 - INFO - ecommerce - User logged in: cartbuyer@test.com
+2026-05-09 00:24:39,716 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3837s
+2026-05-09 00:24:39,749 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0293s
+2026-05-09 00:24:39,787 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0345s
+2026-05-09 00:24:39,800 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0091s
+2026-05-09 00:24:40,351 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5399s
+2026-05-09 00:24:40,862 - WARNING - ecommerce - Failed login attempt: cartbuyer2@test.com
+2026-05-09 00:24:40,862 - INFO - ecommerce - User logged in: cartbuyer2@test.com
+2026-05-09 00:24:40,864 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5081s
+2026-05-09 00:24:40,871 - INFO - ecommerce - POST /api/v1/cart/ Status: 404 Duration: 0.0049s
+2026-05-09 00:24:41,366 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4892s
+2026-05-09 00:24:41,891 - WARNING - ecommerce - Failed login attempt: stockadmin@test.com
+2026-05-09 00:24:41,892 - INFO - ecommerce - User logged in: stockadmin@test.com
+2026-05-09 00:24:41,893 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5236s
+2026-05-09 00:24:42,360 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4644s
+2026-05-09 00:24:42,898 - WARNING - ecommerce - Failed login attempt: stockbuyer@test.com
+2026-05-09 00:24:42,898 - INFO - ecommerce - User logged in: stockbuyer@test.com
+2026-05-09 00:24:42,900 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5365s
+2026-05-09 00:24:42,926 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0232s
+2026-05-09 00:24:42,981 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0516s
+2026-05-09 00:24:42,992 - INFO - ecommerce - POST /api/v1/cart/ Status: 400 Duration: 0.0071s
+2026-05-09 00:24:43,508 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5078s
+2026-05-09 00:24:44,011 - WARNING - ecommerce - Failed login attempt: upd_admin@test.com
+2026-05-09 00:24:44,011 - INFO - ecommerce - User logged in: upd_admin@test.com
+2026-05-09 00:24:44,013 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5007s
+2026-05-09 00:24:44,506 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4909s
+2026-05-09 00:24:44,998 - WARNING - ecommerce - Failed login attempt: upd_buyer@test.com
+2026-05-09 00:24:44,998 - INFO - ecommerce - User logged in: upd_buyer@test.com
+2026-05-09 00:24:45,000 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.49s
+2026-05-09 00:24:45,028 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0255s
+2026-05-09 00:24:45,058 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0254s
+2026-05-09 00:24:45,070 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0081s
+2026-05-09 00:24:45,082 - INFO - ecommerce - PUT /api/v1/cart/3 Status: 200 Duration: 0.0077s
+2026-05-09 00:24:45,594 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5032s
+2026-05-09 00:24:46,081 - WARNING - ecommerce - Failed login attempt: rem_admin@test.com
+2026-05-09 00:24:46,081 - INFO - ecommerce - User logged in: rem_admin@test.com
+2026-05-09 00:24:46,083 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.484s
+2026-05-09 00:24:46,547 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4612s
+2026-05-09 00:24:47,022 - WARNING - ecommerce - Failed login attempt: rem_buyer@test.com
+2026-05-09 00:24:47,022 - INFO - ecommerce - User logged in: rem_buyer@test.com
+2026-05-09 00:24:47,023 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4741s
+2026-05-09 00:24:47,056 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.03s
+2026-05-09 00:24:47,085 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0255s
+2026-05-09 00:24:47,096 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0068s
+2026-05-09 00:24:47,105 - INFO - ecommerce - DELETE /api/v1/cart/4 Status: 200 Duration: 0.0051s
+2026-05-09 00:24:47,644 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5306s
+2026-05-09 00:24:48,102 - WARNING - ecommerce - Failed login attempt: clr_admin@test.com
+2026-05-09 00:24:48,103 - INFO - ecommerce - User logged in: clr_admin@test.com
+2026-05-09 00:24:48,104 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.457s
+2026-05-09 00:24:48,467 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3605s
+2026-05-09 00:24:48,849 - WARNING - ecommerce - Failed login attempt: clr_buyer@test.com
+2026-05-09 00:24:48,849 - INFO - ecommerce - User logged in: clr_buyer@test.com
+2026-05-09 00:24:48,850 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3814s
+2026-05-09 00:24:48,872 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0198s
+2026-05-09 00:24:48,896 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0212s
+2026-05-09 00:24:48,905 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0057s
+2026-05-09 00:24:48,913 - INFO - ecommerce - DELETE /api/v1/cart/clear Status: 200 Duration: 0.0047s
+2026-05-09 00:24:49,336 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4108s
+2026-05-09 00:24:49,781 - WARNING - ecommerce - Failed login attempt: catadmin@test.com
+2026-05-09 00:24:49,782 - INFO - ecommerce - User logged in: catadmin@test.com
+2026-05-09 00:24:49,783 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4418s
+2026-05-09 00:24:49,813 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0242s
+2026-05-09 00:24:49,835 - INFO - ecommerce - GET /api/v1/categories/getall Status: 200 Duration: 0.0068s
+2026-05-09 00:24:49,867 - INFO - ecommerce - GET /api/v1/categories/1 Status: 200 Duration: 0.0156s
+2026-05-09 00:24:49,900 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.0148s
+2026-05-09 00:24:50,358 - WARNING - ecommerce - Failed login attempt: catadmin@test.com
+2026-05-09 00:24:50,359 - INFO - ecommerce - User logged in: catadmin@test.com
+2026-05-09 00:24:50,360 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4491s
+2026-05-09 00:24:50,387 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0206s
+2026-05-09 00:24:50,417 - INFO - ecommerce - PUT /api/v1/categories/7 Status: 200 Duration: 0.0239s
+2026-05-09 00:24:50,437 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.0062s
+2026-05-09 00:24:50,826 - WARNING - ecommerce - Failed login attempt: catadmin@test.com
+2026-05-09 00:24:50,827 - INFO - ecommerce - User logged in: catadmin@test.com
+2026-05-09 00:24:50,828 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.382s
+2026-05-09 00:24:50,855 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0225s
+2026-05-09 00:24:50,882 - INFO - ecommerce - DELETE /api/v1/categories/8 Status: 200 Duration: 0.0203s
+2026-05-09 00:24:50,899 - INFO - ecommerce - POST /api/v1/categories/add Status: 401 Duration: 0.0043s
+2026-05-09 00:24:51,355 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4463s
+2026-05-09 00:24:51,696 - WARNING - ecommerce - Failed login attempt: ord_admin@test.com
+2026-05-09 00:24:51,696 - INFO - ecommerce - User logged in: ord_admin@test.com
+2026-05-09 00:24:51,697 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3396s
+2026-05-09 00:24:52,072 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3727s
+2026-05-09 00:24:52,431 - WARNING - ecommerce - Failed login attempt: ord_buyer@test.com
+2026-05-09 00:24:52,431 - INFO - ecommerce - User logged in: ord_buyer@test.com
+2026-05-09 00:24:52,432 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3576s
+2026-05-09 00:24:52,456 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0212s
+2026-05-09 00:24:52,481 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.022s
+2026-05-09 00:24:52,491 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0063s
+2026-05-09 00:24:52,528 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0342s
+2026-05-09 00:24:52,968 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4314s
+2026-05-09 00:24:53,326 - WARNING - ecommerce - Failed login attempt: empty_buyer@test.com
+2026-05-09 00:24:53,326 - INFO - ecommerce - User logged in: empty_buyer@test.com
+2026-05-09 00:24:53,327 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3575s
+2026-05-09 00:24:53,335 - INFO - ecommerce - POST /api/v1/orders/create Status: 404 Duration: 0.0052s
+2026-05-09 00:24:53,344 - INFO - ecommerce - POST /api/v1/orders/create Status: 401 Duration: 0.0023s
+2026-05-09 00:24:53,813 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4607s
+2026-05-09 00:24:54,171 - WARNING - ecommerce - Failed login attempt: my_ord_admin@test.com
+2026-05-09 00:24:54,171 - INFO - ecommerce - User logged in: my_ord_admin@test.com
+2026-05-09 00:24:54,172 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3556s
+2026-05-09 00:24:54,522 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3464s
+2026-05-09 00:24:54,888 - WARNING - ecommerce - Failed login attempt: my_ord_buyer@test.com
+2026-05-09 00:24:54,888 - INFO - ecommerce - User logged in: my_ord_buyer@test.com
+2026-05-09 00:24:54,889 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3647s
+2026-05-09 00:24:54,912 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0204s
+2026-05-09 00:24:54,933 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0188s
+2026-05-09 00:24:54,943 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0061s
+2026-05-09 00:24:54,974 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0278s
+2026-05-09 00:24:54,987 - INFO - ecommerce - GET /api/v1/orders/get/my_orders Status: 200 Duration: 0.0097s
+2026-05-09 00:24:55,430 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4335s
+2026-05-09 00:24:55,822 - WARNING - ecommerce - Failed login attempt: all_ord_admin@test.com
+2026-05-09 00:24:55,822 - INFO - ecommerce - User logged in: all_ord_admin@test.com
+2026-05-09 00:24:55,824 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3911s
+2026-05-09 00:24:55,834 - INFO - ecommerce - GET /api/v1/orders/get_all_orders Status: 200 Duration: 0.0074s
+2026-05-09 00:24:56,223 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3838s
+2026-05-09 00:24:56,561 - WARNING - ecommerce - Failed login attempt: all_ord_user@test.com
+2026-05-09 00:24:56,561 - INFO - ecommerce - User logged in: all_ord_user@test.com
+2026-05-09 00:24:56,562 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3364s
+2026-05-09 00:24:56,569 - INFO - ecommerce - GET /api/v1/orders/get_all_orders Status: 403 Duration: 0.0035s
+2026-05-09 00:24:56,576 - INFO - ecommerce - GET /api/v1/orders/get_all_orders Status: 401 Duration: 0.0021s
+2026-05-09 00:24:56,991 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4089s
+2026-05-09 00:24:57,387 - WARNING - ecommerce - Failed login attempt: cancel_admin@test.com
+2026-05-09 00:24:57,387 - INFO - ecommerce - User logged in: cancel_admin@test.com
+2026-05-09 00:24:57,389 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3943s
+2026-05-09 00:24:57,788 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3954s
+2026-05-09 00:24:58,194 - WARNING - ecommerce - Failed login attempt: cancel_buyer@test.com
+2026-05-09 00:24:58,194 - INFO - ecommerce - User logged in: cancel_buyer@test.com
+2026-05-09 00:24:58,195 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4051s
+2026-05-09 00:24:58,219 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0214s
+2026-05-09 00:24:58,246 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0232s
+2026-05-09 00:24:58,257 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.007s
+2026-05-09 00:24:58,287 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0266s
+2026-05-09 00:24:58,315 - INFO - ecommerce - DELETE /api/v1/orders/cancel/3 Status: 200 Duration: 0.0236s
+2026-05-09 00:24:58,849 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5249s
+2026-05-09 00:24:59,231 - WARNING - ecommerce - Failed login attempt: cancel_ghost@test.com
+2026-05-09 00:24:59,232 - INFO - ecommerce - User logged in: cancel_ghost@test.com
+2026-05-09 00:24:59,233 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3791s
+2026-05-09 00:24:59,239 - INFO - ecommerce - DELETE /api/v1/orders/cancel/999999 Status: 404 Duration: 0.004s
+2026-05-09 00:24:59,682 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4369s
+2026-05-09 00:25:00,024 - WARNING - ecommerce - Failed login attempt: ship_admin@test.com
+2026-05-09 00:25:00,025 - INFO - ecommerce - User logged in: ship_admin@test.com
+2026-05-09 00:25:00,026 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3409s
+2026-05-09 00:25:00,469 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4397s
+2026-05-09 00:25:00,825 - WARNING - ecommerce - Failed login attempt: ship_buyer@test.com
+2026-05-09 00:25:00,826 - INFO - ecommerce - User logged in: ship_buyer@test.com
+2026-05-09 00:25:00,827 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3562s
+2026-05-09 00:25:00,848 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0177s
+2026-05-09 00:25:00,869 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0187s
+2026-05-09 00:25:00,878 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0058s
+2026-05-09 00:25:00,905 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0241s
+2026-05-09 00:25:00,930 - INFO - ecommerce - PUT /api/v1/orders/put/ship/4 Status: 200 Duration: 0.0217s
+2026-05-09 00:25:01,364 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4248s
+2026-05-09 00:25:01,837 - WARNING - ecommerce - Failed login attempt: ship_admin2@test.com
+2026-05-09 00:25:01,837 - INFO - ecommerce - User logged in: ship_admin2@test.com
+2026-05-09 00:25:01,838 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4713s
+2026-05-09 00:25:02,201 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3595s
+2026-05-09 00:25:02,535 - WARNING - ecommerce - Failed login attempt: ship_buyer2@test.com
+2026-05-09 00:25:02,535 - INFO - ecommerce - User logged in: ship_buyer2@test.com
+2026-05-09 00:25:02,536 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3325s
+2026-05-09 00:25:02,558 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0197s
+2026-05-09 00:25:02,581 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.021s
+2026-05-09 00:25:02,591 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0068s
+2026-05-09 00:25:02,621 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0256s
+2026-05-09 00:25:02,632 - INFO - ecommerce - PUT /api/v1/orders/put/ship/5 Status: 403 Duration: 0.0064s
+2026-05-09 00:25:03,114 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4739s
+2026-05-09 00:25:03,484 - WARNING - ecommerce - Failed login attempt: state_admin@test.com
+2026-05-09 00:25:03,485 - INFO - ecommerce - User logged in: state_admin@test.com
+2026-05-09 00:25:03,486 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3685s
+2026-05-09 00:25:03,865 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3768s
+2026-05-09 00:25:04,251 - WARNING - ecommerce - Failed login attempt: state_buyer@test.com
+2026-05-09 00:25:04,251 - INFO - ecommerce - User logged in: state_buyer@test.com
+2026-05-09 00:25:04,252 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3835s
+2026-05-09 00:25:04,275 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0205s
+2026-05-09 00:25:04,302 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.023s
+2026-05-09 00:25:04,312 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0065s
+2026-05-09 00:25:04,341 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0254s
+2026-05-09 00:25:04,366 - INFO - ecommerce - PUT /api/v1/orders/put/ship/6 Status: 200 Duration: 0.0212s
+2026-05-09 00:25:04,377 - INFO - ecommerce - DELETE /api/v1/orders/cancel/6 Status: 404 Duration: 0.0072s
+2026-05-09 00:25:04,828 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4422s
+2026-05-09 00:25:05,215 - WARNING - ecommerce - Failed login attempt: prodadmin@test.com
+2026-05-09 00:25:05,215 - INFO - ecommerce - User logged in: prodadmin@test.com
+2026-05-09 00:25:05,216 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3854s
+2026-05-09 00:25:05,248 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0297s
+2026-05-09 00:25:05,726 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4684s
+2026-05-09 00:25:06,163 - WARNING - ecommerce - Failed login attempt: produser@test.com
+2026-05-09 00:25:06,164 - INFO - ecommerce - User logged in: produser@test.com
+2026-05-09 00:25:06,166 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4356s
+2026-05-09 00:25:06,174 - INFO - ecommerce - POST /api/v1/categories/add Status: 403 Duration: 0.0057s
+2026-05-09 00:25:06,572 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.393s
+2026-05-09 00:25:06,962 - WARNING - ecommerce - Failed login attempt: prodadmin2@test.com
+2026-05-09 00:25:06,963 - INFO - ecommerce - User logged in: prodadmin2@test.com
+2026-05-09 00:25:06,964 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3897s
+2026-05-09 00:25:07,011 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0446s
+2026-05-09 00:25:07,025 - INFO - ecommerce - POST /api/v1/categories/add Status: 409 Duration: 0.01s
+2026-05-09 00:25:07,037 - INFO - ecommerce - GET /api/v1/categories/getall Status: 200 Duration: 0.0043s
+2026-05-09 00:25:07,488 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4415s
+2026-05-09 00:25:07,828 - WARNING - ecommerce - Failed login attempt: prodadmin3@test.com
+2026-05-09 00:25:07,828 - INFO - ecommerce - User logged in: prodadmin3@test.com
+2026-05-09 00:25:07,830 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.338s
+2026-05-09 00:25:07,850 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0188s
+2026-05-09 00:25:07,858 - INFO - ecommerce - GET /api/v1/categories/16 Status: 200 Duration: 0.0043s
+2026-05-09 00:25:07,873 - INFO - ecommerce - GET /api/v1/categories/999999 Status: 404 Duration: 0.0047s
+2026-05-09 00:25:08,294 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4117s
+2026-05-09 00:25:08,642 - WARNING - ecommerce - Failed login attempt: prodadmin4@test.com
+2026-05-09 00:25:08,642 - INFO - ecommerce - User logged in: prodadmin4@test.com
+2026-05-09 00:25:08,643 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3466s
+2026-05-09 00:25:08,669 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0225s
+2026-05-09 00:25:08,697 - INFO - ecommerce - PUT /api/v1/categories/17 Status: 200 Duration: 0.0242s
+2026-05-09 00:25:09,106 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4005s
+2026-05-09 00:25:09,451 - WARNING - ecommerce - Failed login attempt: prodadmin5@test.com
+2026-05-09 00:25:09,451 - INFO - ecommerce - User logged in: prodadmin5@test.com
+2026-05-09 00:25:09,452 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3443s
+2026-05-09 00:25:09,477 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0217s
+2026-05-09 00:25:09,497 - INFO - ecommerce - DELETE /api/v1/categories/18 Status: 200 Duration: 0.0179s
+2026-05-09 00:25:09,908 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4035s
+2026-05-09 00:25:10,244 - WARNING - ecommerce - Failed login attempt: prodc_admin@test.com
+2026-05-09 00:25:10,244 - INFO - ecommerce - User logged in: prodc_admin@test.com
+2026-05-09 00:25:10,245 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3355s
+2026-05-09 00:25:10,268 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0209s
+2026-05-09 00:25:10,289 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0185s
+2026-05-09 00:25:10,715 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4194s
+2026-05-09 00:25:11,078 - WARNING - ecommerce - Failed login attempt: prodc_user@test.com
+2026-05-09 00:25:11,079 - INFO - ecommerce - User logged in: prodc_user@test.com
+2026-05-09 00:25:11,080 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3623s
+2026-05-09 00:25:11,086 - INFO - ecommerce - POST /api/v1/products Status: 403 Duration: 0.0044s
+2026-05-09 00:25:11,515 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.424s
+2026-05-09 00:25:11,880 - WARNING - ecommerce - Failed login attempt: prodc_admin2@test.com
+2026-05-09 00:25:11,881 - INFO - ecommerce - User logged in: prodc_admin2@test.com
+2026-05-09 00:25:11,882 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3627s
+2026-05-09 00:25:11,890 - INFO - ecommerce - POST /api/v1/products Status: 400 Duration: 0.0055s
+2026-05-09 00:25:12,281 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.387s
+2026-05-09 00:25:12,652 - WARNING - ecommerce - Failed login attempt: prodc_admin3@test.com
+2026-05-09 00:25:12,653 - INFO - ecommerce - User logged in: prodc_admin3@test.com
+2026-05-09 00:25:12,654 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3702s
+2026-05-09 00:25:12,678 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0217s
+2026-05-09 00:25:12,707 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0253s
+2026-05-09 00:25:12,720 - INFO - ecommerce - POST /api/v1/products Status: 409 Duration: 0.0094s
+2026-05-09 00:25:12,735 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0065s
+2026-05-09 00:25:13,160 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4159s
+2026-05-09 00:25:13,503 - WARNING - ecommerce - Failed login attempt: prodc_admin4@test.com
+2026-05-09 00:25:13,503 - INFO - ecommerce - User logged in: prodc_admin4@test.com
+2026-05-09 00:25:13,505 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3424s
+2026-05-09 00:25:13,532 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0236s
+2026-05-09 00:25:13,555 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0202s
+2026-05-09 00:25:13,561 - INFO - ecommerce - GET /api/v1/products/14 Status: 200 Duration: 0.0035s
+2026-05-09 00:25:13,572 - INFO - ecommerce - GET /api/v1/products/999999 Status: 404 Duration: 0.004s
+2026-05-09 00:25:14,013 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4322s
+2026-05-09 00:25:14,371 - WARNING - ecommerce - Failed login attempt: prodc_admin5@test.com
+2026-05-09 00:25:14,371 - INFO - ecommerce - User logged in: prodc_admin5@test.com
+2026-05-09 00:25:14,373 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3556s
+2026-05-09 00:25:14,404 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0272s
+2026-05-09 00:25:14,432 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0243s
+2026-05-09 00:25:14,460 - INFO - ecommerce - PUT /api/v1/products/15 Status: 200 Duration: 0.0243s
+2026-05-09 00:25:14,898 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4296s
+2026-05-09 00:25:15,292 - WARNING - ecommerce - Failed login attempt: prodc_admin6@test.com
+2026-05-09 00:25:15,292 - INFO - ecommerce - User logged in: prodc_admin6@test.com
+2026-05-09 00:25:15,293 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3919s
+2026-05-09 00:25:15,315 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0195s
+2026-05-09 00:25:15,334 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0174s
+2026-05-09 00:25:15,359 - INFO - ecommerce - DELETE /api/v1/products/16 Status: 200 Duration: 0.0207s
+2026-05-09 00:25:15,374 - INFO - ecommerce - GET /api/v1/products/search Status: 200 Duration: 0.0074s
+2026-05-09 00:25:15,810 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4255s
+2026-05-09 00:25:16,201 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3821s
+2026-05-09 00:25:16,566 - WARNING - ecommerce - Failed login attempt: login@test.com
+2026-05-09 00:25:16,566 - INFO - ecommerce - User logged in: login@test.com
+2026-05-09 00:25:16,567 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3604s
+2026-05-09 00:25:16,941 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3651s
+2026-05-09 00:25:17,366 - WARNING - ecommerce - Failed login attempt: me@test.com
+2026-05-09 00:25:17,366 - INFO - ecommerce - User logged in: me@test.com
+2026-05-09 00:25:17,368 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4207s
+2026-05-09 00:25:17,382 - INFO - ecommerce - GET /api/v1/users/me Status: 200 Duration: 0.007s
+2026-05-09 00:25:17,793 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3988s
+2026-05-09 00:25:18,204 - WARNING - ecommerce - Failed login attempt: role@test.com
+2026-05-09 00:25:18,205 - INFO - ecommerce - User logged in: role@test.com
+2026-05-09 00:25:18,206 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4066s
+2026-05-09 00:25:18,214 - INFO - ecommerce - GET /api/v1/users/me/role Status: 200 Duration: 0.0043s
+2026-05-09 00:25:18,620 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3964s
+2026-05-09 00:25:18,960 - WARNING - ecommerce - Failed login attempt: edit@test.com
+2026-05-09 00:25:18,960 - INFO - ecommerce - User logged in: edit@test.com
+2026-05-09 00:25:18,961 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3364s
+2026-05-09 00:25:18,986 - INFO - ecommerce - PUT /api/v1/users/edit Status: 200 Duration: 0.02s
+2026-05-09 00:25:18,996 - INFO - ecommerce - GET /api/v1/users/ Status: 401 Duration: 0.0022s
+2026-05-09 00:27:40,518 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4434s
+2026-05-09 00:27:40,529 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.0032s
+2026-05-09 00:27:40,537 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.0045s
+2026-05-09 00:27:40,550 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.0075s
+2026-05-09 00:27:40,564 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.0088s
+2026-05-09 00:27:40,579 - INFO - ecommerce - POST /api/v1/users/register Status: 422 Duration: 0.0035s
+2026-05-09 00:27:40,972 - WARNING - ecommerce - Failed login attempt: authuser@test.com
+2026-05-09 00:27:40,972 - INFO - ecommerce - User logged in: authuser@test.com
+2026-05-09 00:27:40,982 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3917s
+2026-05-09 00:27:41,397 - INFO - ecommerce - POST /api/v1/users/login Status: 401 Duration: 0.4095s
+2026-05-09 00:27:41,407 - INFO - ecommerce - POST /api/v1/users/login Status: 401 Duration: 0.0057s
+2026-05-09 00:27:41,763 - WARNING - ecommerce - Failed login attempt: authuser@test.com
+2026-05-09 00:27:41,763 - INFO - ecommerce - User logged in: authuser@test.com
+2026-05-09 00:27:41,765 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3525s
+2026-05-09 00:27:41,777 - INFO - ecommerce - GET /api/v1/users/me Status: 200 Duration: 0.0079s
+2026-05-09 00:27:41,788 - INFO - ecommerce - GET /api/v1/users/me Status: 401 Duration: 0.0016s
+2026-05-09 00:27:41,801 - INFO - ecommerce - GET /api/v1/users/me Status: 401 Duration: 0.0038s
+2026-05-09 00:27:42,213 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4021s
+2026-05-09 00:27:42,609 - WARNING - ecommerce - Failed login attempt: regular1@test.com
+2026-05-09 00:27:42,609 - INFO - ecommerce - User logged in: regular1@test.com
+2026-05-09 00:27:42,610 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3944s
+2026-05-09 00:27:42,617 - INFO - ecommerce - GET /api/v1/users/ Status: 403 Duration: 0.0047s
+2026-05-09 00:27:43,039 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4118s
+2026-05-09 00:27:43,430 - WARNING - ecommerce - Failed login attempt: admin1@test.com
+2026-05-09 00:27:43,431 - INFO - ecommerce - User logged in: admin1@test.com
+2026-05-09 00:27:43,432 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3899s
+2026-05-09 00:27:43,440 - INFO - ecommerce - GET /api/v1/users/ Status: 200 Duration: 0.0052s
+2026-05-09 00:27:43,859 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4157s
+2026-05-09 00:27:44,262 - WARNING - ecommerce - Failed login attempt: editme@test.com
+2026-05-09 00:27:44,263 - INFO - ecommerce - User logged in: editme@test.com
+2026-05-09 00:27:44,266 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4036s
+2026-05-09 00:27:44,310 - INFO - ecommerce - PUT /api/v1/users/edit Status: 200 Duration: 0.0382s
+2026-05-09 00:27:44,322 - INFO - ecommerce - GET /api/v1/cart/ Status: 401 Duration: 0.0027s
+2026-05-09 00:27:44,759 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.428s
+2026-05-09 00:27:45,182 - WARNING - ecommerce - Failed login attempt: cartuser@test.com
+2026-05-09 00:27:45,182 - INFO - ecommerce - User logged in: cartuser@test.com
+2026-05-09 00:27:45,185 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.421s
+2026-05-09 00:27:45,195 - INFO - ecommerce - GET /api/v1/cart/ Status: 200 Duration: 0.006s
+2026-05-09 00:27:45,657 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4532s
+2026-05-09 00:27:46,082 - WARNING - ecommerce - Failed login attempt: cartadmin@test.com
+2026-05-09 00:27:46,082 - INFO - ecommerce - User logged in: cartadmin@test.com
+2026-05-09 00:27:46,084 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4222s
+2026-05-09 00:27:46,455 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3691s
+2026-05-09 00:27:46,871 - WARNING - ecommerce - Failed login attempt: cartbuyer@test.com
+2026-05-09 00:27:46,871 - INFO - ecommerce - User logged in: cartbuyer@test.com
+2026-05-09 00:27:46,872 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4132s
+2026-05-09 00:27:46,901 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.026s
+2026-05-09 00:27:46,927 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0242s
+2026-05-09 00:27:46,938 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0076s
+2026-05-09 00:27:47,357 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4103s
+2026-05-09 00:27:47,912 - WARNING - ecommerce - Failed login attempt: cartbuyer2@test.com
+2026-05-09 00:27:47,912 - INFO - ecommerce - User logged in: cartbuyer2@test.com
+2026-05-09 00:27:47,914 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.553s
+2026-05-09 00:27:47,927 - INFO - ecommerce - POST /api/v1/cart/ Status: 404 Duration: 0.0083s
+2026-05-09 00:27:48,621 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.6836s
+2026-05-09 00:27:49,223 - WARNING - ecommerce - Failed login attempt: stockadmin@test.com
+2026-05-09 00:27:49,223 - INFO - ecommerce - User logged in: stockadmin@test.com
+2026-05-09 00:27:49,226 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5994s
+2026-05-09 00:27:49,885 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.6533s
+2026-05-09 00:27:50,538 - WARNING - ecommerce - Failed login attempt: stockbuyer@test.com
+2026-05-09 00:27:50,539 - INFO - ecommerce - User logged in: stockbuyer@test.com
+2026-05-09 00:27:50,542 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.6492s
+2026-05-09 00:27:50,595 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0486s
+2026-05-09 00:27:50,645 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0427s
+2026-05-09 00:27:50,665 - INFO - ecommerce - POST /api/v1/cart/ Status: 400 Duration: 0.0135s
+2026-05-09 00:27:51,356 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.679s
+2026-05-09 00:27:51,981 - WARNING - ecommerce - Failed login attempt: upd_admin@test.com
+2026-05-09 00:27:51,982 - INFO - ecommerce - User logged in: upd_admin@test.com
+2026-05-09 00:27:51,984 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.6216s
+2026-05-09 00:27:52,555 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5657s
+2026-05-09 00:27:53,111 - WARNING - ecommerce - Failed login attempt: upd_buyer@test.com
+2026-05-09 00:27:53,112 - INFO - ecommerce - User logged in: upd_buyer@test.com
+2026-05-09 00:27:53,114 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5548s
+2026-05-09 00:27:53,152 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0327s
+2026-05-09 00:27:53,192 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0351s
+2026-05-09 00:27:53,207 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0105s
+2026-05-09 00:27:53,226 - INFO - ecommerce - PUT /api/v1/cart/3 Status: 200 Duration: 0.0131s
+2026-05-09 00:27:53,859 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.6203s
+2026-05-09 00:27:54,420 - WARNING - ecommerce - Failed login attempt: rem_admin@test.com
+2026-05-09 00:27:54,420 - INFO - ecommerce - User logged in: rem_admin@test.com
+2026-05-09 00:27:54,422 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5576s
+2026-05-09 00:27:54,996 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.569s
+2026-05-09 00:27:55,597 - WARNING - ecommerce - Failed login attempt: rem_buyer@test.com
+2026-05-09 00:27:55,598 - INFO - ecommerce - User logged in: rem_buyer@test.com
+2026-05-09 00:27:55,602 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5967s
+2026-05-09 00:27:55,662 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0518s
+2026-05-09 00:27:55,705 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0376s
+2026-05-09 00:27:55,718 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0086s
+2026-05-09 00:27:55,732 - INFO - ecommerce - DELETE /api/v1/cart/4 Status: 200 Duration: 0.0084s
+2026-05-09 00:27:56,362 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.6157s
+2026-05-09 00:27:56,995 - WARNING - ecommerce - Failed login attempt: clr_admin@test.com
+2026-05-09 00:27:56,995 - INFO - ecommerce - User logged in: clr_admin@test.com
+2026-05-09 00:27:56,998 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.6145s
+2026-05-09 00:27:57,560 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5572s
+2026-05-09 00:27:58,102 - WARNING - ecommerce - Failed login attempt: clr_buyer@test.com
+2026-05-09 00:27:58,103 - INFO - ecommerce - User logged in: clr_buyer@test.com
+2026-05-09 00:27:58,105 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5417s
+2026-05-09 00:27:58,141 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0312s
+2026-05-09 00:27:58,178 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.031s
+2026-05-09 00:27:58,193 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0087s
+2026-05-09 00:27:58,204 - INFO - ecommerce - DELETE /api/v1/cart/clear Status: 200 Duration: 0.0067s
+2026-05-09 00:27:58,834 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.6151s
+2026-05-09 00:27:59,396 - WARNING - ecommerce - Failed login attempt: catadmin@test.com
+2026-05-09 00:27:59,397 - INFO - ecommerce - User logged in: catadmin@test.com
+2026-05-09 00:27:59,401 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5541s
+2026-05-09 00:27:59,446 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0346s
+2026-05-09 00:27:59,476 - INFO - ecommerce - GET /api/v1/categories/getall Status: 200 Duration: 0.0117s
+2026-05-09 00:27:59,522 - INFO - ecommerce - GET /api/v1/categories/1 Status: 200 Duration: 0.0241s
+2026-05-09 00:27:59,564 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.0157s
+2026-05-09 00:28:00,117 - WARNING - ecommerce - Failed login attempt: catadmin@test.com
+2026-05-09 00:28:00,118 - INFO - ecommerce - User logged in: catadmin@test.com
+2026-05-09 00:28:00,120 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5442s
+2026-05-09 00:28:00,163 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0341s
+2026-05-09 00:28:00,211 - INFO - ecommerce - PUT /api/v1/categories/7 Status: 200 Duration: 0.0355s
+2026-05-09 00:28:00,239 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.009s
+2026-05-09 00:28:00,788 - WARNING - ecommerce - Failed login attempt: catadmin@test.com
+2026-05-09 00:28:00,789 - INFO - ecommerce - User logged in: catadmin@test.com
+2026-05-09 00:28:00,791 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5412s
+2026-05-09 00:28:00,836 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0334s
+2026-05-09 00:28:00,883 - INFO - ecommerce - DELETE /api/v1/categories/8 Status: 200 Duration: 0.0365s
+2026-05-09 00:28:00,905 - INFO - ecommerce - POST /api/v1/categories/add Status: 401 Duration: 0.0059s
+2026-05-09 00:28:01,481 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5646s
+2026-05-09 00:28:02,045 - WARNING - ecommerce - Failed login attempt: ord_admin@test.com
+2026-05-09 00:28:02,045 - INFO - ecommerce - User logged in: ord_admin@test.com
+2026-05-09 00:28:02,048 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5615s
+2026-05-09 00:28:02,627 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5757s
+2026-05-09 00:28:03,198 - WARNING - ecommerce - Failed login attempt: ord_buyer@test.com
+2026-05-09 00:28:03,198 - INFO - ecommerce - User logged in: ord_buyer@test.com
+2026-05-09 00:28:03,201 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5685s
+2026-05-09 00:28:03,239 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0339s
+2026-05-09 00:28:03,293 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0456s
+2026-05-09 00:28:03,309 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0107s
+2026-05-09 00:28:03,383 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0606s
+2026-05-09 00:28:03,959 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.564s
+2026-05-09 00:28:04,524 - WARNING - ecommerce - Failed login attempt: empty_buyer@test.com
+2026-05-09 00:28:04,524 - INFO - ecommerce - User logged in: empty_buyer@test.com
+2026-05-09 00:28:04,527 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.562s
+2026-05-09 00:28:04,540 - INFO - ecommerce - POST /api/v1/orders/create Status: 404 Duration: 0.0081s
+2026-05-09 00:28:04,553 - INFO - ecommerce - POST /api/v1/orders/create Status: 401 Duration: 0.0035s
+2026-05-09 00:28:05,154 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5913s
+2026-05-09 00:28:05,726 - WARNING - ecommerce - Failed login attempt: my_ord_admin@test.com
+2026-05-09 00:28:05,727 - INFO - ecommerce - User logged in: my_ord_admin@test.com
+2026-05-09 00:28:05,729 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5687s
+2026-05-09 00:28:06,323 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5899s
+2026-05-09 00:28:06,875 - WARNING - ecommerce - Failed login attempt: my_ord_buyer@test.com
+2026-05-09 00:28:06,876 - INFO - ecommerce - User logged in: my_ord_buyer@test.com
+2026-05-09 00:28:06,878 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5507s
+2026-05-09 00:28:06,914 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0317s
+2026-05-09 00:28:06,957 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0368s
+2026-05-09 00:28:06,970 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0093s
+2026-05-09 00:28:07,016 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0411s
+2026-05-09 00:28:07,046 - INFO - ecommerce - GET /api/v1/orders/get/my_orders Status: 200 Duration: 0.0236s
+2026-05-09 00:28:07,606 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5479s
+2026-05-09 00:28:08,141 - WARNING - ecommerce - Failed login attempt: all_ord_admin@test.com
+2026-05-09 00:28:08,141 - INFO - ecommerce - User logged in: all_ord_admin@test.com
+2026-05-09 00:28:08,143 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5325s
+2026-05-09 00:28:08,161 - INFO - ecommerce - GET /api/v1/orders/get_all_orders Status: 200 Duration: 0.0135s
+2026-05-09 00:28:08,748 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5756s
+2026-05-09 00:28:09,315 - WARNING - ecommerce - Failed login attempt: all_ord_user@test.com
+2026-05-09 00:28:09,316 - INFO - ecommerce - User logged in: all_ord_user@test.com
+2026-05-09 00:28:09,318 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5636s
+2026-05-09 00:28:09,333 - INFO - ecommerce - GET /api/v1/orders/get_all_orders Status: 403 Duration: 0.0108s
+2026-05-09 00:28:09,349 - INFO - ecommerce - GET /api/v1/orders/get_all_orders Status: 401 Duration: 0.0052s
+2026-05-09 00:28:09,981 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.6202s
+2026-05-09 00:28:10,520 - WARNING - ecommerce - Failed login attempt: cancel_admin@test.com
+2026-05-09 00:28:10,521 - INFO - ecommerce - User logged in: cancel_admin@test.com
+2026-05-09 00:28:10,523 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5363s
+2026-05-09 00:28:11,072 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5438s
+2026-05-09 00:28:11,624 - WARNING - ecommerce - Failed login attempt: cancel_buyer@test.com
+2026-05-09 00:28:11,624 - INFO - ecommerce - User logged in: cancel_buyer@test.com
+2026-05-09 00:28:11,626 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5499s
+2026-05-09 00:28:11,663 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.032s
+2026-05-09 00:28:11,699 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0308s
+2026-05-09 00:28:11,718 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0107s
+2026-05-09 00:28:11,757 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0347s
+2026-05-09 00:28:11,791 - INFO - ecommerce - DELETE /api/v1/orders/cancel/3 Status: 200 Duration: 0.0305s
+2026-05-09 00:28:12,394 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5918s
+2026-05-09 00:28:12,953 - WARNING - ecommerce - Failed login attempt: cancel_ghost@test.com
+2026-05-09 00:28:12,954 - INFO - ecommerce - User logged in: cancel_ghost@test.com
+2026-05-09 00:28:12,956 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5548s
+2026-05-09 00:28:12,972 - INFO - ecommerce - DELETE /api/v1/orders/cancel/999999 Status: 404 Duration: 0.0119s
+2026-05-09 00:28:13,574 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5914s
+2026-05-09 00:28:14,101 - WARNING - ecommerce - Failed login attempt: ship_admin@test.com
+2026-05-09 00:28:14,102 - INFO - ecommerce - User logged in: ship_admin@test.com
+2026-05-09 00:28:14,105 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.525s
+2026-05-09 00:28:14,660 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5509s
+2026-05-09 00:28:15,223 - WARNING - ecommerce - Failed login attempt: ship_buyer@test.com
+2026-05-09 00:28:15,224 - INFO - ecommerce - User logged in: ship_buyer@test.com
+2026-05-09 00:28:15,226 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5615s
+2026-05-09 00:28:15,268 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0364s
+2026-05-09 00:28:15,309 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0368s
+2026-05-09 00:28:15,324 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0102s
+2026-05-09 00:28:15,363 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0336s
+2026-05-09 00:28:15,400 - INFO - ecommerce - PUT /api/v1/orders/put/ship/4 Status: 200 Duration: 0.0278s
+2026-05-09 00:28:16,001 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5889s
+2026-05-09 00:28:16,536 - WARNING - ecommerce - Failed login attempt: ship_admin2@test.com
+2026-05-09 00:28:16,537 - INFO - ecommerce - User logged in: ship_admin2@test.com
+2026-05-09 00:28:16,539 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.533s
+2026-05-09 00:28:17,081 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5371s
+2026-05-09 00:28:17,607 - WARNING - ecommerce - Failed login attempt: ship_buyer2@test.com
+2026-05-09 00:28:17,608 - INFO - ecommerce - User logged in: ship_buyer2@test.com
+2026-05-09 00:28:17,611 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5252s
+2026-05-09 00:28:17,652 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0332s
+2026-05-09 00:28:17,691 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0334s
+2026-05-09 00:28:17,707 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0093s
+2026-05-09 00:28:17,744 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0333s
+2026-05-09 00:28:17,759 - INFO - ecommerce - PUT /api/v1/orders/put/ship/5 Status: 403 Duration: 0.0085s
+2026-05-09 00:28:18,344 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5733s
+2026-05-09 00:28:18,907 - WARNING - ecommerce - Failed login attempt: state_admin@test.com
+2026-05-09 00:28:18,908 - INFO - ecommerce - User logged in: state_admin@test.com
+2026-05-09 00:28:18,910 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5608s
+2026-05-09 00:28:19,475 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.56s
+2026-05-09 00:28:20,023 - WARNING - ecommerce - Failed login attempt: state_buyer@test.com
+2026-05-09 00:28:20,024 - INFO - ecommerce - User logged in: state_buyer@test.com
+2026-05-09 00:28:20,027 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5463s
+2026-05-09 00:28:20,061 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0293s
+2026-05-09 00:28:20,101 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0336s
+2026-05-09 00:28:20,116 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0098s
+2026-05-09 00:28:20,157 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0359s
+2026-05-09 00:28:20,191 - INFO - ecommerce - PUT /api/v1/orders/put/ship/6 Status: 200 Duration: 0.0296s
+2026-05-09 00:28:20,205 - INFO - ecommerce - DELETE /api/v1/orders/cancel/6 Status: 404 Duration: 0.0097s
+2026-05-09 00:28:20,772 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5574s
+2026-05-09 00:28:21,323 - WARNING - ecommerce - Failed login attempt: prodadmin@test.com
+2026-05-09 00:28:21,324 - INFO - ecommerce - User logged in: prodadmin@test.com
+2026-05-09 00:28:21,326 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5482s
+2026-05-09 00:28:21,363 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0314s
+2026-05-09 00:28:21,932 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5531s
+2026-05-09 00:28:22,469 - WARNING - ecommerce - Failed login attempt: produser@test.com
+2026-05-09 00:28:22,470 - INFO - ecommerce - User logged in: produser@test.com
+2026-05-09 00:28:22,472 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5336s
+2026-05-09 00:28:22,484 - INFO - ecommerce - POST /api/v1/categories/add Status: 403 Duration: 0.0075s
+2026-05-09 00:28:23,139 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.6474s
+2026-05-09 00:28:23,673 - WARNING - ecommerce - Failed login attempt: prodadmin2@test.com
+2026-05-09 00:28:23,674 - INFO - ecommerce - User logged in: prodadmin2@test.com
+2026-05-09 00:28:23,676 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5302s
+2026-05-09 00:28:23,721 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0409s
+2026-05-09 00:28:23,741 - INFO - ecommerce - POST /api/v1/categories/add Status: 409 Duration: 0.0149s
+2026-05-09 00:28:23,761 - INFO - ecommerce - GET /api/v1/categories/getall Status: 200 Duration: 0.006s
+2026-05-09 00:28:24,371 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5929s
+2026-05-09 00:28:24,933 - WARNING - ecommerce - Failed login attempt: prodadmin3@test.com
+2026-05-09 00:28:24,933 - INFO - ecommerce - User logged in: prodadmin3@test.com
+2026-05-09 00:28:24,935 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5587s
+2026-05-09 00:28:24,968 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0286s
+2026-05-09 00:28:24,983 - INFO - ecommerce - GET /api/v1/categories/16 Status: 200 Duration: 0.0098s
+2026-05-09 00:28:25,013 - INFO - ecommerce - GET /api/v1/categories/999999 Status: 404 Duration: 0.0148s
+2026-05-09 00:28:25,627 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5805s
+2026-05-09 00:28:26,130 - WARNING - ecommerce - Failed login attempt: prodadmin4@test.com
+2026-05-09 00:28:26,132 - INFO - ecommerce - User logged in: prodadmin4@test.com
+2026-05-09 00:28:26,137 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5046s
+2026-05-09 00:28:26,175 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0323s
+2026-05-09 00:28:26,209 - INFO - ecommerce - PUT /api/v1/categories/17 Status: 200 Duration: 0.03s
+2026-05-09 00:28:26,712 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4907s
+2026-05-09 00:28:27,215 - WARNING - ecommerce - Failed login attempt: prodadmin5@test.com
+2026-05-09 00:28:27,216 - INFO - ecommerce - User logged in: prodadmin5@test.com
+2026-05-09 00:28:27,218 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5017s
+2026-05-09 00:28:27,242 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0199s
+2026-05-09 00:28:27,269 - INFO - ecommerce - DELETE /api/v1/categories/18 Status: 200 Duration: 0.0233s
+2026-05-09 00:28:27,804 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5276s
+2026-05-09 00:28:28,255 - WARNING - ecommerce - Failed login attempt: prodc_admin@test.com
+2026-05-09 00:28:28,256 - INFO - ecommerce - User logged in: prodc_admin@test.com
+2026-05-09 00:28:28,258 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4493s
+2026-05-09 00:28:28,290 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.028s
+2026-05-09 00:28:28,324 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0312s
+2026-05-09 00:28:28,783 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4477s
+2026-05-09 00:28:29,201 - WARNING - ecommerce - Failed login attempt: prodc_user@test.com
+2026-05-09 00:28:29,201 - INFO - ecommerce - User logged in: prodc_user@test.com
+2026-05-09 00:28:29,202 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4145s
+2026-05-09 00:28:29,214 - INFO - ecommerce - POST /api/v1/products Status: 403 Duration: 0.0063s
+2026-05-09 00:28:29,641 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4194s
+2026-05-09 00:28:30,052 - WARNING - ecommerce - Failed login attempt: prodc_admin2@test.com
+2026-05-09 00:28:30,052 - INFO - ecommerce - User logged in: prodc_admin2@test.com
+2026-05-09 00:28:30,053 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4086s
+2026-05-09 00:28:30,063 - INFO - ecommerce - POST /api/v1/products Status: 400 Duration: 0.0069s
+2026-05-09 00:28:30,503 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4304s
+2026-05-09 00:28:30,906 - WARNING - ecommerce - Failed login attempt: prodc_admin3@test.com
+2026-05-09 00:28:30,906 - INFO - ecommerce - User logged in: prodc_admin3@test.com
+2026-05-09 00:28:30,907 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4009s
+2026-05-09 00:28:30,935 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0256s
+2026-05-09 00:28:30,963 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0236s
+2026-05-09 00:28:30,975 - INFO - ecommerce - POST /api/v1/products Status: 409 Duration: 0.008s
+2026-05-09 00:28:30,992 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0083s
+2026-05-09 00:28:31,441 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4401s
+2026-05-09 00:28:31,845 - WARNING - ecommerce - Failed login attempt: prodc_admin4@test.com
+2026-05-09 00:28:31,846 - INFO - ecommerce - User logged in: prodc_admin4@test.com
+2026-05-09 00:28:31,848 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4034s
+2026-05-09 00:28:31,872 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0191s
+2026-05-09 00:28:31,904 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0284s
+2026-05-09 00:28:31,910 - INFO - ecommerce - GET /api/v1/products/14 Status: 200 Duration: 0.0033s
+2026-05-09 00:28:31,920 - INFO - ecommerce - GET /api/v1/products/999999 Status: 404 Duration: 0.0035s
+2026-05-09 00:28:32,367 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4378s
+2026-05-09 00:28:32,792 - WARNING - ecommerce - Failed login attempt: prodc_admin5@test.com
+2026-05-09 00:28:32,792 - INFO - ecommerce - User logged in: prodc_admin5@test.com
+2026-05-09 00:28:32,794 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4236s
+2026-05-09 00:28:32,825 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0257s
+2026-05-09 00:28:32,856 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.027s
+2026-05-09 00:28:32,891 - INFO - ecommerce - PUT /api/v1/products/15 Status: 200 Duration: 0.0312s
+2026-05-09 00:28:33,342 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4422s
+2026-05-09 00:28:33,787 - WARNING - ecommerce - Failed login attempt: prodc_admin6@test.com
+2026-05-09 00:28:33,787 - INFO - ecommerce - User logged in: prodc_admin6@test.com
+2026-05-09 00:28:33,789 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4401s
+2026-05-09 00:28:33,832 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0396s
+2026-05-09 00:28:33,864 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0281s
+2026-05-09 00:28:33,900 - INFO - ecommerce - DELETE /api/v1/products/16 Status: 200 Duration: 0.0294s
+2026-05-09 00:28:33,924 - INFO - ecommerce - GET /api/v1/products/search Status: 200 Duration: 0.0097s
+2026-05-09 00:28:34,406 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4712s
+2026-05-09 00:28:35,005 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5842s
+2026-05-09 00:28:35,457 - WARNING - ecommerce - Failed login attempt: login@test.com
+2026-05-09 00:28:35,458 - INFO - ecommerce - User logged in: login@test.com
+2026-05-09 00:28:35,459 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4423s
+2026-05-09 00:28:35,866 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3936s
+2026-05-09 00:28:36,232 - WARNING - ecommerce - Failed login attempt: me@test.com
+2026-05-09 00:28:36,232 - INFO - ecommerce - User logged in: me@test.com
+2026-05-09 00:28:36,234 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.362s
+2026-05-09 00:28:36,243 - INFO - ecommerce - GET /api/v1/users/me Status: 200 Duration: 0.0041s
+2026-05-09 00:28:36,638 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3877s
+2026-05-09 00:28:36,987 - WARNING - ecommerce - Failed login attempt: role@test.com
+2026-05-09 00:28:36,988 - INFO - ecommerce - User logged in: role@test.com
+2026-05-09 00:28:36,989 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3441s
+2026-05-09 00:28:36,998 - INFO - ecommerce - GET /api/v1/users/me/role Status: 200 Duration: 0.0042s
+2026-05-09 00:28:37,379 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3731s
+2026-05-09 00:28:37,728 - WARNING - ecommerce - Failed login attempt: edit@test.com
+2026-05-09 00:28:37,728 - INFO - ecommerce - User logged in: edit@test.com
+2026-05-09 00:28:37,730 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3449s
+2026-05-09 00:28:37,754 - INFO - ecommerce - PUT /api/v1/users/edit Status: 200 Duration: 0.0186s
+2026-05-09 00:28:37,765 - INFO - ecommerce - GET /api/v1/users/ Status: 401 Duration: 0.0028s
+2026-05-09 00:33:01,048 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4179s
+2026-05-09 00:33:01,058 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.004s
+2026-05-09 00:33:01,065 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.004s
+2026-05-09 00:33:01,077 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.0049s
+2026-05-09 00:33:01,082 - INFO - ecommerce - POST /api/v1/users/register Status: 409 Duration: 0.0029s
+2026-05-09 00:33:01,090 - INFO - ecommerce - POST /api/v1/users/register Status: 422 Duration: 0.0022s
+2026-05-09 00:33:01,465 - WARNING - ecommerce - Failed login attempt: authuser@test.com
+2026-05-09 00:33:01,466 - INFO - ecommerce - User logged in: authuser@test.com
+2026-05-09 00:33:01,473 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3736s
+2026-05-09 00:33:01,836 - INFO - ecommerce - POST /api/v1/users/login Status: 401 Duration: 0.3573s
+2026-05-09 00:33:01,847 - INFO - ecommerce - POST /api/v1/users/login Status: 401 Duration: 0.0056s
+2026-05-09 00:33:02,207 - WARNING - ecommerce - Failed login attempt: authuser@test.com
+2026-05-09 00:33:02,207 - INFO - ecommerce - User logged in: authuser@test.com
+2026-05-09 00:33:02,208 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3568s
+2026-05-09 00:33:02,215 - INFO - ecommerce - GET /api/v1/users/me Status: 200 Duration: 0.0044s
+2026-05-09 00:33:02,221 - INFO - ecommerce - GET /api/v1/users/me Status: 401 Duration: 0.0007s
+2026-05-09 00:33:02,228 - INFO - ecommerce - GET /api/v1/users/me Status: 401 Duration: 0.0023s
+2026-05-09 00:33:02,597 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3613s
+2026-05-09 00:33:02,954 - WARNING - ecommerce - Failed login attempt: regular1@test.com
+2026-05-09 00:33:02,955 - INFO - ecommerce - User logged in: regular1@test.com
+2026-05-09 00:33:02,956 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.356s
+2026-05-09 00:33:02,962 - INFO - ecommerce - GET /api/v1/users/ Status: 403 Duration: 0.004s
+2026-05-09 00:33:03,341 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3676s
+2026-05-09 00:33:03,677 - WARNING - ecommerce - Failed login attempt: admin1@test.com
+2026-05-09 00:33:03,677 - INFO - ecommerce - User logged in: admin1@test.com
+2026-05-09 00:33:03,678 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.334s
+2026-05-09 00:33:03,684 - INFO - ecommerce - GET /api/v1/users/ Status: 200 Duration: 0.0047s
+2026-05-09 00:33:04,050 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3612s
+2026-05-09 00:33:04,391 - WARNING - ecommerce - Failed login attempt: editme@test.com
+2026-05-09 00:33:04,391 - INFO - ecommerce - User logged in: editme@test.com
+2026-05-09 00:33:04,393 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.34s
+2026-05-09 00:33:04,404 - INFO - ecommerce - PUT /api/v1/users/edit Status: 200 Duration: 0.0076s
+2026-05-09 00:33:04,411 - INFO - ecommerce - GET /api/v1/cart/ Status: 401 Duration: 0.0015s
+2026-05-09 00:33:04,845 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4283s
+2026-05-09 00:33:05,183 - WARNING - ecommerce - Failed login attempt: cartuser@test.com
+2026-05-09 00:33:05,184 - INFO - ecommerce - User logged in: cartuser@test.com
+2026-05-09 00:33:05,185 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3371s
+2026-05-09 00:33:05,192 - INFO - ecommerce - GET /api/v1/cart/ Status: 200 Duration: 0.0032s
+2026-05-09 00:33:05,551 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3526s
+2026-05-09 00:33:05,886 - WARNING - ecommerce - Failed login attempt: cartadmin@test.com
+2026-05-09 00:33:05,886 - INFO - ecommerce - User logged in: cartadmin@test.com
+2026-05-09 00:33:05,887 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.334s
+2026-05-09 00:33:06,261 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3717s
+2026-05-09 00:33:06,610 - WARNING - ecommerce - Failed login attempt: cartbuyer@test.com
+2026-05-09 00:33:06,611 - INFO - ecommerce - User logged in: cartbuyer@test.com
+2026-05-09 00:33:06,612 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3487s
+2026-05-09 00:33:06,625 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0114s
+2026-05-09 00:33:06,644 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0155s
+2026-05-09 00:33:06,655 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0076s
+2026-05-09 00:33:07,037 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3737s
+2026-05-09 00:33:07,392 - WARNING - ecommerce - Failed login attempt: cartbuyer2@test.com
+2026-05-09 00:33:07,392 - INFO - ecommerce - User logged in: cartbuyer2@test.com
+2026-05-09 00:33:07,393 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3543s
+2026-05-09 00:33:07,401 - INFO - ecommerce - POST /api/v1/cart/ Status: 404 Duration: 0.0045s
+2026-05-09 00:33:07,785 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3761s
+2026-05-09 00:33:08,132 - WARNING - ecommerce - Failed login attempt: stockadmin@test.com
+2026-05-09 00:33:08,132 - INFO - ecommerce - User logged in: stockadmin@test.com
+2026-05-09 00:33:08,133 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3456s
+2026-05-09 00:33:08,473 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3379s
+2026-05-09 00:33:08,821 - WARNING - ecommerce - Failed login attempt: stockbuyer@test.com
+2026-05-09 00:33:08,821 - INFO - ecommerce - User logged in: stockbuyer@test.com
+2026-05-09 00:33:08,822 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3463s
+2026-05-09 00:33:08,834 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0074s
+2026-05-09 00:33:08,846 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0089s
+2026-05-09 00:33:08,854 - INFO - ecommerce - POST /api/v1/cart/ Status: 400 Duration: 0.0054s
+2026-05-09 00:33:09,242 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3815s
+2026-05-09 00:33:09,576 - WARNING - ecommerce - Failed login attempt: upd_admin@test.com
+2026-05-09 00:33:09,576 - INFO - ecommerce - User logged in: upd_admin@test.com
+2026-05-09 00:33:09,577 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3327s
+2026-05-09 00:33:09,969 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.389s
+2026-05-09 00:33:10,349 - WARNING - ecommerce - Failed login attempt: upd_buyer@test.com
+2026-05-09 00:33:10,350 - INFO - ecommerce - User logged in: upd_buyer@test.com
+2026-05-09 00:33:10,351 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3795s
+2026-05-09 00:33:10,359 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0053s
+2026-05-09 00:33:10,367 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0062s
+2026-05-09 00:33:10,373 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0032s
+2026-05-09 00:33:10,380 - INFO - ecommerce - PUT /api/v1/cart/3 Status: 200 Duration: 0.004s
+2026-05-09 00:33:10,777 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3911s
+2026-05-09 00:33:11,164 - WARNING - ecommerce - Failed login attempt: rem_admin@test.com
+2026-05-09 00:33:11,164 - INFO - ecommerce - User logged in: rem_admin@test.com
+2026-05-09 00:33:11,166 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3869s
+2026-05-09 00:33:11,527 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3582s
+2026-05-09 00:33:11,893 - WARNING - ecommerce - Failed login attempt: rem_buyer@test.com
+2026-05-09 00:33:11,893 - INFO - ecommerce - User logged in: rem_buyer@test.com
+2026-05-09 00:33:11,895 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3657s
+2026-05-09 00:33:11,903 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0058s
+2026-05-09 00:33:11,911 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0059s
+2026-05-09 00:33:11,917 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0037s
+2026-05-09 00:33:11,922 - INFO - ecommerce - DELETE /api/v1/cart/4 Status: 200 Duration: 0.0024s
+2026-05-09 00:33:12,303 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3753s
+2026-05-09 00:33:12,816 - WARNING - ecommerce - Failed login attempt: clr_admin@test.com
+2026-05-09 00:33:12,816 - INFO - ecommerce - User logged in: clr_admin@test.com
+2026-05-09 00:33:12,818 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.5127s
+2026-05-09 00:33:13,358 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.5369s
+2026-05-09 00:33:13,759 - WARNING - ecommerce - Failed login attempt: clr_buyer@test.com
+2026-05-09 00:33:13,760 - INFO - ecommerce - User logged in: clr_buyer@test.com
+2026-05-09 00:33:13,763 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4002s
+2026-05-09 00:33:13,779 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0118s
+2026-05-09 00:33:13,797 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0132s
+2026-05-09 00:33:13,805 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0043s
+2026-05-09 00:33:13,812 - INFO - ecommerce - DELETE /api/v1/cart/clear Status: 200 Duration: 0.0044s
+2026-05-09 00:33:14,186 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3678s
+2026-05-09 00:33:14,547 - WARNING - ecommerce - Failed login attempt: ord_admin@test.com
+2026-05-09 00:33:14,547 - INFO - ecommerce - User logged in: ord_admin@test.com
+2026-05-09 00:33:14,548 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3601s
+2026-05-09 00:33:14,890 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3391s
+2026-05-09 00:33:15,229 - WARNING - ecommerce - Failed login attempt: ord_buyer@test.com
+2026-05-09 00:33:15,229 - INFO - ecommerce - User logged in: ord_buyer@test.com
+2026-05-09 00:33:15,231 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3385s
+2026-05-09 00:33:15,239 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0057s
+2026-05-09 00:33:15,247 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.006s
+2026-05-09 00:33:15,252 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.003s
+2026-05-09 00:33:15,267 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0125s
+2026-05-09 00:33:15,626 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3547s
+2026-05-09 00:33:15,966 - WARNING - ecommerce - Failed login attempt: empty_buyer@test.com
+2026-05-09 00:33:15,966 - INFO - ecommerce - User logged in: empty_buyer@test.com
+2026-05-09 00:33:15,967 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3383s
+2026-05-09 00:33:15,971 - INFO - ecommerce - POST /api/v1/orders/create Status: 404 Duration: 0.0026s
+2026-05-09 00:33:15,978 - INFO - ecommerce - POST /api/v1/orders/create Status: 401 Duration: 0.0014s
+2026-05-09 00:33:16,362 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3791s
+2026-05-09 00:33:16,710 - WARNING - ecommerce - Failed login attempt: my_ord_admin@test.com
+2026-05-09 00:33:16,710 - INFO - ecommerce - User logged in: my_ord_admin@test.com
+2026-05-09 00:33:16,711 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3469s
+2026-05-09 00:33:17,087 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3731s
+2026-05-09 00:33:17,427 - WARNING - ecommerce - Failed login attempt: my_ord_buyer@test.com
+2026-05-09 00:33:17,427 - INFO - ecommerce - User logged in: my_ord_buyer@test.com
+2026-05-09 00:33:17,428 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3391s
+2026-05-09 00:33:17,438 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.007s
+2026-05-09 00:33:17,446 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.006s
+2026-05-09 00:33:17,452 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0035s
+2026-05-09 00:33:17,461 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0067s
+2026-05-09 00:33:17,470 - INFO - ecommerce - GET /api/v1/orders/get/my_orders Status: 200 Duration: 0.0058s
+2026-05-09 00:33:17,830 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3539s
+2026-05-09 00:33:18,168 - WARNING - ecommerce - Failed login attempt: all_ord_admin@test.com
+2026-05-09 00:33:18,169 - INFO - ecommerce - User logged in: all_ord_admin@test.com
+2026-05-09 00:33:18,170 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3374s
+2026-05-09 00:33:18,179 - INFO - ecommerce - GET /api/v1/orders/get_all_orders Status: 200 Duration: 0.0066s
+2026-05-09 00:33:18,536 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3518s
+2026-05-09 00:33:18,883 - WARNING - ecommerce - Failed login attempt: all_ord_user@test.com
+2026-05-09 00:33:18,883 - INFO - ecommerce - User logged in: all_ord_user@test.com
+2026-05-09 00:33:18,884 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3453s
+2026-05-09 00:33:18,890 - INFO - ecommerce - GET /api/v1/orders/get_all_orders Status: 403 Duration: 0.0032s
+2026-05-09 00:33:18,897 - INFO - ecommerce - GET /api/v1/orders/get_all_orders Status: 401 Duration: 0.0018s
+2026-05-09 00:33:19,260 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3576s
+2026-05-09 00:33:19,598 - WARNING - ecommerce - Failed login attempt: cancel_admin@test.com
+2026-05-09 00:33:19,598 - INFO - ecommerce - User logged in: cancel_admin@test.com
+2026-05-09 00:33:19,599 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3368s
+2026-05-09 00:33:19,942 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3408s
+2026-05-09 00:33:20,294 - WARNING - ecommerce - Failed login attempt: cancel_buyer@test.com
+2026-05-09 00:33:20,295 - INFO - ecommerce - User logged in: cancel_buyer@test.com
+2026-05-09 00:33:20,296 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3517s
+2026-05-09 00:33:20,307 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0081s
+2026-05-09 00:33:20,321 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0101s
+2026-05-09 00:33:20,333 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0077s
+2026-05-09 00:33:20,351 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0139s
+2026-05-09 00:33:20,368 - INFO - ecommerce - DELETE /api/v1/orders/cancel/3 Status: 200 Duration: 0.0119s
+2026-05-09 00:33:20,782 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4047s
+2026-05-09 00:33:21,163 - WARNING - ecommerce - Failed login attempt: cancel_ghost@test.com
+2026-05-09 00:33:21,163 - INFO - ecommerce - User logged in: cancel_ghost@test.com
+2026-05-09 00:33:21,165 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3797s
+2026-05-09 00:33:21,171 - INFO - ecommerce - DELETE /api/v1/orders/cancel/999999 Status: 404 Duration: 0.0037s
+2026-05-09 00:33:21,530 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3537s
+2026-05-09 00:33:21,884 - WARNING - ecommerce - Failed login attempt: ship_admin@test.com
+2026-05-09 00:33:21,885 - INFO - ecommerce - User logged in: ship_admin@test.com
+2026-05-09 00:33:21,886 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3536s
+2026-05-09 00:33:22,239 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3507s
+2026-05-09 00:33:22,570 - WARNING - ecommerce - Failed login attempt: ship_buyer@test.com
+2026-05-09 00:33:22,571 - INFO - ecommerce - User logged in: ship_buyer@test.com
+2026-05-09 00:33:22,572 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.331s
+2026-05-09 00:33:22,581 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0065s
+2026-05-09 00:33:22,591 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0074s
+2026-05-09 00:33:22,597 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0034s
+2026-05-09 00:33:22,606 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0069s
+2026-05-09 00:33:22,615 - INFO - ecommerce - PUT /api/v1/orders/put/ship/4 Status: 200 Duration: 0.0065s
+2026-05-09 00:33:23,014 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3914s
+2026-05-09 00:33:23,358 - WARNING - ecommerce - Failed login attempt: ship_admin2@test.com
+2026-05-09 00:33:23,358 - INFO - ecommerce - User logged in: ship_admin2@test.com
+2026-05-09 00:33:23,359 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3426s
+2026-05-09 00:33:23,706 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.344s
+2026-05-09 00:33:24,041 - WARNING - ecommerce - Failed login attempt: ship_buyer2@test.com
+2026-05-09 00:33:24,041 - INFO - ecommerce - User logged in: ship_buyer2@test.com
+2026-05-09 00:33:24,042 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3348s
+2026-05-09 00:33:24,053 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0082s
+2026-05-09 00:33:24,062 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0067s
+2026-05-09 00:33:24,067 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0031s
+2026-05-09 00:33:24,076 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.0063s
+2026-05-09 00:33:24,081 - INFO - ecommerce - PUT /api/v1/orders/put/ship/5 Status: 403 Duration: 0.003s
+2026-05-09 00:33:24,446 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3592s
+2026-05-09 00:33:24,813 - WARNING - ecommerce - Failed login attempt: state_admin@test.com
+2026-05-09 00:33:24,813 - INFO - ecommerce - User logged in: state_admin@test.com
+2026-05-09 00:33:24,814 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3662s
+2026-05-09 00:33:25,169 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.353s
+2026-05-09 00:33:25,507 - WARNING - ecommerce - Failed login attempt: state_buyer@test.com
+2026-05-09 00:33:25,507 - INFO - ecommerce - User logged in: state_buyer@test.com
+2026-05-09 00:33:25,508 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3367s
+2026-05-09 00:33:25,517 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0063s
+2026-05-09 00:33:25,526 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0065s
+2026-05-09 00:33:25,532 - INFO - ecommerce - POST /api/v1/cart/ Status: 201 Duration: 0.0039s
+2026-05-09 00:33:25,540 - INFO - ecommerce - POST /api/v1/orders/create Status: 201 Duration: 0.006s
+2026-05-09 00:33:25,547 - INFO - ecommerce - PUT /api/v1/orders/put/ship/6 Status: 200 Duration: 0.0049s
+2026-05-09 00:33:25,553 - INFO - ecommerce - DELETE /api/v1/orders/cancel/6 Status: 404 Duration: 0.0038s
+2026-05-09 00:33:25,949 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3902s
+2026-05-09 00:33:26,292 - WARNING - ecommerce - Failed login attempt: prodadmin@test.com
+2026-05-09 00:33:26,292 - INFO - ecommerce - User logged in: prodadmin@test.com
+2026-05-09 00:33:26,294 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3418s
+2026-05-09 00:33:26,301 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0055s
+2026-05-09 00:33:26,656 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3498s
+2026-05-09 00:33:27,002 - WARNING - ecommerce - Failed login attempt: produser@test.com
+2026-05-09 00:33:27,002 - INFO - ecommerce - User logged in: produser@test.com
+2026-05-09 00:33:27,004 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3452s
+2026-05-09 00:33:27,011 - INFO - ecommerce - POST /api/v1/categories/add Status: 403 Duration: 0.0046s
+2026-05-09 00:33:27,369 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3537s
+2026-05-09 00:33:27,713 - WARNING - ecommerce - Failed login attempt: prodadmin2@test.com
+2026-05-09 00:33:27,713 - INFO - ecommerce - User logged in: prodadmin2@test.com
+2026-05-09 00:33:27,715 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3431s
+2026-05-09 00:33:27,723 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0055s
+2026-05-09 00:33:27,730 - INFO - ecommerce - POST /api/v1/categories/add Status: 409 Duration: 0.0046s
+2026-05-09 00:33:27,738 - INFO - ecommerce - GET /api/v1/categories/getall Status: 200 Duration: 0.0028s
+2026-05-09 00:33:28,104 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3593s
+2026-05-09 00:33:28,441 - WARNING - ecommerce - Failed login attempt: prodadmin3@test.com
+2026-05-09 00:33:28,441 - INFO - ecommerce - User logged in: prodadmin3@test.com
+2026-05-09 00:33:28,442 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3351s
+2026-05-09 00:33:28,450 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0056s
+2026-05-09 00:33:28,456 - INFO - ecommerce - GET /api/v1/categories/14 Status: 200 Duration: 0.004s
+2026-05-09 00:33:28,464 - INFO - ecommerce - GET /api/v1/categories/999999 Status: 404 Duration: 0.0023s
+2026-05-09 00:33:28,817 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3479s
+2026-05-09 00:33:29,156 - WARNING - ecommerce - Failed login attempt: prodadmin4@test.com
+2026-05-09 00:33:29,157 - INFO - ecommerce - User logged in: prodadmin4@test.com
+2026-05-09 00:33:29,158 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3384s
+2026-05-09 00:33:29,167 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.007s
+2026-05-09 00:33:29,177 - INFO - ecommerce - PUT /api/v1/categories/15 Status: 200 Duration: 0.0086s
+2026-05-09 00:33:29,534 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3507s
+2026-05-09 00:33:29,875 - WARNING - ecommerce - Failed login attempt: prodadmin5@test.com
+2026-05-09 00:33:29,875 - INFO - ecommerce - User logged in: prodadmin5@test.com
+2026-05-09 00:33:29,877 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3397s
+2026-05-09 00:33:29,887 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0077s
+2026-05-09 00:33:29,895 - INFO - ecommerce - DELETE /api/v1/categories/16 Status: 200 Duration: 0.0064s
+2026-05-09 00:33:30,261 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3592s
+2026-05-09 00:33:30,601 - WARNING - ecommerce - Failed login attempt: prodc_admin@test.com
+2026-05-09 00:33:30,602 - INFO - ecommerce - User logged in: prodc_admin@test.com
+2026-05-09 00:33:30,603 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3381s
+2026-05-09 00:33:30,611 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0056s
+2026-05-09 00:33:30,620 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0072s
+2026-05-09 00:33:30,995 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3685s
+2026-05-09 00:33:31,332 - WARNING - ecommerce - Failed login attempt: prodc_user@test.com
+2026-05-09 00:33:31,333 - INFO - ecommerce - User logged in: prodc_user@test.com
+2026-05-09 00:33:31,334 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3365s
+2026-05-09 00:33:31,340 - INFO - ecommerce - POST /api/v1/products Status: 403 Duration: 0.0038s
+2026-05-09 00:33:31,723 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3774s
+2026-05-09 00:33:32,061 - WARNING - ecommerce - Failed login attempt: prodc_admin2@test.com
+2026-05-09 00:33:32,061 - INFO - ecommerce - User logged in: prodc_admin2@test.com
+2026-05-09 00:33:32,063 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3376s
+2026-05-09 00:33:32,070 - INFO - ecommerce - POST /api/v1/products Status: 400 Duration: 0.0049s
+2026-05-09 00:33:32,425 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3506s
+2026-05-09 00:33:32,761 - WARNING - ecommerce - Failed login attempt: prodc_admin3@test.com
+2026-05-09 00:33:32,761 - INFO - ecommerce - User logged in: prodc_admin3@test.com
+2026-05-09 00:33:32,762 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3345s
+2026-05-09 00:33:32,771 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.006s
+2026-05-09 00:33:32,780 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0072s
+2026-05-09 00:33:32,788 - INFO - ecommerce - POST /api/v1/products Status: 409 Duration: 0.0052s
+2026-05-09 00:33:32,797 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.004s
+2026-05-09 00:33:33,156 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3529s
+2026-05-09 00:33:33,518 - WARNING - ecommerce - Failed login attempt: prodc_admin4@test.com
+2026-05-09 00:33:33,519 - INFO - ecommerce - User logged in: prodc_admin4@test.com
+2026-05-09 00:33:33,520 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3617s
+2026-05-09 00:33:33,530 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0067s
+2026-05-09 00:33:33,540 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0083s
+2026-05-09 00:33:33,547 - INFO - ecommerce - GET /api/v1/products/14 Status: 200 Duration: 0.0038s
+2026-05-09 00:33:33,559 - INFO - ecommerce - GET /api/v1/products/999999 Status: 404 Duration: 0.0041s
+2026-05-09 00:33:33,992 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.4244s
+2026-05-09 00:33:34,333 - WARNING - ecommerce - Failed login attempt: prodc_admin5@test.com
+2026-05-09 00:33:34,333 - INFO - ecommerce - User logged in: prodc_admin5@test.com
+2026-05-09 00:33:34,334 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3403s
+2026-05-09 00:33:34,342 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0055s
+2026-05-09 00:33:34,352 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0072s
+2026-05-09 00:33:34,361 - INFO - ecommerce - PUT /api/v1/products/15 Status: 200 Duration: 0.0061s
+2026-05-09 00:33:34,718 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3507s
+2026-05-09 00:33:35,058 - WARNING - ecommerce - Failed login attempt: prodc_admin6@test.com
+2026-05-09 00:33:35,058 - INFO - ecommerce - User logged in: prodc_admin6@test.com
+2026-05-09 00:33:35,059 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3383s
+2026-05-09 00:33:35,067 - INFO - ecommerce - POST /api/v1/categories/add Status: 201 Duration: 0.0061s
+2026-05-09 00:33:35,075 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0057s
+2026-05-09 00:33:35,081 - INFO - ecommerce - DELETE /api/v1/products/16 Status: 200 Duration: 0.0052s
+2026-05-09 00:33:35,089 - INFO - ecommerce - GET /api/v1/products/search Status: 200 Duration: 0.0029s

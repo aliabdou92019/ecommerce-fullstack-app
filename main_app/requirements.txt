@@ -12,3 +12,4 @@ email-validator
 redis[asyncio]>=5.0.0
 python-multipart
 prometheus-fastapi-instrumentator
+httpx
