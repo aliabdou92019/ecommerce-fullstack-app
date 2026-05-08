@@ -7,10 +7,10 @@ from crud.products import *
 from dependencies import *
 from models import *
 
-router = APIRouter(prefix="/products", tags=["Products"])
+router = APIRouter(prefix="/api/v1/products", tags=["Products"])
 
 # Admin only: create product
-@router.post("/", response_model=ProductResponse, status_code=status.HTTP_201_CREATED)
+@router.post("", response_model=ProductResponse, status_code=status.HTTP_201_CREATED)
 def add_product(
     product: ProductCreate,
     db: Session = Depends(get_db),
@@ -32,32 +32,7 @@ def add_product(
 
     return new_product
 
-# @router.get("/in-stock",response_model=list[ProductResponse],response_model_exclude_none=True)
-# def read_in_stock_products(
-#     db: Session = Depends(get_db),
-#     current_user: User = Depends(get_current_user)
-# ):
-#     products = get_in_stock_products(db)
-
-#     result = []
-
-#     for product in products:
-#         product_data = {
-#             "id": product.id,
-#             "name": product.name,
-#             "description": product.description,
-#             "price": product.price,
-#             "category_id": product.category_id,
-#         }
-
-#         if current_user.role == "admin" or product.stock <= 3:
-#             product_data["stock"] = product.stock
-
-#         result.append(product_data)
-
-#     return result
-
-@router.get("/", response_model=list[ProductResponse])
+@router.get("", response_model=list[ProductResponse])
 def read_products(
     hide_out_of_stock: bool = Query(False, description="Hide out-of-stock products"),
     page: int = Query(1, ge=1, description="Page number"),
@@ -116,7 +91,7 @@ def read_product(product_id: int, db: Session = Depends(get_db)):
 
     return product
 
-@router.get("/category/{category_id}", response_model=list[ProductResponse])
+@router.get("/by-category/{category_id}", response_model=list[ProductResponse])
 def read_products_by_category(
     category_id: int,
     hide_out_of_stock: bool = Query(False, description="Hide out-of-stock products"),
