@@ -6,3 +6,15 @@
 2026-05-08 00:10:00,772 - INFO - ecommerce - GET /api/v1/orders/get_all_orders Status: 401 Duration: 0.0049s
 2026-05-08 01:39:04,195 - INFO - ecommerce - GET / Status: 200 Duration: 0.0595s
 2026-05-08 01:39:04,300 - INFO - ecommerce - GET /favicon.ico Status: 404 Duration: 0.0012s
+2026-05-08 16:09:14,030 - INFO - ecommerce - GET / Status: 200 Duration: 0.0086s
+2026-05-08 16:09:14,113 - INFO - ecommerce - GET /favicon.ico Status: 404 Duration: 0.0014s
+2026-05-08 16:09:23,425 - INFO - ecommerce - GET /docs Status: 200 Duration: 0.0005s
+2026-05-08 16:09:24,301 - INFO - ecommerce - GET /openapi.json Status: 200 Duration: 0.2279s
+2026-05-08 16:12:50,087 - INFO - ecommerce - POST /products/ Status: 401 Duration: 0.0056s
+2026-05-08 16:13:00,378 - INFO - ecommerce - GET /products/ Status: 200 Duration: 0.0722s
+2026-05-08 16:24:43,814 - INFO - ecommerce - GET / Status: 200 Duration: 0.004s
+2026-05-08 16:24:49,502 - INFO - ecommerce - GET /docs Status: 200 Duration: 0.0006s
+2026-05-08 16:24:49,915 - INFO - ecommerce - GET /openapi.json Status: 200 Duration: 0.1557s
+2026-05-08 16:25:09,683 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.067s
+2026-05-08 16:34:58,419 - INFO - ecommerce - GET /docs Status: 200 Duration: 0.0008s
+2026-05-08 16:34:58,537 - INFO - ecommerce - GET /openapi.json Status: 200 Duration: 0.002s
