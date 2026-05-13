@@ -2,7 +2,9 @@ version: "3.9"
 
 services:
   app:
-    build: .
+    build:
+      context: ..
+      dockerfile: main_app/Dockerfile
     container_name: ecommerce_app
     ports:
       - "8000:8000"

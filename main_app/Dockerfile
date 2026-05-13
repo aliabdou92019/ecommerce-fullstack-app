@@ -10,10 +10,17 @@ RUN apt-get update && apt-get install -y gnupg2 curl \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt .
+COPY main_app/requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+# Copy the frontend static files
+COPY frontend /app/frontend
+
+# Copy the backend app
+COPY main_app /app/main_app
+
+# Set working directory to the backend so uvicorn runs correctly
+WORKDIR /app/main_app
 
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

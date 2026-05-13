@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Monitoring Dashboard</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --success: #10b981;
+            --danger: #ef4444;
+            --border: #334155;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 1000px;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-title {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-value {
+            font-size: 2.25rem;
+            font-weight: 700;
+        }
+
+        .status-ok {
+            color: var(--success);
+        }
+
+        .status-error {
+            color: var(--danger);
+        }
+
+        .logs-section {
+            width: 100%;
+            max-width: 1000px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .logs-header {
+            padding: 1rem 1.5rem;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid var(--border);
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .refresh-btn {
+            background-color: var(--accent);
+            color: var(--bg-color);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .refresh-btn:hover {
+            opacity: 0.9;
+        }
+
+        .log-container {
+            padding: 1.5rem;
+            max-height: 400px;
+            overflow-y: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            color: #fbbf24;
+            /* yellow for warnings/errors */
+        }
+
+        .log-line {
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .log-line:last-child {
+            border-bottom: none;
+        }
+
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top: 3px solid var(--accent);
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>System Monitor</h1>
+    <div class="subtitle" id="last-updated">Last updated: --</div>
+
+    <div class="dashboard-grid">
+        <div class="card">
+            <div class="card-title">System Health</div>
+            <div class="card-value status-ok" id="health-status">Checking...</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Total Requests</div>
+            <div class="card-value" id="total-req">0</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Avg Response Time</div>
+            <div class="card-value" id="avg-time">0.00s</div>
+        </div>
+        <div class="card">
+            <div class="card-title">Error Rate</div>
+            <div class="card-value status-ok" id="err-rate">0.00%</div>
+        </div>
+    </div>
+
+    <div class="logs-section">
+        <div class="logs-header">
+            Recent Error Logs
+            <button class="refresh-btn" onclick="fetchMetrics()">Refresh Data</button>
+        </div>
+        <div class="log-container" id="logs-container">
+            Fetching logs...
+        </div>
+    </div>
+
+    <script>
+        async function fetchMetrics() {
+            try {
+                const response = await fetch('/api/v1/monitoring/dashboard');
+                const data = await response.json();
+
+                // Update basic stats
+                document.getElementById('health-status').innerText = data.status.toUpperCase();
+                document.getElementById('health-status').className = data.status === 'ok' ? 'card-value status-ok' : 'card-value status-error';
+
+                document.getElementById('total-req').innerText = data.api_metrics.total_requests.toLocaleString();
+                document.getElementById('avg-time').innerText = data.api_metrics.average_response_time_seconds.toFixed(4) + 's';
+
+                const errRate = data.api_metrics.error_rate_percentage;
+                const errEl = document.getElementById('err-rate');
+                errEl.innerText = errRate.toFixed(2) + '%';
+                errEl.className = errRate > 5 ? 'card-value status-error' : 'card-value status-ok';
+
+                // Update logs
+                const logsContainer = document.getElementById('logs-container');
+                if (data.recent_errors.length === 0) {
+                    logsContainer.innerHTML = '<div style="color: var(--success)">No recent errors found! System is stable.</div>';
+                } else {
+                    logsContainer.innerHTML = data.recent_errors.map(log =>
+                        `<div class="log-line">${log.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>`
+                    ).join('');
+                }
+
+                document.getElementById('last-updated').innerText = 'Last updated: ' + new Date().toLocaleTimeString();
+            } catch (error) {
+                console.error("Failed to fetch metrics", error);
+                document.getElementById('health-status').innerText = 'OFFLINE';
+                document.getElementById('health-status').className = 'card-value status-error';
+            }
+        }
+
+        // Fetch immediately, then every 5 seconds
+        fetchMetrics();
+        setInterval(fetchMetrics, 5000);
+    </script>
+</body>
+
+</html>

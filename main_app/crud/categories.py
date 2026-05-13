@@ -3,6 +3,7 @@ from sqlalchemy import func
 from sqlalchemy.exc import IntegrityError
 from models import Category
 from schemas.categories import CategoryCreate, CategoryUpdate
+from core.logging_config import logger
 
 
 def get_category_by_name(db: Session, name: str, exclude_category_id: int | None = None):
@@ -30,8 +31,10 @@ def create_category(db: Session, category: CategoryCreate):
     try:
         db.commit()
         db.refresh(db_category)
+        logger.info(f"Category created: {db_category.name}")
     except IntegrityError:
         db.rollback()
+        logger.error(f"Failed to create category (duplicate): {category_name}")
         return "duplicate_category"
 
     return db_category
@@ -67,8 +70,10 @@ def update_category(db: Session, category_id: int, update_data: CategoryUpdate):
     try:
         db.commit()
         db.refresh(category)
+        logger.info(f"Category updated: {category.id}")
     except IntegrityError:
         db.rollback()
+        logger.error(f"Failed to update category {category.id} (duplicate)")
         return "duplicate_category"
 
     return category
@@ -82,4 +87,5 @@ def delete_category(db: Session, category_id: int):
 
     db.delete(category)
     db.commit()
+    logger.warning(f"Category deleted: {category.id}")
     return category

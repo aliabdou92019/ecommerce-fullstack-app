@@ -11,6 +11,8 @@ from routers.categories import router as categories_router
 import redis.asyncio as redis
 import time
 from fastapi import Request
+from fastapi.responses import FileResponse, RedirectResponse, PlainTextResponse
+from pathlib import Path
 from core.logging_config import logger
 from prometheus_fastapi_instrumentator import Instrumentator
 
@@ -26,11 +28,24 @@ app.include_router(categories_router)
 app.include_router(orders_router)
 app.include_router(shopping_cart_router)
 
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    logger.error(f"Unhandled exception on {request.method} {request.url.path}: {str(exc)}", exc_info=True)
+    from fastapi.responses import JSONResponse
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Internal server error"},
+    )
+
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
     start_time = time.time()
-
-    response = await call_next(request)
+    try:
+        response = await call_next(request)
+    except Exception as exc:
+        duration = round(time.time() - start_time, 4)
+        logger.error(f"{request.method} {request.url.path} Status: 500 Duration: {duration}s - {str(exc)}")
+        raise
 
     duration = round(time.time() - start_time, 4)
 
@@ -43,11 +58,10 @@ async def log_requests(request: Request, call_next):
 
     return response
 
-
-@app.get("/")
-def root():
-    return {"message": "Hello World!"}
-
+@app.get("/health")
+def health_check():
+    logger.debug("Health check requested")
+    return {"status": "ok", "service": "E-Commerce API"}
 
 async def get_redis():
     client = redis.from_url("redis://localhost:6379")
@@ -55,7 +69,42 @@ async def get_redis():
         yield client
     finally:
         await client.close() 
-        
-        
 
+# ==========================================
+# Serve Frontend Static Files
+# ==========================================
+FRONTEND_ROOT = Path(__file__).resolve().parent.parent / "frontend"
 
+def safe_path(route):
+    candidate = (FRONTEND_ROOT / route).resolve()
+    try:
+        candidate.relative_to(FRONTEND_ROOT)
+    except ValueError:
+        return None
+    return candidate
+
+@app.get("/{route:path}")
+async def frontend(route: str, incoming: Request):
+    if route.endswith(".html"):
+        clean_route = route[:-5]
+        location = "/" if clean_route == "index" else f"/{clean_route}"
+        if incoming.url.query:
+            location = f"{location}?{incoming.url.query}"
+        return RedirectResponse(location, status_code=301)
+
+    if not route or route == "/":
+        route = "index.html"
+
+    file_path = safe_path(route)
+    if file_path and file_path.is_file():
+        return FileResponse(file_path)
+
+    if file_path and file_path.is_dir() and (file_path / "index.html").is_file():
+        return FileResponse(file_path / "index.html")
+
+    if "." not in Path(route).name:
+        html_path = safe_path(f"{route}.html")
+        if html_path and html_path.is_file():
+            return FileResponse(html_path)
+
+    return PlainTextResponse("Not found", status_code=404)

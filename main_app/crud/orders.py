@@ -2,6 +2,7 @@ from models import Order, OrderItem,Product
 from schemas.orders import OrderCreate
 from sqlalchemy.orm import Session
 from schemas.shopping_cart import CartResponse
+from core.logging_config import logger
 
 def add_order(db:Session,order_data:CartResponse):
   total_price = 0
@@ -31,8 +32,8 @@ def add_order(db:Session,order_data:CartResponse):
   db.add_all(order_list)
   db.commit()
   db.refresh(new_order)
+  logger.info(f"Order created: {new_order.id} for user: {new_order.user_id}")
   return new_order
-  logger.info(f"Order created: {new_order.id}")
 
 def get_user_orders(user_id:int,db:Session): 
   orders = db.query(Order).filter(Order.user_id == user_id).all()
@@ -57,7 +58,9 @@ def cancel_order(db: Session, order_id: int, user_id: int = None):
     if order.status == 'pending':
       order.status = 'canceled'
       db.commit()
+      logger.info(f"Order {order_id} canceled successfully")
       return True
+    logger.warning(f"Failed to cancel order {order_id}: status is {order.status}")
     return False
 
 def change_to_shipping(db:Session,order_id:int):
@@ -65,5 +68,7 @@ def change_to_shipping(db:Session,order_id:int):
   if order and order.status == "pending":
     order.status = "shipped"
     db.commit()
+    logger.info(f"Order {order_id} status changed to shipped")
     return True
+  logger.warning(f"Failed to change order {order_id} to shipping")
   return False

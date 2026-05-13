@@ -99,20 +99,20 @@ def create_user(db: Session, user_in: UserCreate):
         db.add(new_user)
         db.commit()
         db.refresh(new_user)
+        logger.info(f"New user registered: {new_user.email}")
         return new_user
     except SQLAlchemyError as exc:
         db.rollback()
+        logger.error(f"Failed to create user {user_in.email}: {str(exc)}")
         raise DatabaseException("Failed to create user") from exc
-
-    logger.info(f"New user registered: {new_user.email}")
 
 
 def authenticate_user(db: Session, email: str, password: str):
     user = get_user_by_email(db, email)
     if not user or not verify_password(password, user.password):
+        logger.warning(f"Failed login attempt for email: {email}")
         raise AppException(status.HTTP_401_UNAUTHORIZED, "Invalid email or password")
-    logger.warning(f"Failed login attempt: {email}")
-    logger.info(f"User logged in: {email}")
+    logger.info(f"User logged in successfully: {email}")
 
     return user
 
@@ -145,9 +145,11 @@ def update_user(db: Session, user_in: UserUpdate, user: models.User):
     try:
         db.commit()
         db.refresh(user)
+        logger.info(f"User updated successfully: {user.email}")
         return user
     except SQLAlchemyError as exc:
         db.rollback()
+        logger.error(f"Failed to update user {user.email}: {str(exc)}")
         raise DatabaseException("Failed to update user") from exc
 
 
@@ -157,9 +159,11 @@ def delete_user(db: Session, user_id: int):
     try:
         db.delete(user)
         db.commit()
+        logger.info(f"User deleted successfully: ID {user_id}")
         return {"detail": "User deleted successfully"}
     except SQLAlchemyError as exc:
         db.rollback()
+        logger.error(f"Failed to delete user {user_id}: {str(exc)}")
         raise DatabaseException("Failed to delete user") from exc
 
 

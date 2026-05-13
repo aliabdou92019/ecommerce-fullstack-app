@@ -34,9 +34,8 @@ def create_product(db: Session, product_data: ProductCreate):
     db.add(new_product)
     db.commit()
     db.refresh(new_product)
-
-    return new_product
     logger.info(f"Product created: {new_product.name}")
+    return new_product
 
 def get_products_stock_admin(
     db: Session,
@@ -125,9 +124,8 @@ def update_product(db: Session, product_id: int, product_data: ProductUpdate):
 
     db.commit()
     db.refresh(product)
-
-    return product
     logger.info(f"Product updated: {product.id}")
+    return product
 
 def delete_product(db: Session, product_id: int):
     product = db.query(Product).filter(Product.id == product_id).first()
@@ -137,5 +135,5 @@ def delete_product(db: Session, product_id: int):
 
     db.delete(product)
     db.commit()
-    return product
     logger.warning(f"Product deleted: {product.id}")
+    return product
