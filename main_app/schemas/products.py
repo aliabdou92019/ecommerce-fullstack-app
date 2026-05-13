@@ -7,6 +7,7 @@ class ProductCreate(BaseModel):
     description: Optional[str] = None
     price: float = Field(..., gt=0)
     stock: int = Field(default=0, ge=0)
+    img_path: Optional[str] = None
     category_id: int
 
 from pydantic import BaseModel, Field, field_validator, ConfigDict
@@ -19,6 +20,7 @@ class ProductResponse(BaseModel):
     description: Optional[str]
     price: float
     stock: Literal["in-stock", "out-of-stock"]
+    img_path: Optional[str]
     category_id: Optional[int]
 
     @field_validator("stock", mode="before")
@@ -35,6 +37,7 @@ class ProductStockResponse(BaseModel):
     id: int
     name: str
     stock: int
+    img_path: Optional[str]
     category_id: Optional[int]
 
     class Config:
@@ -45,6 +48,7 @@ class ProductUpdate(BaseModel):
     description: Optional[str] = None
     price: Optional[float] = Field(None, gt=0)
     stock: Optional[int] = Field(None, ge=0)
+    img_path: Optional[str] = None
     category_id: Optional[int] = None
         
 class ProductDeleteResponse(BaseModel):
