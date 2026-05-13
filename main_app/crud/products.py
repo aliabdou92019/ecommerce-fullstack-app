@@ -27,6 +27,7 @@ def create_product(db: Session, product_data: ProductCreate):
         description=product_data.description,
         price=product_data.price,
         stock=product_data.stock,
+        img_path=product_data.img_path,
         category_id=product_data.category_id
     )
 

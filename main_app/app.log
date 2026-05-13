@@ -1278,3 +1278,105 @@
 2026-05-09 00:33:35,075 - INFO - ecommerce - POST /api/v1/products Status: 201 Duration: 0.0057s
 2026-05-09 00:33:35,081 - INFO - ecommerce - DELETE /api/v1/products/16 Status: 200 Duration: 0.0052s
 2026-05-09 00:33:35,089 - INFO - ecommerce - GET /api/v1/products/search Status: 200 Duration: 0.0029s
+2026-05-13 23:47:28,377 - INFO - ecommerce - GET / Status: 200 Duration: 0.0049s
+2026-05-13 23:47:28,429 - INFO - ecommerce - GET /favicon.ico Status: 404 Duration: 0.0005s
+2026-05-13 23:48:18,629 - INFO - ecommerce - GET / Status: 200 Duration: 0.002s
+2026-05-13 23:48:29,551 - WARNING - ecommerce - Failed login attempt: admin@a.a
+2026-05-13 23:48:29,552 - INFO - ecommerce - User logged in: admin@a.a
+2026-05-13 23:48:33,910 - WARNING - ecommerce - Failed login attempt: admin@a.a
+2026-05-13 23:48:33,910 - INFO - ecommerce - User logged in: admin@a.a
+2026-05-14 00:52:22,640 - WARNING - ecommerce - Failed login attempt: admin@a.a
+2026-05-14 00:52:22,641 - INFO - ecommerce - User logged in: admin@a.a
+2026-05-14 01:00:40,129 - WARNING - ecommerce - Failed login attempt: admin@a.a
+2026-05-14 01:00:40,131 - INFO - ecommerce - User logged in: admin@a.a
+2026-05-14 01:00:40,154 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.4968s
+2026-05-14 01:00:40,193 - INFO - ecommerce - GET /api/v1/users/me/role Status: 200 Duration: 0.0185s
+2026-05-14 01:00:40,424 - INFO - ecommerce - GET /api/v1/categories/getall Status: 200 Duration: 0.0081s
+2026-05-14 01:00:40,449 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0152s
+2026-05-14 01:00:40,464 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0068s
+2026-05-14 01:00:40,490 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0051s
+2026-05-14 01:00:40,519 - INFO - ecommerce - GET /api/v1/users/me Status: 200 Duration: 0.0188s
+2026-05-14 01:00:40,534 - INFO - ecommerce - GET /api/v1/users/me/role Status: 200 Duration: 0.0097s
+2026-05-14 01:00:40,549 - INFO - ecommerce - GET /api/v1/users/ Status: 200 Duration: 0.0092s
+2026-05-14 01:00:40,572 - INFO - ecommerce - GET /api/v1/orders/get_all_orders Status: 200 Duration: 0.0169s
+2026-05-14 01:00:40,589 - INFO - ecommerce - GET /api/v1/products/admin/stock Status: 200 Duration: 0.0125s
+2026-05-14 01:00:40,627 - INFO - ecommerce - GET /api/v1/products/admin/stock Status: 200 Duration: 0.01s
+2026-05-14 01:00:40,667 - INFO - ecommerce - GET /api/v1/products/admin/stock Status: 200 Duration: 0.0079s
+2026-05-14 01:06:46,343 - INFO - ecommerce - GET /docs Status: 200 Duration: 0.0005s
+2026-05-14 01:06:46,641 - INFO - ecommerce - GET /openapi.json Status: 200 Duration: 0.2297s
+2026-05-14 01:08:00,883 - WARNING - ecommerce - Failed login attempt: admin@a.a
+2026-05-14 01:08:00,883 - INFO - ecommerce - User logged in: admin@a.a
+2026-05-14 01:08:00,886 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.2886s
+2026-05-14 01:08:00,898 - INFO - ecommerce - GET /api/v1/users/me/role Status: 200 Duration: 0.0069s
+2026-05-14 01:08:01,006 - INFO - ecommerce - GET /api/v1/categories/getall Status: 200 Duration: 0.004s
+2026-05-14 01:08:01,033 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0091s
+2026-05-14 01:08:01,048 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0081s
+2026-05-14 01:08:01,059 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0045s
+2026-05-14 01:08:01,071 - INFO - ecommerce - GET /api/v1/users/me Status: 200 Duration: 0.0044s
+2026-05-14 01:08:01,081 - INFO - ecommerce - GET /api/v1/users/me/role Status: 200 Duration: 0.0048s
+2026-05-14 01:08:01,097 - INFO - ecommerce - GET /api/v1/users/ Status: 200 Duration: 0.008s
+2026-05-14 01:08:01,122 - INFO - ecommerce - GET /api/v1/orders/get_all_orders Status: 200 Duration: 0.0183s
+2026-05-14 01:08:01,137 - INFO - ecommerce - GET /api/v1/products/admin/stock Status: 200 Duration: 0.0096s
+2026-05-14 01:08:01,153 - INFO - ecommerce - GET /api/v1/products/admin/stock Status: 200 Duration: 0.0091s
+2026-05-14 01:08:01,173 - INFO - ecommerce - GET /api/v1/products/admin/stock Status: 200 Duration: 0.004s
+2026-05-14 01:08:20,262 - INFO - ecommerce - POST /api/v1/users/register Status: 201 Duration: 0.3628s
+2026-05-14 01:08:20,639 - WARNING - ecommerce - Failed login attempt: user@u.u
+2026-05-14 01:08:20,639 - INFO - ecommerce - User logged in: user@u.u
+2026-05-14 01:08:20,641 - INFO - ecommerce - POST /api/v1/users/login Status: 200 Duration: 0.3569s
+2026-05-14 01:08:20,654 - INFO - ecommerce - GET /api/v1/users/me/role Status: 200 Duration: 0.0069s
+2026-05-14 01:08:20,746 - INFO - ecommerce - GET /api/v1/users/me Status: 200 Duration: 0.0033s
+2026-05-14 01:08:20,762 - INFO - ecommerce - GET /api/v1/users/me/role Status: 200 Duration: 0.0049s
+2026-05-14 01:08:23,513 - INFO - ecommerce - GET /api/v1/categories/getall Status: 200 Duration: 0.0065s
+2026-05-14 01:08:23,546 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0131s
+2026-05-14 01:08:23,572 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0077s
+2026-05-14 01:08:23,602 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0057s
+2026-05-14 01:08:23,623 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0079s
+2026-05-14 01:08:23,681 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0083s
+2026-05-14 01:08:23,698 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0057s
+2026-05-14 01:09:28,223 - INFO - ecommerce - GET /api/v1/users/me Status: 200 Duration: 0.0073s
+2026-05-14 01:09:28,234 - INFO - ecommerce - GET /api/v1/users/me/role Status: 200 Duration: 0.0039s
+2026-05-14 01:09:30,969 - INFO - ecommerce - GET /api/v1/categories/getall Status: 200 Duration: 0.0083s
+2026-05-14 01:09:30,994 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0127s
+2026-05-14 01:09:31,022 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0104s
+2026-05-14 01:09:31,040 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0064s
+2026-05-14 01:09:34,726 - INFO - ecommerce - GET /api/v1/users/me Status: 200 Duration: 0.0039s
+2026-05-14 01:09:34,742 - INFO - ecommerce - GET /api/v1/users/me/role Status: 200 Duration: 0.0043s
+2026-05-14 01:09:37,465 - INFO - ecommerce - GET /api/v1/categories/getall Status: 200 Duration: 0.0025s
+2026-05-14 01:09:37,487 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0044s
+2026-05-14 01:09:37,512 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0068s
+2026-05-14 01:09:37,529 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0065s
+2026-05-14 01:09:37,771 - INFO - ecommerce - GET /api/v1/users/me Status: 200 Duration: 0.0044s
+2026-05-14 01:09:37,780 - INFO - ecommerce - GET /api/v1/users/me/role Status: 200 Duration: 0.0035s
+2026-05-14 01:09:40,498 - INFO - ecommerce - GET /api/v1/users/me Status: 200 Duration: 0.0044s
+2026-05-14 01:09:40,507 - INFO - ecommerce - GET /api/v1/users/me/role Status: 200 Duration: 0.0035s
+2026-05-14 01:09:43,232 - INFO - ecommerce - GET /api/v1/categories/getall Status: 200 Duration: 0.0032s
+2026-05-14 01:09:43,267 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0062s
+2026-05-14 01:09:43,289 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0055s
+2026-05-14 01:09:43,313 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0046s
+2026-05-14 01:12:45,545 - INFO - ecommerce - GET /api/v1/users/me Status: 200 Duration: 0.0058s
+2026-05-14 01:12:45,551 - INFO - ecommerce - GET /api/v1/users/me/role Status: 200 Duration: 0.0031s
+2026-05-14 01:12:48,279 - INFO - ecommerce - GET /api/v1/categories/getall Status: 200 Duration: 0.0058s
+2026-05-14 01:12:48,297 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0117s
+2026-05-14 01:12:48,319 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0031s
+2026-05-14 01:12:48,337 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0028s
+2026-05-14 01:12:48,346 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0035s
+2026-05-14 01:12:48,362 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0073s
+2026-05-14 01:12:48,370 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0022s
+2026-05-14 01:12:51,210 - INFO - ecommerce - GET /api/v1/users/me Status: 200 Duration: 0.0041s
+2026-05-14 01:12:51,217 - INFO - ecommerce - GET /api/v1/users/me/role Status: 200 Duration: 0.003s
+2026-05-14 01:12:56,689 - INFO - ecommerce - GET /api/v1/categories/getall Status: 200 Duration: 0.0037s
+2026-05-14 01:12:56,702 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0066s
+2026-05-14 01:12:56,719 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0099s
+2026-05-14 01:12:56,729 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0054s
+2026-05-14 01:12:56,745 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0072s
+2026-05-14 01:12:56,778 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.025s
+2026-05-14 01:12:56,791 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0066s
+2026-05-14 01:13:10,416 - INFO - ecommerce - GET /api/v1/users/me Status: 200 Duration: 0.0039s
+2026-05-14 01:13:10,424 - INFO - ecommerce - GET /api/v1/users/me/role Status: 200 Duration: 0.0043s
+2026-05-14 01:13:15,832 - INFO - ecommerce - GET /api/v1/categories/getall Status: 200 Duration: 0.0037s
+2026-05-14 01:13:15,852 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0101s
+2026-05-14 01:13:15,866 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.008s
+2026-05-14 01:13:15,881 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.007s
+2026-05-14 01:13:15,906 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0037s
+2026-05-14 01:13:15,944 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0081s
+2026-05-14 01:13:15,973 - INFO - ecommerce - GET /api/v1/products Status: 200 Duration: 0.0052s

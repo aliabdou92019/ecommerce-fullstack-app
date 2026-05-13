@@ -33,6 +33,7 @@ class Product(Base):
     description = Column(Text, nullable=True)
     price = Column(Float, nullable=False)
     stock = Column(Integer, default=0)
+    img_path = Column(String(255), nullable=True)
     category_id = Column(Integer, ForeignKey("categories.id"))
     category = relationship("Category", back_populates="products")
     order_items = relationship("OrderItem", back_populates="product")
