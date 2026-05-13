@@ -7,7 +7,7 @@ from routers.categories import router as categories_router
 from routers.products import router as products_router
 from routers.orders import router as orders_router
 from routers.shopping_cart import router as shopping_cart_router
-from routers.categories import router as categories_router
+from routers.monitoring import router as monitoring_router
 import redis.asyncio as redis
 import time
 from fastapi import Request
@@ -27,6 +27,9 @@ app.include_router(products_router)
 app.include_router(categories_router)
 app.include_router(orders_router)
 app.include_router(shopping_cart_router)
+app.include_router(monitoring_router)
+
+from core.metrics import metrics_data
 
 @app.exception_handler(Exception)
 async def global_exception_handler(request: Request, exc: Exception):
@@ -40,14 +43,21 @@ async def global_exception_handler(request: Request, exc: Exception):
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
     start_time = time.time()
+    metrics_data["total_requests"] += 1
+
     try:
         response = await call_next(request)
+        if response.status_code >= 500:
+            metrics_data["total_errors"] += 1
     except Exception as exc:
+        metrics_data["total_errors"] += 1
         duration = round(time.time() - start_time, 4)
+        metrics_data["total_response_time"] += duration
         logger.error(f"{request.method} {request.url.path} Status: 500 Duration: {duration}s - {str(exc)}")
         raise
 
     duration = round(time.time() - start_time, 4)
+    metrics_data["total_response_time"] += duration
 
     logger.info(
         f"{request.method} "
