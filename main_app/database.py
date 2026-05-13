@@ -9,15 +9,19 @@ load_dotenv()
 host = os.getenv("DB_SERVER")
 database = os.getenv("DB_NAME")
 driver = os.getenv("DB_DRIVER")
+user = os.getenv("DB_USER")
+password = os.getenv("DB_PASSWORD")
 
 # Construct the connection string
 params = urllib.parse.quote_plus(
     f"DRIVER={{{driver}}};"
     f"SERVER={host};"
     f"DATABASE={database};"
-    f"Trusted_Connection=yes;"
+    f"UID={user};"
+    f"PWD={password};"
     f"TrustServerCertificate=yes;"
 )
+
 
 SQLALCHEMY_DATABASE_URL = f"mssql+pyodbc:///?odbc_connect={params}"
 
