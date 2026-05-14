@@ -48,7 +48,7 @@ class Order(Base):
     status = Column(String(20), default="pending")
     created_at = Column(DateTime, default=func.now())
     owner = relationship("User", back_populates="orders")
-    items = relationship("OrderItem", back_populates="order")
+    items = relationship("OrderItem", back_populates="order", cascade="all, delete")
 
 
 class OrderItem(Base):
