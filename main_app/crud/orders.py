@@ -57,6 +57,9 @@ def cancel_order(db: Session, order_id: int, user_id: int = None):
       return False
     if order.status == 'pending':
       order.status = 'canceled'
+      for item in order.items:
+        product = db.query(Product).filter(Product.id == item.product_id).first()
+        product.stock = product.stock + item.quantity
       db.commit()
       logger.info(f"Order {order_id} canceled successfully")
       return True
