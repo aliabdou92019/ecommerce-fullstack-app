@@ -76,11 +76,11 @@ This project was built collaboratively by our engineering team:
 * **Yousef Medhat**
   Developed all files and logic related to the order processing system and order item management.
 
-* **Ali Abdo**
-  Worked on all related files to products, including CRUD operations, stock management, and filtering.
-
 * **Amira Azzam**
   Developed the security layer, working on all related files to users, JWT authentication, and authorization.
 
+* **Ali Abdo**
+  Worked on all related files to products, including CRUD operations, stock management, and filtering.
+  
 * **Amr Yasser**
   Worked on all related files to categories and developed the entire frontend application and user interface.
