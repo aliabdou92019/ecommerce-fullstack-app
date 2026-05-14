@@ -6,9 +6,6 @@ test_products.py — CRUD operations for Products and Categories.
 
 import pytest
 
-
-# ── Helpers ───────────────────────────────────────────────────────────────────
-
 def _register_and_login(client, username, email, role="user"):
     client.post(
         "/api/v1/users/register",
@@ -42,9 +39,6 @@ def _create_product(client, admin_token, category_id, name="Laptop"):
             "category_id": category_id,
         },
     )
-
-
-# ── Category CRUD ─────────────────────────────────────────────────────────────
 
 def test_create_category_as_admin(client):
     token = _register_and_login(client, "prodadmin", "prodadmin@test.com", "admin")
@@ -111,9 +105,6 @@ def test_delete_category(client):
         headers={"Authorization": f"Bearer {token}"},
     )
     assert resp.status_code == 200
-
-
-# ── Product CRUD ──────────────────────────────────────────────────────────────
 
 def test_create_product_as_admin(client):
     token = _register_and_login(client, "prodc_admin", "prodc_admin@test.com", "admin")

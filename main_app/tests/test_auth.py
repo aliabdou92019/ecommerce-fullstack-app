@@ -1,12 +1,6 @@
-"""
-test_auth.py — Authentication: registration, login, token validation,
-               protected endpoint access, and role-based restrictions.
-"""
-
 import pytest
 
 
-# ── Registration ──────────────────────────────────────────────────────────────
 
 def test_register_success(client):
     response = client.post(
@@ -22,7 +16,7 @@ def test_register_success(client):
     data = response.json()
     assert data["email"] == "authuser@test.com"
     assert data["username"] == "authuser"
-    assert "password" not in data  # password must never be returned
+    assert "password" not in data 
 
 
 def test_register_duplicate_email(client):
@@ -31,7 +25,7 @@ def test_register_duplicate_email(client):
         "/api/v1/users/register",
         json={
             "username": "dupemailuser",
-            "email": "authuser@test.com",   # same e-mail as above
+            "email": "authuser@test.com", 
             "password": "securePass1",
             "role": "user",
         },
@@ -53,7 +47,7 @@ def test_register_duplicate_username(client):
     client.post(
         "/api/v1/users/register",
         json={
-            "username": "authuser",          # same username as first test
+            "username": "authuser",         
             "email": "unique_for_dup@test.com",
             "password": "securePass1",
             "role": "user",
@@ -85,7 +79,6 @@ def test_register_invalid_email_format(client):
     assert response.status_code == 422
 
 
-# ── Login ─────────────────────────────────────────────────────────────────────
 
 def test_login_success(client):
     response = client.post(
@@ -113,8 +106,6 @@ def test_login_nonexistent_user(client):
     )
     assert response.status_code == 401
 
-
-# ── Token & protected endpoints ───────────────────────────────────────────────
 
 def test_get_current_user_with_valid_token(client):
     """A valid token must allow access to /me."""
@@ -147,7 +138,6 @@ def test_get_current_user_with_invalid_token(client):
     assert response.status_code == 401
 
 
-# ── Role-based restrictions ───────────────────────────────────────────────────
 
 def _register_and_login(client, username, email, role="user"):
     client.post(

@@ -1,18 +1,8 @@
-"""
-conftest.py — shared fixtures for the entire test suite.
-
-Strategy:
-  • Replace the production SQL Server DB with an in-memory SQLite DB.
-  • Replace the async Redis client with a lightweight fake (fakeredis).
-  • Expose a TestClient that every test module can import.
-"""
-
 import json
 import sys
 import os
 import pytest
 
-# ── make sure the main_app directory is on sys.path ──────────────────────────
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
@@ -27,7 +17,6 @@ from dependencies import get_redis
 
 from sqlalchemy.pool import StaticPool
 
-# ── In-memory SQLite engine (one per test session) ───────────────────────────
 SQLALCHEMY_TEST_URL = "sqlite:///:memory:"
 
 engine = create_engine(
@@ -38,9 +27,7 @@ engine = create_engine(
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
-# ── Fake async Redis ──────────────────────────────────────────────────────────
 class FakeRedis:
-    """Minimal in-memory Redis substitute for testing cart & order logic."""
 
     def __init__(self):
         self._store: dict = {}
@@ -58,7 +45,6 @@ class FakeRedis:
         pass
 
 
-# ── Session-scoped fixtures ───────────────────────────────────────────────────
 
 @pytest.fixture(scope="session", autouse=True)
 def setup_database():

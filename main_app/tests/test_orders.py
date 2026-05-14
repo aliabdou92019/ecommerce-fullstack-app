@@ -1,14 +1,6 @@
-"""
-test_orders.py — Order lifecycle tests.
-                 Covers: creating from cart, fetching own/all orders,
-                 cancellation, shipping state transition,
-                 invalid state transitions, and unauthorized access.
-"""
-
 import pytest
 
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
 
 def _register_and_login(client, username, email, role="user"):
     client.post(
@@ -61,8 +53,6 @@ def _place_order(client, user_token):
     )
 
 
-# ── Order creation ────────────────────────────────────────────────────────────
-
 def test_create_order_from_cart(client):
     admin_token = _register_and_login(client, "ord_admin", "ord_admin@test.com", "admin")
     user_token  = _register_and_login(client, "ord_buyer", "ord_buyer@test.com", "user")
@@ -81,7 +71,6 @@ def test_create_order_from_cart(client):
 def test_create_order_with_empty_cart(client):
     """Placing an order when the cart is empty must return 404."""
     user_token = _register_and_login(client, "empty_buyer", "empty_buyer@test.com")
-    # Cart is empty — no items added
     response = _place_order(client, user_token)
     assert response.status_code == 404
 
@@ -91,8 +80,6 @@ def test_order_unauthorized(client):
     response = client.post("/api/v1/orders/create")
     assert response.status_code == 401
 
-
-# ── Fetching orders ───────────────────────────────────────────────────────────
 
 def test_get_my_orders(client):
     admin_token = _register_and_login(client, "my_ord_admin", "my_ord_admin@test.com", "admin")
@@ -133,8 +120,6 @@ def test_get_all_orders_unauthorized(client):
     assert response.status_code in [401, 403]
 
 
-# ── Order cancellation ────────────────────────────────────────────────────────
-
 def test_cancel_pending_order(client):
     admin_token = _register_and_login(client, "cancel_admin", "cancel_admin@test.com", "admin")
     user_token  = _register_and_login(client, "cancel_buyer", "cancel_buyer@test.com", "user")
@@ -161,7 +146,6 @@ def test_cancel_nonexistent_order(client):
     assert response.status_code == 404
 
 
-# ── Shipping state transition ─────────────────────────────────────────────────
 
 def test_ship_order_as_admin(client):
     admin_token = _register_and_login(client, "ship_admin", "ship_admin@test.com", "admin")
@@ -208,15 +192,13 @@ def test_cancel_already_shipped_order(client):
     order_resp = _place_order(client, user_token)
     order_id = order_resp.json()["id"]
 
-    # First ship it
     client.put(
         f"/api/v1/orders/put/ship/{order_id}",
         headers={"Authorization": f"Bearer {admin_token}"},
     )
 
-    # Then try to cancel — should fail
     response = client.delete(
         f"/api/v1/orders/cancel/{order_id}",
         headers={"Authorization": f"Bearer {user_token}"},
     )
-    assert response.status_code == 404  # already shipped → not cancellable
+    assert response.status_code == 404 

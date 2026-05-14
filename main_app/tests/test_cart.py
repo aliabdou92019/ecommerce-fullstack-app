@@ -105,7 +105,7 @@ def test_add_exceeds_stock(client):
     response = client.post(
         "/api/v1/cart/",
         headers={"Authorization": f"Bearer {user_token}"},
-        json={"product_id": prod_id, "quantity": 10},   # 10 > stock of 3
+        json={"product_id": prod_id, "quantity": 10}, 
     )
     assert response.status_code == 400
 
@@ -117,14 +117,12 @@ def test_update_cart_item(client):
     cat_id  = _create_category(client, admin_token, "UpdCat")
     prod_id = _create_product(client, admin_token, cat_id, "UpdProd")
 
-    # Add first
     client.post(
         "/api/v1/cart/",
         headers={"Authorization": f"Bearer {user_token}"},
         json={"product_id": prod_id, "quantity": 1},
     )
 
-    # Update quantity
     response = client.put(
         f"/api/v1/cart/{prod_id}",
         headers={"Authorization": f"Bearer {user_token}"},
