@@ -1,239 +1,451 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" data-layout="topnav">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
+    <title>System Monitoring</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Monitoring Dashboard</title>
+    <meta content="HNU Store monitoring dashboard" name="description" />
+
+    <script src="assets/js/config.js"></script>
+    <link href="assets/css/vendor.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link href="assets/css/dashboard.css" rel="stylesheet" type="text/css" />
+
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --success: #10b981;
-            --danger: #ef4444;
-            --border: #334155;
+        .monitoring-card {
+            min-height: 142px;
         }
 
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
+        .monitoring-card h3 {
+            overflow-wrap: anywhere;
+            line-height: 1.1;
+        }
+
+        .monitoring-icon-circle {
+            display: inline-flex;
             align-items: center;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .subtitle {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            width: 100%;
-            max-width: 1000px;
-            margin-bottom: 2rem;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
-        }
-
-        .card-title {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
-        }
-
-        .card-value {
-            font-size: 2.25rem;
-            font-weight: 700;
-        }
-
-        .status-ok {
-            color: var(--success);
-        }
-
-        .status-error {
-            color: var(--danger);
-        }
-
-        .logs-section {
-            width: 100%;
-            max-width: 1000px;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .logs-header {
-            padding: 1rem 1.5rem;
-            background-color: rgba(0, 0, 0, 0.2);
-            border-bottom: 1px solid var(--border);
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .refresh-btn {
-            background-color: var(--accent);
-            color: var(--bg-color);
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-
-        .refresh-btn:hover {
-            opacity: 0.9;
-        }
-
-        .log-container {
-            padding: 1.5rem;
-            max-height: 400px;
-            overflow-y: auto;
-            font-family: 'Consolas', 'Monaco', monospace;
-            font-size: 0.875rem;
-            line-height: 1.5;
-            color: #fbbf24;
-            /* yellow for warnings/errors */
-        }
-
-        .log-line {
-            margin-bottom: 0.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .log-line:last-child {
-            border-bottom: none;
-        }
-
-        .spinner {
-            border: 3px solid rgba(255, 255, 255, 0.1);
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            min-width: 46px;
+            flex: 0 0 46px;
             border-radius: 50%;
-            border-top: 3px solid var(--accent);
-            width: 20px;
-            height: 20px;
-            animation: spin 1s linear infinite;
-            display: none;
         }
 
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
+        .monitoring-empty .monitoring-icon-circle {
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            flex-basis: 42px;
+        }
 
-            100% {
-                transform: rotate(360deg);
+        .monitoring-log-box {
+            max-height: 430px;
+            overflow: auto;
+            font-family: Consolas, Monaco, "Courier New", monospace;
+            font-size: 13px;
+            line-height: 1.55;
+        }
+
+        .monitoring-log-line {
+            display: flex;
+            gap: 10px;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--bs-border-color);
+            color: var(--bs-body-color);
+            word-break: break-word;
+        }
+
+        .monitoring-log-line:last-child {
+            border-bottom: 0;
+        }
+
+        .monitoring-log-number {
+            flex: 0 0 auto;
+            color: var(--bs-secondary-color);
+            font-weight: 700;
+        }
+
+        .monitoring-empty {
+            min-height: 180px;
+        }
+
+        .monitoring-status-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            min-width: 10px;
+            flex: 0 0 10px;
+            border-radius: 50%;
+            background: var(--bs-secondary);
+        }
+
+        .monitoring-status-dot.is-online {
+            background: var(--bs-success);
+            box-shadow: 0 0 0 4px rgba(var(--bs-success-rgb), .12);
+        }
+
+        .monitoring-status-dot.is-offline {
+            background: var(--bs-danger);
+            box-shadow: 0 0 0 4px rgba(var(--bs-danger-rgb), .12);
+        }
+
+        @media (max-width: 575.98px) {
+            .monitoring-actions,
+            .monitoring-actions .btn {
+                width: 100%;
             }
         }
     </style>
 </head>
 
 <body>
+    <div class="wrapper">
+        <header class="app-topbar">
+            <div class="page-container topbar-menu">
+                <div class="d-flex align-items-center gap-2">
+                    <a href="dashboard" class="logo">
+                        <span class="logo-light">
+                            <span class="logo-lg"><img src="assets/images/newlogo.png" alt="logo"></span>
+                            <span class="logo-sm"><img src="assets/images/logo-sm.png" alt="small logo"></span>
+                        </span>
+                        <span class="logo-dark">
+                            <span class="logo-lg"><img src="assets/images/newlogo.png" alt="dark logo"></span>
+                            <span class="logo-sm"><img src="assets/images/logo-sm.png" alt="small logo"></span>
+                        </span>
+                    </a>
+                </div>
 
-    <h1>System Monitor</h1>
-    <div class="subtitle" id="last-updated">Last updated: --</div>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="topbar-item d-none d-sm-flex">
+                        <button class="topbar-link btn btn-outline-primary btn-icon" id="light-dark-mode" type="button">
+                            <i class="ti ti-moon fs-22"></i>
+                        </button>
+                    </div>
 
-    <div class="dashboard-grid">
-        <div class="card">
-            <div class="card-title">System Health</div>
-            <div class="card-value status-ok" id="health-status">Checking...</div>
-        </div>
-        <div class="card">
-            <div class="card-title">Total Requests</div>
-            <div class="card-value" id="total-req">0</div>
-        </div>
-        <div class="card">
-            <div class="card-title">Avg Response Time</div>
-            <div class="card-value" id="avg-time">0.00s</div>
-        </div>
-        <div class="card">
-            <div class="card-title">Error Rate</div>
-            <div class="card-value status-ok" id="err-rate">0.00%</div>
+                    <div class="topbar-item">
+                        <a class="topbar-link btn btn-outline-primary btn-icon" href="dashboard" aria-label="Dashboard">
+                            <i class="ti ti-layout-dashboard fs-22"></i>
+                        </a>
+                    </div>
+
+                    <div class="topbar-item">
+                        <div class="dropdown">
+                            <button class="topbar-link btn btn-outline-primary dropdown-toggle drop-arrow-none"
+                                data-bs-toggle="dropdown" data-bs-offset="0,22" type="button" aria-haspopup="false"
+                                aria-expanded="false">
+                                <span class="d-flex align-items-center gap-2">
+                                    <i class="ti ti-user-circle fs-22"></i>
+                                    <span class="d-none d-md-block fw-semibold">Admin</span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a href="dashboard" class="dropdown-item">
+                                    <i class="ti ti-layout-dashboard me-1 fs-17 align-middle"></i>
+                                    <span class="align-middle">Dashboard</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="javascript:void(0);" class="dropdown-item text-danger" id="dashboardLogoutBtn">
+                                    <i class="ti ti-logout me-1 fs-17 align-middle"></i>
+                                    <span class="align-middle">Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="page-content">
+            <div class="page-container">
+                <div class="page-title-head d-flex align-items-sm-center flex-sm-row flex-column gap-2">
+                    <div class="flex-grow-1">
+                        <h4 class="fs-18 text-uppercase fw-bold mb-0">System Monitoring</h4>
+                        <div class="text-muted" id="last-updated">Last updated: --</div>
+                    </div>
+                    <div class="monitoring-actions">
+                        <button type="button" class="btn btn-sm btn-soft-primary" id="refreshMetricsBtn">
+                            <i class="ti ti-refresh me-1"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+
+                <div class="alert d-none mt-3 mb-0" id="monitoringAlert" role="alert"></div>
+
+                <div class="card mt-3">
+                    <div class="card-body d-flex flex-wrap align-items-center justify-content-between gap-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="avatar-title text-bg-primary rounded-circle fs-22 monitoring-icon-circle">
+                                <i class="ti ti-activity-heartbeat"></i>
+                            </span>
+                            <div>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="monitoring-status-dot" id="healthDot"></span>
+                                    <h5 class="mb-0">Backend Health</h5>
+                                </div>
+                                <div class="text-muted small">Live metrics refresh every 5 seconds.</div>
+                            </div>
+                        </div>
+                        <span class="badge bg-secondary-subtle text-secondary fs-12 p-2" id="healthBadge">Checking</span>
+                    </div>
+                </div>
+
+                <div class="row row-cols-xxl-4 row-cols-md-2 row-cols-1 text-center mt-3">
+                    <div class="col">
+                        <div class="card monitoring-card">
+                            <div class="card-body">
+                                <h5 class="text-muted fs-13 text-uppercase">System Health</h5>
+                                <div class="d-flex align-items-center justify-content-center gap-2 my-2 py-1">
+                                    <span class="avatar-title text-bg-success rounded-circle fs-22 monitoring-icon-circle">
+                                        <i class="ti ti-shield-check"></i>
+                                    </span>
+                                    <h3 class="mb-0 fw-bold text-secondary" id="health-status">Checking...</h3>
+                                </div>
+                                <div class="text-muted small">Current API availability</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card monitoring-card">
+                            <div class="card-body">
+                                <h5 class="text-muted fs-13 text-uppercase">Total Requests</h5>
+                                <div class="d-flex align-items-center justify-content-center gap-2 my-2 py-1">
+                                    <span class="avatar-title text-bg-info rounded-circle fs-22 monitoring-icon-circle">
+                                        <i class="ti ti-route"></i>
+                                    </span>
+                                    <h3 class="mb-0 fw-bold" id="total-req">0</h3>
+                                </div>
+                                <div class="text-muted small">Requests handled</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card monitoring-card">
+                            <div class="card-body">
+                                <h5 class="text-muted fs-13 text-uppercase">Avg Response Time</h5>
+                                <div class="d-flex align-items-center justify-content-center gap-2 my-2 py-1">
+                                    <span class="avatar-title text-bg-warning rounded-circle fs-22 monitoring-icon-circle">
+                                        <i class="ti ti-clock-bolt"></i>
+                                    </span>
+                                    <h3 class="mb-0 fw-bold" id="avg-time">0.00s</h3>
+                                </div>
+                                <div class="text-muted small">Average API latency</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card monitoring-card">
+                            <div class="card-body">
+                                <h5 class="text-muted fs-13 text-uppercase">Error Rate</h5>
+                                <div class="d-flex align-items-center justify-content-center gap-2 my-2 py-1">
+                                    <span class="avatar-title text-bg-danger rounded-circle fs-22 monitoring-icon-circle">
+                                        <i class="ti ti-alert-triangle"></i>
+                                    </span>
+                                    <h3 class="mb-0 fw-bold text-success" id="err-rate">0.00%</h3>
+                                </div>
+                                <div class="text-muted small">Recent failed requests</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-3">
+                    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <div>
+                            <h4 class="header-title mb-1">Recent Error Logs</h4>
+                            <div class="text-muted small" id="logsSummary">Fetching logs...</div>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-soft-primary" id="refreshLogsBtn">
+                            <i class="ti ti-refresh me-1"></i> Refresh Data
+                        </button>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="monitoring-log-box" id="logs-container">
+                            <div class="monitoring-empty d-flex align-items-center justify-content-center text-muted">
+                                Fetching logs...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="logs-section">
-        <div class="logs-header">
-            Recent Error Logs
-            <button class="refresh-btn" onclick="fetchMetrics()">Refresh Data</button>
-        </div>
-        <div class="log-container" id="logs-container">
-            Fetching logs...
-        </div>
-    </div>
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.js"></script>
 
     <script>
-        async function fetchMetrics() {
-            try {
-                const response = await fetch('/api/v1/monitoring/dashboard');
-                const data = await response.json();
+        let isFetchingMetrics = false;
 
-                // Update basic stats
-                document.getElementById('health-status').innerText = data.status.toUpperCase();
-                document.getElementById('health-status').className = data.status === 'ok' ? 'card-value status-ok' : 'card-value status-error';
+        function escapeHtml(value) {
+            return String(value ?? "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
 
-                document.getElementById('total-req').innerText = data.api_metrics.total_requests.toLocaleString();
-                document.getElementById('avg-time').innerText = data.api_metrics.average_response_time_seconds.toFixed(4) + 's';
+        function setText(id, value) {
+            const element = document.getElementById(id);
+            if (element) element.textContent = value;
+        }
 
-                const errRate = data.api_metrics.error_rate_percentage;
-                const errEl = document.getElementById('err-rate');
-                errEl.innerText = errRate.toFixed(2) + '%';
-                errEl.className = errRate > 5 ? 'card-value status-error' : 'card-value status-ok';
+        function setAlert(message, type) {
+            const alert = document.getElementById("monitoringAlert");
+            if (!alert) return;
 
-                // Update logs
-                const logsContainer = document.getElementById('logs-container');
-                if (data.recent_errors.length === 0) {
-                    logsContainer.innerHTML = '<div style="color: var(--success)">No recent errors found! System is stable.</div>';
-                } else {
-                    logsContainer.innerHTML = data.recent_errors.map(log =>
-                        `<div class="log-line">${log.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>`
-                    ).join('');
-                }
+            if (!message) {
+                alert.className = "alert d-none mt-3 mb-0";
+                alert.textContent = "";
+                return;
+            }
 
-                document.getElementById('last-updated').innerText = 'Last updated: ' + new Date().toLocaleTimeString();
-            } catch (error) {
-                console.error("Failed to fetch metrics", error);
-                document.getElementById('health-status').innerText = 'OFFLINE';
-                document.getElementById('health-status').className = 'card-value status-error';
+            alert.className = `alert alert-${type || "info"} mt-3 mb-0`;
+            alert.textContent = message;
+        }
+
+        function setBusy(button, busy) {
+            if (!button) return;
+
+            if (busy) {
+                if (button.disabled) return;
+                button.dataset.originalHtml = button.innerHTML;
+                button.disabled = true;
+                button.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span> Refresh';
+                return;
+            }
+
+            button.disabled = false;
+            if (button.dataset.originalHtml) {
+                button.innerHTML = button.dataset.originalHtml;
+                delete button.dataset.originalHtml;
             }
         }
 
-        // Fetch immediately, then every 5 seconds
+        function setHealth(status) {
+            const normalized = String(status || "offline").toLowerCase();
+            const isOk = normalized === "ok" || normalized === "online" || normalized === "healthy";
+            const tone = isOk ? "success" : "danger";
+            const label = isOk ? "ONLINE" : normalized.toUpperCase();
+
+            const healthStatus = document.getElementById("health-status");
+            const healthBadge = document.getElementById("healthBadge");
+            const healthDot = document.getElementById("healthDot");
+
+            if (healthStatus) {
+                healthStatus.textContent = label;
+                healthStatus.className = `mb-0 fw-bold text-${tone}`;
+            }
+
+            if (healthBadge) {
+                healthBadge.textContent = label;
+                healthBadge.className = `badge bg-${tone}-subtle text-${tone} fs-12 p-2`;
+            }
+
+            if (healthDot) {
+                healthDot.className = `monitoring-status-dot ${isOk ? "is-online" : "is-offline"}`;
+            }
+        }
+
+        function renderLogs(logs) {
+            const logsContainer = document.getElementById("logs-container");
+            const recentErrors = Array.isArray(logs) ? logs : [];
+
+            setText("logsSummary", recentErrors.length
+                ? `${recentErrors.length} recent issue${recentErrors.length === 1 ? "" : "s"} found`
+                : "No recent errors found");
+
+            if (!logsContainer) return;
+
+            if (!recentErrors.length) {
+                logsContainer.innerHTML = `
+                    <div class="monitoring-empty d-flex flex-column align-items-center justify-content-center text-center p-4">
+                        <span class="avatar-title text-bg-success rounded-circle fs-22 mb-2 monitoring-icon-circle">
+                            <i class="ti ti-circle-check"></i>
+                        </span>
+                        <h5 class="mb-1">System is stable</h5>
+                        <div class="text-muted">No recent error logs were returned.</div>
+                    </div>
+                `;
+                return;
+            }
+
+            logsContainer.innerHTML = recentErrors.map((log, index) => `
+                <div class="monitoring-log-line">
+                    <span class="monitoring-log-number">#${index + 1}</span>
+                    <span>${escapeHtml(log)}</span>
+                </div>
+            `).join("");
+        }
+
+        async function readResponse(response) {
+            const contentType = response.headers.get("content-type") || "";
+            if (contentType.includes("application/json")) return response.json();
+            return { detail: await response.text() };
+        }
+
+        async function fetchMetrics() {
+            if (isFetchingMetrics) return;
+            isFetchingMetrics = true;
+
+            const refreshMetricsBtn = document.getElementById("refreshMetricsBtn");
+            const refreshLogsBtn = document.getElementById("refreshLogsBtn");
+            setBusy(refreshMetricsBtn, true);
+            setBusy(refreshLogsBtn, true);
+            setAlert("");
+
+            try {
+                const response = await fetch("/api/v1/monitoring/dashboard");
+                const data = await readResponse(response);
+
+                if (!response.ok) {
+                    throw new Error(data.detail || data.message || `Request failed with ${response.status}`);
+                }
+
+                const metrics = data.api_metrics || {};
+                const totalRequests = Number(metrics.total_requests || 0);
+                const averageResponseTime = Number(metrics.average_response_time_seconds || 0);
+                const errorRate = Number(metrics.error_rate_percentage || 0);
+
+                setHealth(data.status);
+                setText("total-req", totalRequests.toLocaleString());
+                setText("avg-time", `${averageResponseTime.toFixed(4)}s`);
+
+                const errRate = document.getElementById("err-rate");
+                if (errRate) {
+                    errRate.textContent = `${errorRate.toFixed(2)}%`;
+                    errRate.className = `mb-0 fw-bold text-${errorRate > 5 ? "danger" : "success"}`;
+                }
+
+                renderLogs(data.recent_errors);
+                setText("last-updated", `Last updated: ${new Date().toLocaleTimeString()}`);
+            } catch (error) {
+                console.error("Failed to fetch metrics", error);
+                setHealth("offline");
+                renderLogs([]);
+                setText("last-updated", `Last update failed: ${new Date().toLocaleTimeString()}`);
+                setAlert("Failed to fetch monitoring data. Make sure the backend is running.", "danger");
+            } finally {
+                setBusy(refreshMetricsBtn, false);
+                setBusy(refreshLogsBtn, false);
+                isFetchingMetrics = false;
+            }
+        }
+
+        document.getElementById("refreshMetricsBtn")?.addEventListener("click", fetchMetrics);
+        document.getElementById("refreshLogsBtn")?.addEventListener("click", fetchMetrics);
+        document.getElementById("dashboardLogoutBtn")?.addEventListener("click", function () {
+            localStorage.removeItem("mnu_access_token");
+            window.location.href = "auth-gate";
+        });
+
         fetchMetrics();
         setInterval(fetchMetrics, 5000);
     </script>
