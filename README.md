@@ -23,10 +23,12 @@ This is a comprehensive full-stack e-commerce application built with a modern te
 1. Open the `main_app/.env` file.
 2. Ensure your connection string variables are properly set to match your SQL Server setup. For example:
    ```env
-   DB_SERVER=host.docker.internal
-   DB_DATABASE=ECOMMERCE
-   DB_USER=your_sql_username
-   DB_PASSWORD=your_secure_password
+   DB_DRIVER=driver_name
+   DB_SERVER=host.docker.internal,1433
+   DB_NAME=db_name
+   DB_USER=db_username
+   DB_PASSWORD=db_password
+   SECRET_KEY=your_secret_key
    ```
 *(Note: `host.docker.internal` allows the Docker container to communicate with the SQL Server running on your host Windows machine).*
 
