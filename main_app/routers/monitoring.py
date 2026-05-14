@@ -1,7 +1,6 @@
 from fastapi import APIRouter
 from core.metrics import metrics_data
 import os
-
 router = APIRouter(prefix="/api/v1/monitoring", tags=["Monitoring"])
 
 def get_recent_errors(log_file="app.log", max_lines=50):
@@ -11,7 +10,6 @@ def get_recent_errors(log_file="app.log", max_lines=50):
     
     with open(log_file, "r") as f:
         lines = f.readlines()
-        # Search backwards for errors
         for line in reversed(lines):
             if " - ERROR - " in line or " - CRITICAL - " in line:
                 errors.append(line.strip())
