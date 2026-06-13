@@ -1,30 +1,31 @@
 <div align="center">
 
-# 📊 E-Commerce Product Recommendation System
+# 🛒 HNU Store — E-Commerce Fullstack Application
 
-### A Data Mining Pipeline Powered by FP-Growth, PageRank & BERT
-
-<br/>
-
-[![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
-[![HuggingFace](https://img.shields.io/badge/🤗_DistilBERT-Sentiment-F7DF1E?style=for-the-badge)](https://huggingface.co/distilbert-base-uncased)
-[![NetworkX](https://img.shields.io/badge/NetworkX-PageRank-4C8CBF?style=for-the-badge&logo=python&logoColor=white)](https://networkx.org/)
-[![License](https://img.shields.io/badge/License-Academic-green?style=for-the-badge)](#license)
+### A Production-Ready Online Store Built with FastAPI, SQL Server & Redis
 
 <br/>
 
-<img src="https://img.shields.io/badge/orders-33%2C580-58a6ff?style=flat-square" alt="Orders"/>
-<img src="https://img.shields.io/badge/products-1%2C197-58a6ff?style=flat-square" alt="Products"/>
-<img src="https://img.shields.io/badge/order_items-59%2C163-58a6ff?style=flat-square" alt="Order Items"/>
-<img src="https://img.shields.io/badge/association_rules-68-58a6ff?style=flat-square" alt="Rules"/>
-<img src="https://img.shields.io/badge/graph_nodes-124-58a6ff?style=flat-square" alt="Nodes"/>
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![SQL Server](https://img.shields.io/badge/SQL_Server-MSSQL-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)](https://www.microsoft.com/sql-server)
+[![Redis](https://img.shields.io/badge/Redis-Cart_Cache-DC382D?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io/)
+[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![License](https://img.shields.io/badge/License-Academic-22c55e?style=for-the-badge)](#license)
+
+<br/>
+
+<img src="https://img.shields.io/badge/API_Endpoints-30+-58a6ff?style=flat-square" alt="Endpoints"/>
+<img src="https://img.shields.io/badge/Product_Catalog-90+-58a6ff?style=flat-square" alt="Products"/>
+<img src="https://img.shields.io/badge/Categories-5-58a6ff?style=flat-square" alt="Categories"/>
+<img src="https://img.shields.io/badge/Test_Suites-4-58a6ff?style=flat-square" alt="Tests"/>
+<img src="https://img.shields.io/badge/Frontend_Pages-8-58a6ff?style=flat-square" alt="Pages"/>
 
 </div>
 
 <br/>
 
-> **TL;DR** — This project mines an e-commerce dataset of 33,580 orders to discover hidden purchasing patterns using **FP-Growth association rules**, ranks products by influence with **PageRank**, classifies review sentiment with **DistilBERT**, and combines everything into a **hybrid recommendation engine** served through an interactive **Streamlit dashboard**.
+> **TL;DR** — A fullstack e-commerce platform featuring a **FastAPI** REST backend with **JWT authentication**, **role-based access control** (admin/user), a **Redis-cached shopping cart**, **order lifecycle management**, and a responsive **vanilla HTML/CSS/JS storefront** — all containerized with **Docker Compose** and instrumented with **Prometheus + Grafana** for real-time monitoring.
 
 ---
 
@@ -33,35 +34,33 @@
 - [Overview](#-overview)
 - [Architecture](#-architecture)
 - [Repository Structure](#-repository-structure)
-- [Datasets](#-datasets)
-- [Pipeline Stages](#-pipeline-stages)
-  - [Stage 1 — Data Cleaning & Transaction Building](#stage-1--data-cleaning--transaction-building)
-  - [Stage 2 — FP-Growth Association Mining](#stage-2--fp-growth-association-mining)
-  - [Stage 3 — PageRank Product Ranking](#stage-3--pagerank-product-ranking)
-  - [Stage 4 — BERT Sentiment Analysis](#stage-4--bert-sentiment-analysis)
-  - [Stage 5 — Hybrid Recommendation Engine](#stage-5--hybrid-recommendation-engine)
-- [Interactive Dashboard](#-interactive-dashboard)
+- [Features](#-features)
+- [API Reference](#-api-reference)
+- [Database Schema](#-database-schema)
 - [Getting Started](#-getting-started)
+- [Docker Deployment](#-docker-deployment)
+- [Testing](#-testing)
+- [Monitoring](#-monitoring)
 - [Technologies](#-technologies)
-- [Results](#-results)
-- [Contributing](#-contributing)
+- [Team](#-team)
 - [License](#-license)
 
 ---
 
 ## 🔎 Overview
 
-This project applies multiple **data mining and NLP techniques** to a real-world e-commerce dataset to uncover purchasing patterns and deliver intelligent product recommendations.
+HNU Store is a fullstack e-commerce application designed and developed as a collaborative university project. It covers the complete online shopping lifecycle — from user registration and product browsing through cart management, order placement, and admin operations.
 
 ### What does it do?
 
-| Step | Technique | Purpose |
-|:----:|-----------|---------|
-| 1 | Data Cleaning | Load, merge, and transform raw CSVs into market-basket transactions |
-| 2 | **FP-Growth** | Discover frequent itemsets and generate association rules |
-| 3 | **PageRank** | Build a product co-purchase graph and rank products by importance |
-| 4 | **DistilBERT** | Fine-tune a transformer model for 3-class sentiment classification |
-| 5 | **Hybrid Engine** | Combine association rules + PageRank scores for smart recommendations |
+| Layer | Technology | Purpose |
+|:-----:|------------|---------|
+| 🖥️ **Frontend** | HTML · CSS · JavaScript | Responsive storefront with product catalog, cart, orders, search, and admin dashboard |
+| ⚡ **Backend** | FastAPI · SQLAlchemy | RESTful API with 30+ endpoints, JWT auth, and RBAC |
+| 🗄️ **Database** | Microsoft SQL Server | Persistent storage for users, products, categories, orders, and order items |
+| ⚡ **Cache** | Redis | High-performance shopping cart with 7-day TTL |
+| 📊 **Monitoring** | Prometheus · Grafana | Real-time API metrics, error rates, and response time tracking |
+| 🐳 **DevOps** | Docker Compose | One-command deployment of all services |
 
 ---
 
@@ -69,44 +68,46 @@ This project applies multiple **data mining and NLP techniques** to a real-world
 
 ```mermaid
 flowchart TD
-    subgraph Input ["📂 Raw Data"]
-        A1[orders.csv<br/>33,580 rows]
-        A2[products.csv<br/>1,197 rows]
-        A3[order_items.csv<br/>59,163 rows]
+    subgraph Client ["🖥️ Frontend (Port 5500)"]
+        A1["home.html"]
+        A2["products.html"]
+        A3["cart.html"]
+        A4["orders.html"]
+        A5["dashboard.html"]
+        A6["auth-gate.html"]
     end
 
-    subgraph Pipeline ["⚙️ Mining Pipeline"]
-        B[01 — Data Cleaning<br/>& Transaction Building]
-        C[02 — FP-Growth<br/>Association Rules]
-        D[03 — PageRank<br/>Product Ranking]
+    subgraph API ["⚡ FastAPI Backend (Port 8000)"]
+        B1["Users Router<br/>/api/v1/users"]
+        B2["Products Router<br/>/api/v1/products"]
+        B3["Categories Router<br/>/api/v1/categories"]
+        B4["Cart Router<br/>/api/v1/cart"]
+        B5["Orders Router<br/>/api/v1/orders"]
+        B6["Monitoring Router<br/>/api/v1/monitoring"]
     end
 
-    subgraph NLP ["🤖 NLP Pipeline"]
-        E[04 — DistilBERT<br/>Sentiment Analysis]
+    subgraph Data ["🗄️ Data Layer"]
+        C1["SQL Server<br/>via SQLAlchemy ORM"]
+        C2["Redis<br/>Cart Cache (7d TTL)"]
     end
 
-    subgraph Output ["🎯 Output"]
-        F[05 — Hybrid<br/>Recommendation Engine]
-        G[📊 Streamlit<br/>Dashboard]
+    subgraph Observe ["📊 Observability"]
+        D1["Prometheus<br/>Port 9090"]
+        D2["Grafana<br/>Port 3000"]
     end
 
-    A1 & A2 & A3 --> B
-    B --> C
-    C --> D
-    C --> F
-    D --> F
+    A1 & A2 & A3 & A4 & A5 & A6 -->|"REST API"| B1 & B2 & B3 & B4 & B5
 
-    A1 --> E
+    B1 & B2 & B3 & B5 --> C1
+    B4 --> C2
+    B5 -->|"Reads cart<br/>on checkout"| C2
+    B6 --> D1
+    D1 --> D2
 
-    F --> G
-    D --> G
-    E --> G
-    C --> G
-
-    style Input fill:#1a1a2e,stroke:#58a6ff,color:#fff
-    style Pipeline fill:#16213e,stroke:#58a6ff,color:#fff
-    style NLP fill:#0f3460,stroke:#f7df1e,color:#fff
-    style Output fill:#1a1a2e,stroke:#22c55e,color:#fff
+    style Client fill:#1a1a2e,stroke:#58a6ff,color:#fff
+    style API fill:#16213e,stroke:#58a6ff,color:#fff
+    style Data fill:#0f3460,stroke:#f7df1e,color:#fff
+    style Observe fill:#1a1a2e,stroke:#22c55e,color:#fff
 ```
 
 ---
@@ -114,179 +115,255 @@ flowchart TD
 ## 📁 Repository Structure
 
 ```
-DataMiningProject/
+ecommerce-fullstack-app/
 │
-├── 📂 Data/                                  # Input datasets
-│   ├── orders.csv                            # 33,580 customer orders
-│   ├── products.csv                          # 1,197 product catalog entries
-│   ├── order_items.csv                       # 59,163 individual line items
-│   └── Final_rules.csv                       # Generated association rules output
+├── 🖥️ frontend/                          # Client-side application
+│   ├── home.html                         # Landing page with hero carousel & featured products
+│   ├── products.html                     # Product catalog with category filtering
+│   ├── search.html                       # Live product search page
+│   ├── cart.html                         # Shopping cart management
+│   ├── orders.html                       # Order history & tracking
+│   ├── profile.html                      # User profile management
+│   ├── dashboard.html                    # Admin dashboard (CRUD operations)
+│   ├── monitoring.html                   # System health & API metrics
+│   ├── auth-gate.html                    # Login / Registration gate
+│   ├── index.html                        # Entry point redirect
+│   ├── dev-server.py                     # FastAPI dev server with backend proxy
+│   └── assets/                           # Static assets
+│       ├── css/                          # Stylesheets (vendor + custom shop.css)
+│       ├── js/                           # JavaScript (shop-api.js, config, vendor)
+│       ├── images/                       # Logos, product images, banners
+│       ├── fonts/                        # Custom typography
+│       └── vendor/                       # Third-party libraries
 │
-├── 📓 notebooks/                             # Jupyter notebooks (run in order)
-│   ├── 01_load_and_clean_data.ipynb          # Data loading, merging, one-hot encoding
-│   ├── 02_fp_growth.ipynb                    # FP-Growth frequent itemset mining
-│   ├── 03_pagerank.ipynb                     # Graph construction & PageRank
-│   ├── 04_bert_sentiment.ipynb               # DistilBERT fine-tuning
-│   └── 05_final_recommendation.ipynb         # Combining rules + PageRank
+├── ⚡ main_app/                           # FastAPI backend application
+│   ├── main.py                           # Application entry point & middleware
+│   ├── database.py                       # SQLAlchemy engine & session (MSSQL + pyodbc)
+│   ├── models.py                         # ORM models (User, Product, Category, Order, OrderItem)
+│   ├── dependencies.py                   # Auth guards (get_current_user, get_admin_user)
+│   ├── db.py                             # Database utilities
+│   │
+│   ├── routers/                          # API route handlers
+│   │   ├── users.py                      # Auth & user management endpoints
+│   │   ├── products.py                   # Product CRUD, search, stock management
+│   │   ├── categories.py                 # Category CRUD endpoints
+│   │   ├── shopping_cart.py              # Redis-backed cart operations
+│   │   ├── orders.py                     # Order creation, tracking, cancellation
+│   │   └── monitoring.py                 # Health checks & API metrics
+│   │
+│   ├── crud/                             # Business logic layer
+│   │   ├── users.py                      # JWT auth, password hashing, user CRUD
+│   │   ├── products.py                   # Product queries with filtering & pagination
+│   │   ├── categories.py                 # Category management logic
+│   │   ├── shopping_cart.py              # Redis cart operations (add, update, remove, clear)
+│   │   └── orders.py                     # Order lifecycle management
+│   │
+│   ├── schemas/                          # Pydantic request/response models
+│   │   ├── users.py                      # UserCreate, UserOut, Token, UserUpdate
+│   │   ├── products.py                   # ProductCreate, ProductResponse, ProductUpdate
+│   │   ├── categories.py                 # CategoryCreate, CategoryResponse
+│   │   ├── shopping_cart.py              # CartItem, CartItemAdd, CartResponse
+│   │   └── orders.py                     # OrderResponse, OrderItem schemas
+│   │
+│   ├── core/                             # Core utilities
+│   │   ├── logging_config.py             # Rotating file logger configuration
+│   │   └── metrics.py                    # Request/error/response-time counters
+│   │
+│   ├── tests/                            # Test suites
+│   │   ├── conftest.py                   # Shared fixtures & test database setup
+│   │   ├── test_auth.py                  # Authentication & authorization tests
+│   │   ├── test_cart.py                  # Shopping cart operation tests
+│   │   ├── test_orders.py                # Order lifecycle tests
+│   │   └── test_products.py              # Product CRUD tests
+│   │
+│   ├── seed_data.json                    # 90+ products across 5 categories
+│   ├── seed_db.py                        # Database seeding script
+│   ├── requirements.txt                  # Python dependencies
+│   ├── Dockerfile                        # Container image definition
+│   ├── docker-compose.yml                # Multi-service orchestration
+│   └── prometheus.yml                    # Prometheus scraping configuration
 │
-├── 📊 results/                               # Computed outputs
-│   ├── association_rules.csv                 # Filtered association rules
-│   ├── pagerank_scores.csv                   # Product importance scores (124 products)
-│   ├── sentiment_results.csv                 # Sentiment classification predictions
-│   └── final_recommendations.csv             # Final ranked recommendations
-│
-├── 📄 report/
-│   └── final_report.docx                     # Academic project report
-│
-├── app.py                                    # Streamlit dashboard application
-├── requirements.txt                          # Python dependencies
-├── .gitignore                                # Git ignore rules
-└── README.md                                 # ← You are here
+├── start.bat                             # Windows one-click launcher
+├── .gitignore                            # Git ignore rules
+└── README.md                             # ← You are here
 ```
 
 ---
 
-## 📦 Datasets
+## ✨ Features
 
-### Source Files
+### 🔐 Authentication & Security
 
-| File | Records | Key Columns | Description |
-|------|:-------:|-------------|-------------|
-| `orders.csv` | 33,580 | `order_id`, `customer_id`, `order_time`, `payment_method`, `total_usd`, `country`, `device` | Customer orders with timestamps, payment info, discounts, and geolocation |
-| `products.csv` | 1,197 | `product_id`, `category`, `name`, `price_usd`, `cost_usd`, `margin_usd` | Full product catalog with pricing and profit margins |
-| `order_items.csv` | 59,163 | `order_id`, `product_id`, `unit_price_usd`, `quantity`, `line_total_usd` | Line items linking each order to specific products |
+- **JWT-based authentication** with configurable token expiration
+- **Role-based access control** — `user` and `admin` roles
+- **Password hashing** with bcrypt (passlib)
+- **OAuth2** password flow with Bearer tokens
+- Protected admin routes with middleware guards
 
-### Derived Data
+### 🛍️ Product Management
 
-| File | Source | Description |
-|------|--------|-------------|
-| `Data/Final_rules.csv` | Notebook 02 | Association rules with support, confidence, and lift metrics |
-| `results/pagerank_scores.csv` | Notebook 03 | PageRank importance score for each product in the co-purchase graph |
-| `results/sentiment_results.csv` | Notebook 04 | Sentiment predictions (positive / neutral / negative) for product reviews |
-| `results/final_recommendations.csv` | Notebook 05 | Final ranked product recommendations |
+- Full **CRUD operations** for products (admin-only create/update/delete)
+- **Paginated** product listings with configurable page sizes
+- **Category-based filtering** and **stock visibility** toggle
+- **Product search** by name with live results
+- **Stock management** with admin stock dashboard
 
----
+### 🛒 Shopping Cart (Redis)
 
-## ⚙️ Pipeline Stages
+- **High-performance** Redis-cached cart (7-day TTL)
+- Add, update quantity, remove items, or clear entire cart
+- **Real-time stock validation** before adding to cart
+- Automatic **subtotal and total** price calculations
+- Cart persists across sessions via user-scoped Redis keys
 
-### Stage 1 — Data Cleaning & Transaction Building
+### 📦 Order Management
 
-> **Notebook:** [`01_load_and_clean_data.ipynb`](notebooks/01_load_and_clean_data.ipynb)
+- **Cart-to-order conversion** with automatic stock deduction
+- Order status lifecycle: `pending` → `shipped` → `canceled`
+- Users can view **their own orders** or cancel pending orders
+- Admins can view **all orders**, ship orders, or cancel any order
+- Full order item details with price-at-time-of-purchase snapshots
 
-Prepares the raw data into a format suitable for association rule mining.
+### 📊 Admin Dashboard
 
-- Loads three CSV files and merges `order_items` with `products` via `product_id`
-- Groups items by `order_id` to construct **33,580 market-basket transactions**
-- Cleans transactions — deduplication, whitespace trimming, empty-item removal
-- Applies **one-hot encoding** using `TransactionEncoder` from `mlxtend`
-- Produces a binary basket matrix of shape **(33,580 × 1,195)**
+- **Real-time monitoring** page with API metrics
+- Request count, error rates, and average response times
+- Recent error log viewer
+- Product stock management interface
+- User management panel
 
----
+### 🖥️ Storefront Frontend
 
-### Stage 2 — FP-Growth Association Mining
-
-> **Notebook:** [`02_fp_growth.ipynb`](notebooks/02_fp_growth.ipynb)
-
-Discovers products that are frequently bought together.
-
-- Runs the **FP-Growth algorithm** on the basket matrix to find frequent itemsets
-- Generates **association rules** evaluated by three metrics:
-
-| Metric | Meaning |
-|--------|---------|
-| **Support** | How often the itemset appears across all transactions |
-| **Confidence** | P(consequent \| antecedent) — directional certainty |
-| **Lift** | Strength of association; lift > 1 means positive correlation |
-
-- Exports rules to `Data/Final_rules.csv` for downstream consumption
+- **Responsive** HTML/CSS/JS storefront (no framework)
+- Hero carousel, featured products, and promo banners
+- Live product search with instant results
+- Shopping cart with quantity controls
+- Order history with status badges
+- Dark/light mode toggle
+- Clean URL routing (no `.html` extensions)
 
 ---
 
-### Stage 3 — PageRank Product Ranking
+## 📡 API Reference
 
-> **Notebook:** [`03_pagerank.ipynb`](notebooks/03_pagerank.ipynb)
+All endpoints are prefixed with `/api/v1`. Full interactive docs available at `/docs` (Swagger UI) and `/redoc`.
 
-Identifies the most influential products in the purchasing ecosystem.
+### Authentication & Users — `/api/v1/users`
 
-- Filters **strong association rules** (confidence ≥ 0.1, lift ≥ 2.0) → **68 qualifying rules**
-- Constructs a **directed graph**:
-  - **124 nodes** (products)
-  - **68 edges** (rules), weighted by lift
-- Applies Google's **PageRank algorithm** to compute importance scores
-- Visualizes the full co-purchase network and top-ranked products
+| Method | Endpoint | Auth | Description |
+|:------:|----------|:----:|-------------|
+| `POST` | `/register` | — | Register a new user |
+| `POST` | `/login` | — | Login and receive JWT token |
+| `GET` | `/` | 🔑 Admin | List all users |
+| `GET` | `/me` | 🔑 User | Get current user profile |
+| `GET` | `/me/role` | 🔑 User | Get current user role |
+| `GET` | `/{user_id}` | 🔑 Admin | Get user by ID |
+| `PUT` | `/edit` | 🔑 User | Update own profile |
+| `DELETE` | `/{user_id}` | 🔑 Admin | Delete a user |
 
-**Top 5 Products by PageRank:**
+### Products — `/api/v1/products`
 
-| Rank | Product | PageRank Score |
-|:----:|---------|:--------------:|
-| 1 | Lamp Chocolate 506 | 0.0154 |
-| 2 | Jeans LawnGreen 779 | 0.0154 |
-| 3 | Water Bottle PaleVioletRed 274 | 0.0154 |
-| 4 | SSD Lime 581 | 0.0126 |
-| 5 | Puzzle Orange 783 | 0.0106 |
+| Method | Endpoint | Auth | Description |
+|:------:|----------|:----:|-------------|
+| `POST` | `/` | 🔑 Admin | Create a new product |
+| `GET` | `/` | — | List products (paginated, stock filter) |
+| `GET` | `/search` | — | Search products by name |
+| `GET` | `/admin/stock` | 🔑 Admin | View product stock levels |
+| `GET` | `/{product_id}` | — | Get product details |
+| `GET` | `/by-category/{category_id}` | — | Filter by category |
+| `PUT` | `/{product_id}` | 🔑 Admin | Update a product |
+| `DELETE` | `/{product_id}` | 🔑 Admin | Delete a product |
+
+### Categories — `/api/v1/categories`
+
+| Method | Endpoint | Auth | Description |
+|:------:|----------|:----:|-------------|
+| `POST` | `/add` | 🔑 Admin | Create a category |
+| `GET` | `/getall` | — | List all categories |
+| `GET` | `/{category_id}` | — | Get category with products |
+| `PUT` | `/{category_id}` | 🔑 Admin | Update a category |
+| `DELETE` | `/{category_id}` | 🔑 Admin | Delete a category |
+
+### Shopping Cart — `/api/v1/cart`
+
+| Method | Endpoint | Auth | Description |
+|:------:|----------|:----:|-------------|
+| `GET` | `/` | 🔑 User | Get current cart |
+| `POST` | `/` | 🔑 User | Add item to cart |
+| `PUT` | `/{product_id}` | 🔑 User | Update item quantity |
+| `DELETE` | `/{product_id}` | 🔑 User | Remove item from cart |
+| `DELETE` | `/clear` | 🔑 User | Clear entire cart |
+
+### Orders — `/api/v1/orders`
+
+| Method | Endpoint | Auth | Description |
+|:------:|----------|:----:|-------------|
+| `POST` | `/create` | 🔑 User | Create order from cart |
+| `GET` | `/get/my_orders` | 🔑 User | Get own orders |
+| `GET` | `/get/user/{user_id}` | 🔑 Admin | Get orders by user |
+| `GET` | `/get_all_orders` | 🔑 Admin | List all orders |
+| `DELETE` | `/cancel/{order_id}` | 🔑 User | Cancel a pending order |
+| `PUT` | `/put/ship/{order_id}` | 🔑 Admin | Mark order as shipped |
+
+### Monitoring — `/api/v1/monitoring`
+
+| Method | Endpoint | Auth | Description |
+|:------:|----------|:----:|-------------|
+| `GET` | `/dashboard` | — | API health and metrics |
+| `GET` | `/health` | — | Service health check |
 
 ---
 
-### Stage 4 — BERT Sentiment Analysis
+## 🗄️ Database Schema
 
-> **Notebook:** [`04_bert_sentiment.ipynb`](notebooks/04_bert_sentiment.ipynb)
+```mermaid
+erDiagram
+    User ||--o{ Order : places
+    Order ||--|{ OrderItem : contains
+    Product ||--o{ OrderItem : "included in"
+    Category ||--o{ Product : categorizes
 
-Classifies product review sentiment using a fine-tuned transformer model.
+    User {
+        int id PK
+        string username UK
+        string email UK
+        string password
+        string role
+        datetime created_at
+    }
 
-- Fine-tunes **DistilBERT** (`distilbert-base-uncased`) for **3-class classification**:
-  - `0` — 😠 Negative
-  - `1` — 😐 Neutral
-  - `2` — 😊 Positive
-- Trains on a large-scale clothing reviews dataset (~2.5M reviews)
-- Implements a robust experiment framework:
-  - Fixed validation / test splits for fair comparison
-  - Early stopping based on **macro F1 score**
-  - Automated best-model tracking with versioned outputs
-  - Configurable hyperparameters (learning rate, batch size, epochs, max tokens)
-- Exports predictions to `results/sentiment_results.csv`
+    Category {
+        int id PK
+        string name UK
+        text description
+    }
 
-> 💡 **Tip:** This notebook is best executed on **Google Colab with a GPU runtime** for faster training.
+    Product {
+        int id PK
+        string name
+        text description
+        float price
+        int stock
+        string img_path
+        int category_id FK
+    }
 
----
+    Order {
+        int id PK
+        int user_id FK
+        float total_price
+        string status
+        datetime created_at
+    }
 
-### Stage 5 — Hybrid Recommendation Engine
-
-> **Notebook:** [`05_final_recommendation.ipynb`](notebooks/05_final_recommendation.ipynb)
-
-Combines association rules and PageRank into a unified recommendation system.
-
-**How it works:**
-
+    OrderItem {
+        int id PK
+        int order_id FK
+        int product_id FK
+        int quantity
+        float price_at_time_of_purchase
+    }
 ```
-Input Product → Match Association Rules → Retrieve Consequent Products → Rank by PageRank → Output
-```
-
-1. Takes a product name as input (supports exact and fuzzy matching)
-2. Finds all matching association rules where the product is an antecedent
-3. Retrieves consequent products from the matched rules
-4. Ranks results by their **PageRank importance score**
-5. Falls back to top PageRank products when no rules match
-
----
-
-## 🖥 Interactive Dashboard
-
-The project ships with a **Streamlit-based interactive dashboard** (`app.py`) featuring a dark-themed UI with six navigation pages:
-
-| Page | What You'll See |
-|------|-----------------|
-| 🏠 **Home** | Project overview with key metric cards (total orders, products, items) |
-| 📁 **Data Overview** | Browse raw datasets with summary statistics and category distributions |
-| 🔗 **Association Rules** | Explore rules with support vs. confidence scatter plots and top-lift bar charts |
-| 🌐 **PageRank** | Product importance rankings with interactive bar chart visualizations |
-| 💬 **Sentiment Analysis** | Sentiment distribution with interactive pie charts |
-| ✅ **Recommendations** | Real-time product recommendation search powered by rules + PageRank |
-
-**Dashboard Highlights:**
-- 🌙 Dark-themed UI with custom CSS
-- 📈 Interactive **Plotly** charts with hover tooltips
-- 🔍 Real-time product search and recommendation
-- 📱 Responsive sidebar navigation
 
 ---
 
@@ -296,18 +373,34 @@ The project ships with a **Streamlit-based interactive dashboard** (`app.py`) fe
 
 | Requirement | Details |
 |-------------|---------|
-| **Python** | 3.10 or higher (developed with 3.12) |
+| **Python** | 3.10 or higher (developed with 3.11) |
+| **SQL Server** | Any edition with ODBC Driver 17+ installed |
+| **Redis** | 7.x (local install or Docker) |
 | **pip** | Latest version recommended |
-| **GPU** | Optional — recommended for BERT fine-tuning (Notebook 04) |
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/aliabdou92019/DataMiningProject.git
-cd DataMiningProject
+git clone https://github.com/aliabdou92019/ecommerce-fullstack-app.git
+cd ecommerce-fullstack-app
 ```
 
-### 2. Create a Virtual Environment
+### 2. Configure Environment Variables
+
+Create a `.env` file inside the `main_app/` directory:
+
+```env
+DB_SERVER=localhost
+DB_NAME=ecommerce_db
+DB_DRIVER=ODBC Driver 17 for SQL Server
+DB_USER=sa
+DB_PASSWORD=your_password
+
+SECRET_KEY=your-super-secret-jwt-key
+ACCESS_TOKEN_EXPIRE_MINUTES=60
+```
+
+### 3. Create a Virtual Environment
 
 ```bash
 python -m venv venv
@@ -317,36 +410,104 @@ source venv/bin/activate        # macOS / Linux
 venv\Scripts\activate           # Windows
 ```
 
-### 3. Install Dependencies
+### 4. Install Dependencies
 
 ```bash
-pip install -r requirements.txt
-pip install streamlit plotly      # Dashboard extras
+pip install -r main_app/requirements.txt
 ```
 
-### 4. Run the Pipeline
-
-Execute the Jupyter notebooks **sequentially**:
+### 5. Seed the Database
 
 ```bash
-jupyter notebook
+cd main_app
+python seed_db.py
 ```
 
-| Order | Notebook | Purpose |
-|:-----:|----------|---------|
-| 1st | `01_load_and_clean_data.ipynb` | Prepares transaction data |
-| 2nd | `02_fp_growth.ipynb` | Mines association rules |
-| 3rd | `03_pagerank.ipynb` | Computes product rankings |
-| 4th | `04_bert_sentiment.ipynb` | Fine-tunes BERT *(best on Colab w/ GPU)* |
-| 5th | `05_final_recommendation.ipynb` | Generates hybrid recommendations |
+This seeds the database with:
+- ✅ An admin user (`admin@gmail.com` / `admin123`)
+- ✅ 5 product categories (Electronics, Home Appliances, Accessories, Gaming, Smart Home)
+- ✅ 90+ products across all categories
 
-### 5. Launch the Dashboard
+### 6. Start the Backend
 
 ```bash
-streamlit run app.py
+cd main_app
+uvicorn main:app --host 127.0.0.1 --port 8000
 ```
 
-The dashboard will be available at **http://localhost:8501**
+### 7. Start the Frontend Dev Server
+
+```bash
+python frontend/dev-server.py --port 5500 --backend http://127.0.0.1:8000
+```
+
+### 8. Open the Store
+
+Navigate to **http://127.0.0.1:5500/home** in your browser.
+
+> 💡 **Windows Shortcut:** Run `start.bat` from the project root to launch both servers and open the browser automatically.
+
+---
+
+## 🐳 Docker Deployment
+
+Deploy the entire stack with a single command:
+
+```bash
+cd main_app
+docker-compose up --build
+```
+
+This starts **4 services**:
+
+| Service | Container | Port | Description |
+|---------|-----------|:----:|-------------|
+| **App** | `ecommerce_app` | `8000` | FastAPI backend + frontend static files |
+| **Redis** | `ecommerce_redis` | `6379` | Shopping cart cache |
+| **Prometheus** | `prometheus` | `9090` | Metrics collection |
+| **Grafana** | `grafana` | `3000` | Metrics visualization |
+
+---
+
+## 🧪 Testing
+
+The project includes 4 test suites covering authentication, cart operations, orders, and product management.
+
+```bash
+cd main_app
+pytest tests/ -v
+```
+
+| Test Suite | Coverage |
+|------------|----------|
+| `test_auth.py` | User registration, login, token validation, role-based access |
+| `test_cart.py` | Cart add/update/remove/clear, stock validation |
+| `test_orders.py` | Order creation, cancellation, shipping, user/admin access |
+| `test_products.py` | Product CRUD, search, pagination, category filtering |
+
+---
+
+## 📊 Monitoring
+
+### Built-in Metrics
+
+The backend tracks key metrics via middleware:
+
+- **Total Requests** — Cumulative count of all API calls
+- **Error Rate** — Percentage of 5xx responses
+- **Average Response Time** — Mean request duration in seconds
+- **Recent Errors** — Last 50 error-level log entries
+
+Access the monitoring dashboard at `/api/v1/monitoring/dashboard` or view the frontend monitoring page.
+
+### Prometheus + Grafana
+
+With Docker Compose running:
+
+- **Prometheus** → http://localhost:9090
+- **Grafana** → http://localhost:3000
+
+The `prometheus-fastapi-instrumentator` library automatically exposes detailed HTTP metrics at `/metrics`.
 
 ---
 
@@ -354,47 +515,41 @@ The dashboard will be available at **http://localhost:8501**
 
 | Category | Tools |
 |----------|-------|
-| **Language** | Python 3.12 |
-| **Data Processing** | Pandas · NumPy |
-| **Association Mining** | mlxtend (FP-Growth · TransactionEncoder) |
-| **Graph Analysis** | NetworkX (PageRank) |
-| **NLP & Sentiment** | HuggingFace Transformers (DistilBERT) · PyTorch |
-| **Machine Learning** | scikit-learn |
-| **Visualization** | Matplotlib · Seaborn · Plotly |
-| **Dashboard** | Streamlit |
-| **Notebooks** | Jupyter |
+| **Language** | Python 3.11 |
+| **Web Framework** | FastAPI · Uvicorn |
+| **ORM** | SQLAlchemy |
+| **Database** | Microsoft SQL Server (via pyodbc) |
+| **Cache** | Redis (async, 7-day TTL) |
+| **Authentication** | python-jose (JWT) · passlib (bcrypt) · OAuth2 |
+| **Validation** | Pydantic · email-validator |
+| **Testing** | pytest · httpx |
+| **Monitoring** | Prometheus · Grafana · prometheus-fastapi-instrumentator |
+| **Containerization** | Docker · Docker Compose |
+| **Frontend** | HTML5 · CSS3 · JavaScript · Bootstrap |
+| **Logging** | Python logging (RotatingFileHandler) |
 
 <details>
 <summary><b>📋 Full <code>requirements.txt</code></b></summary>
 
 ```
-pandas
-numpy
-matplotlib
-seaborn
-networkx
-mlxtend
-datasets
-transformers
-torch
-scikit-learn
-jupyter
+fastapi
+uvicorn
+sqlalchemy
+pyodbc
+python-dotenv
+pydantic
+pydantic-settings
+passlib[bcrypt]==1.7.4
+bcrypt==3.2.2
+python-jose[cryptography]
+email-validator
+redis[asyncio]>=5.0.0
+python-multipart
+prometheus-fastapi-instrumentator
+httpx
 ```
 
 </details>
-
----
-
-## 📈 Results
-
-All computed outputs are saved in the `results/` directory:
-
-| Output File | Records | Description |
-|-------------|:-------:|-------------|
-| `association_rules.csv` | — | Filtered association rules from FP-Growth |
-| `pagerank_scores.csv` | 124 | Product importance scores from the co-purchase graph |
-| `sentiment_results.csv` | ~2.5M | Sentiment predictions for product reviews |
-| `final_recommendations.csv` | Variable | Context-dependent product recommendations |
 
 ---
 
@@ -410,34 +565,31 @@ Contributions, bug reports, and feature requests are welcome!
 
 ---
 
-## 👥 Team Member Roles
+## 👥 Team
 
 This project was built collaboratively by our engineering team:
 
-- **Amira Azzam** — Developed the security layer, working on all related files to users, JWT authentication, and authorization.
-
-- **Ali Abdo** — Worked on all related files to products, including CRUD operations, stock management, and filtering.
-
-- **Youssef Waheed** — Built the foundational structure, designed the database and ORM models, and acted mainly as the consultant and architect for the project.
-
-- **Maria Gerges** — Worked comprehensively on all files and logic related to the shopping cart, including the Redis caching implementations.
-
-- **Yousef Medhat** — Developed all files and logic related to the order processing system and order item management.
-
-- **Amr Yasser** — Worked on all related files to categories and developed the entire frontend application and user interface.
+| Member | Responsibility |
+|--------|----------------|
+| **Amira Azzam** | Security layer — users, JWT authentication, and authorization |
+| **Ali Abdo** | Products — CRUD operations, stock management, and filtering |
+| **Youssef Waheed** | Architecture — database design, ORM models, and project consulting |
+| **Maria Gerges** | Shopping cart — cart logic and Redis caching implementation |
+| **Yousef Medhat** | Orders — order processing system and order item management |
+| **Amr Yasser** | Categories and frontend — category endpoints and full UI development |
 
 ---
 
 ## 📄 License
 
-This project was developed for **academic and educational purposes** as part of a university Data Mining course.
+This project was developed for **academic and educational purposes** as part of a university course at Helwan National University.
 
 ---
 
 <div align="center">
 <br/>
 
-**Built with ❤️ using Python · Streamlit · HuggingFace Transformers · NetworkX**
+**Built with ❤️ using FastAPI · SQL Server · Redis · Docker**
 
 <br/>
 
