@@ -582,7 +582,7 @@ This project was built collaboratively by our engineering team:
 
 ## 📄 License
 
-This project was developed for **academic and educational purposes** as part of a university course at Helwan National University.
+This project was developed for **academic and educational purposes** as part of a "Python & R" course at Helwan National University.
 
 ---
 
